@@ -1,0 +1,34 @@
+{
+    "data_dir":"/home/seito/Documents/study/IU/converted-data/", 
+    "brats": {
+        "num_classes": 4,
+        "bce_weight":  [0, 3, 1, 1.75],
+        "ds_class":    "BratsSet",
+        "train_ds_names":  ["2021train"],
+        "test_ds_name":    "",
+        "chosen_modality": -1,
+        "xyz_permute":     "",  
+        "orig_input_size": "",
+        "orig_patch_size": [112, 112, 96],
+        "input_patch_size": [112, 112, 96],
+        "input_scale":     [1,   1,   1],
+        "D_pool_K":         2,
+        "localization_prob": 0.5,
+        "has_mask": {
+            "2019train": 1,    "2019valid": 0,
+            "2020train": 1,    "2020valid": 0,
+            "2021train": 1,    "2021valid": 1
+        }
+        
+    }, 
+    "params":{
+        "seed": 1337, 
+        "device": "cuda", 
+        "epochs": 100, 
+        "batch_size": 4, 
+        "save_epoch": 1, 
+        "num_workers": 4, 
+        "coords": [20,61,10]
+    }
+    
+}

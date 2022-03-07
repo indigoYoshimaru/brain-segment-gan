@@ -82,9 +82,10 @@ def tversky_loss(score, gt_mask, alpha, beta):
     return loss.mean()
 
 
-def focal_tversky_loss(score, gt_mask): 
-    """Adding focal to tversky loss"""
-    ...
+def focal_tversky_loss(score, gt_mask, alpha, beta, gamma=0.75): 
+    """Focal tversky loss by powering by gamma"""
+    tl = tversky_loss(score, gt_mask, alpha, beta)
+    return torch.pow(tl, gamma)
     
 # Treat the whole batch as one big example, and compute the dice loss.
 def dice_loss_mix(score, gt_mask):

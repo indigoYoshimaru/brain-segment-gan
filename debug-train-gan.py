@@ -57,7 +57,7 @@ root = train_cfg.get('data_dir')
 data_cfg = train_cfg.get('brats', {})
 params_cfg = train_cfg.get('params', {})
 model_cfg = read_json(args.model_config_dir)
-#print(model_cfg)
+
 
 # 3. Save directory config
 

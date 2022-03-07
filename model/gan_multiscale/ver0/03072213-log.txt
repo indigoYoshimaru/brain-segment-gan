@@ -1,0 +1,19 @@
+[22:13:38.759] Checkpoints to be saved at: model/gan_multiscale/ver0
+[22:13:38.896] 2021train: 1125 images, has_mask: True
+[22:13:38.896] Combined dataset: 1125 images
+[22:13:41.243] Total epochs: 100
+[22:13:41.243] Iterations per epoch: 375
+[22:13:41.243] Starting at iter/epoch: 0/0
+[22:13:41.254] save model to model/gan_multiscale/ver0/discriminator_epoch0.pth
+[22:13:43.560] Generator 0/0: 
+  Dice loss: 0.9613144397735596
+   L2 loss: 0.7302575707435608
+[22:13:44.344] Generator 1/0: 
+  Dice loss: 0.9191896915435791
+   L2 loss: 0.7303423285484314
+[22:13:45.128] Generator 2/0: 
+  Dice loss: 0.9064134955406189
+   L2 loss: 0.7334070205688477
+[22:13:45.910] Generator 3/0: 
+  Dice loss: 0.9177729487419128
+   L2 loss: 0.7325963377952576

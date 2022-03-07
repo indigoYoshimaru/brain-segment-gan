@@ -16,10 +16,8 @@ from torchvision import transforms
 from torchvision.utils import make_grid
 
 from dataloaders.datasets3d import *
-from networks.unet3d import Modified3DUNet as Unet3D
-# from networks.discriminator_mask_only import Discriminator
+from networks.v2v_generator import Generator 
 from networks.v2v_discriminator import Discriminator
-# from networks.another_dis_version import Discriminator
 from optimization.losses import *
 
 def worker_init_fn(worker_id):
@@ -60,7 +58,6 @@ model_cfg = read_json(args.model_config_dir)
 
 
 # 3. Save directory config
-
 writer_dir = os.path.join(args.writer_dir, model_cfg['model_name'], f'ver{model_cfg["version"]}')
 writer = SummaryWriter(writer_dir)
 timestamp = datetime.now().strftime('%m%d%H%M')
@@ -114,8 +111,8 @@ trainloader = DataLoader(db_train_combo, batch_size=params_cfg['batch_size'], sa
                             worker_init_fn=worker_init_fn)
 
 # 5. Init models
-gen_net = Unet3D(in_channels=4, num_classes = data_cfg['num_classes']) 
-dis_net = Discriminator(in_channels = 4)
+gen_net = Generator(in_channels=4, num_classes = data_cfg['num_classes']) 
+dis_net = Discriminator(in_channels = 4, num_classes=1)
 if params_cfg['device']=='cuda': 
     gen_net.cuda()
     dis_net.cuda()
@@ -143,7 +140,7 @@ class_weights = torch.ones(data_cfg['num_classes']).cuda()
 class_weights[0] = 0
 class_weights /= class_weights.sum()
 
-gan_loss_func = nn.BCEWithLogitsLoss()
+gan_loss_func = nn.MSELoss()
 
 # 7. Load checkpoint if there is
 gen_iter_num = 0
@@ -154,7 +151,6 @@ Tensor = torch.cuda.FloatTensor
 
 if args.gen_cp_dir: 
     gen_iter_num, start_epoch = load_model(args.gen_cp_dir, gen_net, gen_opt)
-    start_epoch -=1
 if args.dis_cp_dir: 
     dis_iter_num, start_epoch = load_model(args.dis_cp_dir, dis_net, dis_opt)
     # to_train_epoch = params_cfg['epochs']-start_epoch
@@ -162,6 +158,7 @@ if args.dis_cp_dir:
 logging.info(f'Total epochs: {params_cfg["epochs"]}')
 logging.info(f'Iterations per epoch: {len(trainloader)}')
 logging.info(f'Starting at iter/epoch: {gen_iter_num}/{start_epoch}')
+
 
 for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
 
@@ -171,26 +168,25 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
     epoch_ce_loss= 0
     epoch_dice_loss= 0
     epoch_gen_gan_loss_func = 0
+    #==========TRAIN DISCRIMINATOR==========#
     for de in tqdm(range(dis_epoch)): 
         for idx, sampled_batch in enumerate(trainloader):
             volume_batch, mask_batch = sampled_batch['image'].cuda(), sampled_batch['mask'].cuda()
             mask_batch = brats_map_label(mask_batch, binarize = False)
             volume_batch = F.interpolate(volume_batch, size=data_cfg['input_patch_size'], mode='trilinear', align_corners=False)
             dis_opt.zero_grad()
-
-            # Adversarial grounde truths, real = 1, fake = 0
-            valid_gt = Tensor(np.ones((volume_batch.size(0),1,14,14,12)))
-            fake_gt = Tensor(np.zeros((volume_batch.size(0), 1,14,14,12)))
+            
             # compute loss for real prediction: L2[D(x,y), 1], x is image, y is mask
             pred_real = dis_net(volume_batch, mask_batch)
-            logging.debug(f'Predict real val: {torch.unique(pred_real)}')
+
+            # Adversarial grounde truths, real = 1, fake = 0
+            out_size = pred_real.size()
+            valid_gt = Tensor(np.ones((volume_batch.size(0), out_size[1],out_size[2],out_size[3],out_size[4])))
+            fake_gt = Tensor(np.zeros((volume_batch.size(0), out_size[1],out_size[2],out_size[3],out_size[4])))
             loss_real = gan_loss_func(pred_real, valid_gt)
             # compute loss for fake prediction: L2[D(x, y^), 0], x is image, y^ is generated mask
-            softmax_pred, fake_mask = gen_net(volume_batch)
-            # softmax_pred = torch.round(softmax_pred)
-            # logging.debug(f'difference: {softmax_pred[mask_batch!= softmax_pred]}')
+            fake_mask = gen_net(volume_batch)
             pred_fake = dis_net(volume_batch, fake_mask)
-            logging.debug(f'Predict fake val: {torch.unique(pred_fake)}')
 
             loss_fake = gan_loss_func(pred_fake, fake_gt)
             loss_d = loss_real + loss_fake
@@ -216,10 +212,11 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         mask_batch = brats_map_label(mask_batch, binarize = False)
         volume_batch = F.interpolate(volume_batch, size=data_cfg['input_patch_size'], mode='trilinear', align_corners=False)
 
-        # Adversarial grounde truths, real = 1, fake = 0
-        valid_gt = Tensor(np.ones((volume_batch.size(0),1,14,14,12)))
-        softmax_pred, fake_mask = gen_net(volume_batch)
+        fake_mask = gen_net(volume_batch)
         pred_fake = dis_net(volume_batch, fake_mask)
+        out_size = pred_fake.size()
+        valid_gt = Tensor(np.ones((volume_batch.size(0),out_size[1],out_size[2],out_size[3],out_size[4])))
+
         loss_GAN  = gan_loss_func(pred_fake, valid_gt)
         # voxel-wise loss 
         # total_ce_loss = bce_loss_func(fake_mask.permute([0, 2, 3, 4, 1]),
@@ -240,7 +237,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         
         if gen_iter_num % 50 ==0:
             draw_image(writer, volume_batch,'train/Image', from_slice=0, to_slice=1, iter_num=gen_iter_num, coords = params_cfg['coords']) 
-            draw_image(writer, softmax_pred,'train/Softmax_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords']) 
+            # draw_image(writer, softmax_pred,'train/Softmax_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords']) 
             draw_image(writer, outputs_soft,'train/Predicted_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords']) 
             draw_image(writer, mask_batch,'train/Groundtruth_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords'])
         
@@ -252,14 +249,11 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         gen_opt.zero_grad()
         loss_g.backward()
         gen_opt.step()
-        # epoch_ce_loss += total_ce_loss
         epoch_dice_loss += total_dice_loss
         epoch_gen_gan_loss_func += loss_GAN
         epoch_gen_loss += loss_g
 
         logging.info(f'Generator {idx}/{epoch}: \n  Dice loss: {total_dice_loss}\n   L2 loss: {loss_GAN}')
-        # logging.info(f'Class dice loss: {dice_losses}')
-        # writer.add_scalar('generator-sample/cross entropy loss', total_ce_loss.item(), gen_iter_num)
         writer.add_scalar('generator-sample/dice loss',
                             total_dice_loss.item(), gen_iter_num)
         writer.add_scalar('generator-sample/GAN mse loss', loss_GAN.item(), gen_iter_num)

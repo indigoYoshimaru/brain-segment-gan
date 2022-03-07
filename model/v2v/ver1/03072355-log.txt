@@ -1,0 +1,6 @@
+[23:55:12.674] Checkpoints to be saved at: model/v2v/ver1
+[23:55:12.798] 2021train: 1125 images, has_mask: True
+[23:55:12.799] Combined dataset: 1125 images
+[23:55:15.642] Total epochs: 100
+[23:55:15.642] Iterations per epoch: 282
+[23:55:15.642] Starting at iter/epoch: 0/0

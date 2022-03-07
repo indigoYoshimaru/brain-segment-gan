@@ -16,10 +16,8 @@ from torchvision import transforms
 from torchvision.utils import make_grid
 
 from dataloaders.datasets3d import *
-from networks.multiscale_generator import MultiscaledGenerator as Unet3D
-# from networks.discriminator_mask_only import Discriminator
-from networks.v2v_discriminator import Discriminator
-# from networks.another_dis_version import Discriminator
+from networks.multiscale_generator import MultiscaleGenerator as Unet3D
+from networks.multiscale_discriminator import MultiscaleDiscriminator as Discriminator
 from optimization.losses import *
 
 def worker_init_fn(worker_id):
@@ -167,6 +165,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
     epoch_ce_loss= 0
     epoch_dice_loss= 0
     epoch_gen_gan_loss_func = 0
+
     for de in tqdm(range(dis_epoch)): 
         for idx, sampled_batch in enumerate(trainloader):
             volume_batch, mask_batch = sampled_batch['image'].cuda(), sampled_batch['mask'].cuda()
@@ -175,15 +174,15 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             dis_opt.zero_grad()
 
             # Adversarial grounde truths, real = 1, fake = 0
-            valid_gt = Tensor(np.ones((volume_batch.size(0),1,14,14,12)))
+            valid_gt = Tensor(np.ones((volume_batch.size(0), 1,14,14,12)))
             fake_gt = Tensor(np.zeros((volume_batch.size(0), 1,14,14,12)))
             # compute loss for real prediction: L2[D(x,y), 1], x is image, y is mask
-            pred_real = dis_net(volume_batch, mask_batch)
+            pred_real = dis_net(mask_batch)
             logging.debug(f'Predict real val: {torch.unique(pred_real)}')
             loss_real = gan_loss_func(pred_real, valid_gt)
             # compute loss for fake prediction: L2[D(x, y^), 0], x is image, y^ is generated mask
-            softmax_pred, fake_mask = gen_net(volume_batch)
-            pred_fake = dis_net(volume_batch, fake_mask)
+            fake_mask = gen_net(volume_batch)
+            pred_fake = dis_net(fake_mask)
             logging.debug(f'Predict fake val: {torch.unique(pred_fake)}')
 
             loss_fake = gan_loss_func(pred_fake, fake_gt)
@@ -204,16 +203,18 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         writer.add_scalar('discriminator/epoch_loss', epoch_dis_loss/(len(trainloader)*dis_epoch), epoch)
     if epoch%params_cfg['save_epoch']==0:
         save_model(checkpoint_root, 'discriminator', dis_net, dis_opt, epoch, dis_iter_num)
-
+    
+    #========TRAIN GENERATOR =========# 
+    
     for idx, sampled_batch in enumerate(trainloader):
         volume_batch, mask_batch = sampled_batch['image'].cuda(), sampled_batch['mask'].cuda()
         mask_batch = brats_map_label(mask_batch, binarize = False)
         volume_batch = F.interpolate(volume_batch, size=data_cfg['input_patch_size'], mode='trilinear', align_corners=False)
 
-        fake_masks = gen_net(volume_batch)
+        fake_mask = gen_net(volume_batch)
         # get the final output for validation
-        fake_mask = fake_masks[-1]
-        pred_fake = dis_net(fake_masks)
+    #   f  ake_mask = fake_masks[-1]
+        pred_fake = dis_net(fake_mask)
         # Adversarial grounde truths, real = 1, fake = 0
         valid_gt = Tensor(np.ones((volume_batch.size(0),1,14,14,12)))
         loss_GAN  = gan_loss_func(pred_fake, valid_gt)

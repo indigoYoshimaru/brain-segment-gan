@@ -7,6 +7,9 @@ import logging
 
 from torchvision.utils import make_grid
 
+def print_size(name,x): 
+    print(f'Block {name} size: {x.size()}')
+
 def print_arg(*print_args, **kwargs):
     #if args.local_rank == 0:
     print(*print_args, **kwargs)

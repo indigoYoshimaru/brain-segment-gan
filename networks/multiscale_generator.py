@@ -1,11 +1,10 @@
 import torch.nn as nn
 import torch
-def print_size(name,x): 
-    print(f'Block {name} size: {x.size()}')
+from utils.run_util import print_size
 
 class MultiscaledGenerator(nn.Module):
     def __init__(self, in_channels, num_classes, base_n_filter = 8):
-        super(Modified3DUNet, self).__init__()
+        super(MultiscaledGenerator, self).__init__()
         
         self.outputs = []
         self.lrelu = nn.LeakyReLU()
@@ -157,8 +156,10 @@ class MultiscaledGenerator(nn.Module):
         # Level 1 localization pathway
         out = torch.cat([out, context_4], dim=1)
         out = self.conv_norm_lrelu_l1(out)
+        ds1 = out 
         out = self.conv3d_l1(out)
         out = self.norm_lrelu_upscale_conv_norm_lrelu_l1(out)
+        print_size('ds1-out', out)
         self.outputs.append(out)
 
         # Level 2 localization pathway
@@ -167,19 +168,23 @@ class MultiscaledGenerator(nn.Module):
         ds2 = out
         out = self.conv3d_l2(out)
         out = self.norm_lrelu_upscale_conv_norm_lrelu_l2(out)
-        
+        print_size('ds2-out', out)
+        self.outputs.append(out)
+
         # Level 3 localization pathway
         out = torch.cat([out, context_2], dim=1)
         out = self.conv_norm_lrelu_l3(out)
         ds3 = out
         out = self.conv3d_l3(out)
         out = self.norm_lrelu_upscale_conv_norm_lrelu_l3(out)
+        print_size('ds3-out', out)
+        self.outputs.append(out)
 
         # Level 4 localization pathway
         out = torch.cat([out, context_1], dim=1)
         out = self.conv_norm_lrelu_l4(out)
         out_pred = self.conv3d_l4(out)
-
+    
         # output 
         ds2_1x1_conv = self.ds2_1x1_conv3d(ds2)
         ds1_ds2_sum_upscale = self.upsacle(ds2_1x1_conv)
@@ -187,12 +192,8 @@ class MultiscaledGenerator(nn.Module):
         ds1_ds2_sum_upscale_ds3_sum = ds1_ds2_sum_upscale + ds3_1x1_conv
         ds1_ds2_sum_upscale_ds3_sum_upscale = self.upsacle(ds1_ds2_sum_upscale_ds3_sum)
         
-        # print_size('out_pred', out_pred)
-        # print_size('sum_upscale', ds1_ds2_sum_upscale_ds3_sum_upscale)
-
-        out = out_pred + ds1_ds2_sum_upscale_ds3_sum_upscale
-        seg_layer = out
-    
-        out = self.softmax(out)
-        return out, seg_layer
+        final_out = out_pred + ds1_ds2_sum_upscale_ds3_sum_upscale
+        self.outputs.append(final_out)
+        print_size('final-out', final_out)
+        return self.outputs
         # return seg_layer

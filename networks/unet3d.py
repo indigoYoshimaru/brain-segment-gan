@@ -196,6 +196,6 @@ class Modified3DUNet(nn.Module):
 		# print_size('seg_layer', seg_layer)
 		# out = out.permute(0, 2, 3, 4, 1).contiguous().view(-1, self.num_classes)
 		#out = out.view(-1, self.num_classes)
-		out = self.softmax(out)
+		# out = self.softmax(out)
 		return out, seg_layer
 		# return seg_layer

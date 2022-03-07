@@ -82,7 +82,7 @@ def tversky_loss(score, gt_mask, alpha, beta):
     return loss.mean()
 
 
-def focal_tversky_loss(score, gt_mask, alpha, beta, gamma=0.75): 
+def focal_tversky_loss(score, gt_mask, alpha=0.3, beta=0.8, gamma=0.75): 
     """Focal tversky loss by powering by gamma"""
     tl = tversky_loss(score, gt_mask, alpha, beta)
     return torch.pow(tl, gamma)

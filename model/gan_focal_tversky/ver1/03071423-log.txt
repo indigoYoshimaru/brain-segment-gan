@@ -1,0 +1,8 @@
+[14:23:44.368] Checkpoints to be saved at: model/gan_focal_tversky/ver1
+[14:23:44.508] 2021train: 1125 images, has_mask: True
+[14:23:44.509] Combined dataset: 1125 images
+[14:23:46.931] Total epochs: 100
+[14:23:46.932] Iterations per epoch: 282
+[14:23:46.932] Starting at iter/epoch: 0/0
+[14:23:48.826] Predict real val: tensor([-1.8873, -1.8230, -1.7532,  ...,  1.1253,  1.1517,  1.1529],
+       device='cuda:0', grad_fn=<Unique2Backward0>)

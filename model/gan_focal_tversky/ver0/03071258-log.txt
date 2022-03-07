@@ -1,0 +1,111 @@
+[12:58:07.040] Checkpoints to be saved at: model/gan_focal_tversky/ver0
+[12:58:07.187] 2021train: 1125 images, has_mask: True
+[12:58:07.187] Combined dataset: 1125 images
+[12:58:37.077] Checkpoints to be saved at: model/gan_focal_tversky/ver0
+[12:58:37.217] 2021train: 1125 images, has_mask: True
+[12:58:37.217] Combined dataset: 1125 images
+[12:58:39.706] Total epochs: 100
+[12:58:39.706] Iterations per epoch: 282
+[12:58:39.706] Starting at iter/epoch: 0/0
+[12:58:42.159] Predict real val: tensor([-1.8576, -1.5733, -1.4458,  ...,  1.6045,  1.6445,  1.8206],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:42.469] Predict fake val: tensor([-1.5844, -1.4235, -1.3369,  ...,  1.4522,  1.5263,  1.8707],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:42.469] Discriminator 0/0/0: loss real: 1.1016316413879395 -- loss fake: 0.10438473522663116
+[12:58:43.985] Predict real val: tensor([-0.2318, -0.2278, -0.1907,  ...,  6.3631,  6.4840,  6.6702],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:44.288] Predict fake val: tensor([-0.0850, -0.0685, -0.0429,  ...,  5.9030,  6.0278,  6.0298],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:44.289] Discriminator 1/0/0: loss real: 1.1766102313995361 -- loss fake: 2.834892511367798
+[12:58:45.806] Predict real val: tensor([-1.0495, -1.0221, -1.0137,  ...,  1.6253,  1.7046,  1.8067],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:46.112] Predict fake val: tensor([-1.2118, -0.9701, -0.9311,  ...,  1.5518,  1.6767,  1.7102],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:46.112] Discriminator 2/0/0: loss real: 0.4184742569923401 -- loss fake: 0.344142884016037
+[12:58:47.625] Predict real val: tensor([-1.2441, -1.0867, -1.0575,  ...,  1.0407,  1.0580,  1.1660],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:47.931] Predict fake val: tensor([-1.4274, -1.3035, -1.1099,  ...,  1.0829,  1.0836,  1.2139],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:47.931] Discriminator 3/0/0: loss real: 0.9785944819450378 -- loss fake: 0.07877624779939651
+[12:58:49.445] Predict real val: tensor([-1.0042, -0.7588, -0.6778,  ...,  1.2559,  1.3192,  1.5506],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:49.784] Predict fake val: tensor([-0.6644, -0.6189, -0.6068,  ...,  1.2777,  1.2801,  1.3046],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:49.784] Discriminator 4/0/0: loss real: 0.5731440782546997 -- loss fake: 0.1488000452518463
+[12:58:51.382] Predict real val: tensor([-0.3341, -0.3079, -0.2619,  ...,  1.7154,  1.7687,  1.7898],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:51.696] Predict fake val: tensor([-0.3992, -0.3305, -0.3169,  ...,  1.7148,  1.7671,  1.8198],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:51.696] Discriminator 5/0/0: loss real: 0.2618491053581238 -- loss fake: 0.43922993540763855
+[12:58:53.212] Predict real val: tensor([-0.2379, -0.1898, -0.1493,  ...,  1.4488,  1.4732,  1.6104],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:53.520] Predict fake val: tensor([-0.2595, -0.2430, -0.1960,  ...,  1.5127,  1.5384,  1.6010],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:53.520] Discriminator 6/0/0: loss real: 0.23440177738666534 -- loss fake: 0.38197797536849976
+[12:58:55.075] Predict real val: tensor([-0.6380, -0.2788, -0.2770,  ...,  1.3749,  1.4397,  1.4927],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:55.417] Predict fake val: tensor([-0.3387, -0.2633, -0.2395,  ...,  1.3638,  1.4228,  1.5285],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:55.418] Discriminator 7/0/0: loss real: 0.2992987036705017 -- loss fake: 0.27537140250205994
+[12:58:56.943] Predict real val: tensor([-0.4074, -0.3959, -0.3827,  ...,  1.3938,  1.4809,  1.6088],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:57.249] Predict fake val: tensor([-0.3320, -0.2811, -0.2782,  ...,  1.1864,  1.1885,  1.2897],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:57.250] Discriminator 8/0/0: loss real: 0.3287745416164398 -- loss fake: 0.2272605001926422
+[12:58:58.777] Predict real val: tensor([-0.3291, -0.2453, -0.2434,  ...,  1.2287,  1.2296,  1.2604],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:59.087] Predict fake val: tensor([-0.3030, -0.2209, -0.1987,  ...,  1.1814,  1.1842,  1.2710],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:58:59.088] Discriminator 9/0/0: loss real: 0.2882276177406311 -- loss fake: 0.2496877908706665
+[12:59:00.629] Predict real val: tensor([-0.2061, -0.1171, -0.1120,  ...,  1.2009,  1.2689,  1.3286],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:00.939] Predict fake val: tensor([-0.3097, -0.2272, -0.1470,  ...,  1.1134,  1.1326,  1.1348],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:00.939] Discriminator 10/0/0: loss real: 0.26298850774765015 -- loss fake: 0.26625746488571167
+[12:59:02.455] Predict real val: tensor([-0.3635, -0.1170, -0.1049,  ...,  1.1716,  1.2418,  1.2667],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:02.765] Predict fake val: tensor([-0.1169, -0.1128, -0.0760,  ...,  1.3246,  1.3618,  1.4965],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:02.765] Discriminator 11/0/0: loss real: 0.21344050765037537 -- loss fake: 0.2821733057498932
+[12:59:04.281] Predict real val: tensor([-0.2012, -0.0976, -0.0800,  ...,  1.1269,  1.1529,  1.1593],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:04.588] Predict fake val: tensor([-0.1424, -0.1378, -0.1128,  ...,  1.1309,  1.1800,  1.1995],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:04.588] Discriminator 12/0/0: loss real: 0.26630091667175293 -- loss fake: 0.22314345836639404
+[12:59:06.154] Predict real val: tensor([-0.1798, -0.1209, -0.0587,  ...,  1.2622,  1.2990,  1.3663],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:06.488] Predict fake val: tensor([-0.1000, -0.0864, -0.0790,  ...,  1.0954,  1.1604,  1.2946],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:06.488] Discriminator 13/0/0: loss real: 0.2733124792575836 -- loss fake: 0.23053140938282013
+[12:59:08.019] Predict real val: tensor([-0.1524, -0.0928, -0.0751,  ...,  1.3145,  1.3295,  1.3490],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:08.325] Predict fake val: tensor([-0.1807, -0.1454, -0.1052,  ...,  1.2702,  1.2741,  1.4783],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:08.325] Discriminator 14/0/0: loss real: 0.2127905786037445 -- loss fake: 0.2393249124288559
+[12:59:09.889] Predict real val: tensor([-0.0430, -0.0197,  0.0072,  ...,  1.3413,  1.3423,  1.3629],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:10.201] Predict fake val: tensor([-0.1555, -0.0969, -0.0633,  ...,  1.2030,  1.5201,  1.9421],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:10.202] Discriminator 15/0/0: loss real: 0.1546119600534439 -- loss fake: 0.26439571380615234
+[12:59:11.731] Predict real val: tensor([-0.0999, -0.0706, -0.0613,  ...,  1.2930,  1.3036,  1.3250],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:12.037] Predict fake val: tensor([-0.1779, -0.1678, -0.1503,  ...,  1.0454,  1.0856,  1.2013],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:12.037] Discriminator 16/0/0: loss real: 0.24818985164165497 -- loss fake: 0.18691422045230865
+[12:59:13.557] Predict real val: tensor([-0.0461, -0.0174,  0.0297,  ...,  1.1659,  1.2145,  1.3857],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:13.863] Predict fake val: tensor([-0.1228, -0.1163, -0.1137,  ...,  1.3580,  1.5417,  1.6976],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:13.863] Discriminator 17/0/0: loss real: 0.196335569024086 -- loss fake: 0.20043927431106567
+[12:59:15.479] Predict real val: tensor([0.0769, 0.0916, 0.1037,  ..., 1.3915, 1.3942, 1.4060], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[12:59:15.814] Predict fake val: tensor([-0.2031, -0.1373, -0.1277,  ...,  0.9723,  1.0164,  1.0375],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:15.814] Discriminator 18/0/0: loss real: 0.10874895751476288 -- loss fake: 0.21205320954322815
+[12:59:17.335] Predict real val: tensor([-0.0885, -0.0359, -0.0306,  ...,  1.4509,  1.4581,  1.4613],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:17.643] Predict fake val: tensor([-0.6795, -0.6536, -0.5852,  ...,  1.0171,  1.0558,  1.0854],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:59:17.644] Discriminator 19/0/0: loss real: 0.1671767383813858 -- loss fake: 0.10447126626968384
+[12:59:19.172] Predict real val: tensor([-0.1428, -0.1240, -0.0831,  ...,  1.3121,  1.3265,  1.3403],
+       device='cuda:0', grad_fn=<Unique2Backward0>)

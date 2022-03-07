@@ -1,10 +1,12 @@
 import torch.nn as nn
 import torch
+def print_size(name,x): 
+    print(f'Block {name} size: {x.size()}')
 
 class Discriminator(nn.Module):
 	def __init__(self, in_channels, num_classes=1, base_n_filter = 8):
 		super(Discriminator, self).__init__()
-		self.in_channels = in_channels*2
+		self.in_channels = in_channels
 		self.num_classes = num_classes
 		self.base_n_filter = base_n_filter
 
@@ -70,10 +72,12 @@ class Discriminator(nn.Module):
 			nn.LeakyReLU())
 
 
-	def forward(self, brain, mask):
+	def forward(self, masks):
 		#  Level 1 context pathway
-		x = torch.cat([brain, mask], dim =1 )
-		out = self.conv3d_c1_1(x)
+		# x = torch.cat([brain, mask], dim =1 )
+		# print_size('x', x)
+		
+		out = self.conv3d_c1_1(masks[3])
 		residual_1 = out
 		out = self.lrelu(out)
 		out = self.conv3d_c1_2(out)
@@ -84,6 +88,9 @@ class Discriminator(nn.Module):
 		context_1 = self.lrelu(out)
 		out = self.inorm3d_c1(out)
 		out = self.lrelu(out)
+		print_size('ds3-in', out)
+
+		out += masks[2]
 
 		# Level 2 context pathway
 		out = self.conv3d_c2(out)
@@ -95,6 +102,9 @@ class Discriminator(nn.Module):
 		out = self.inorm3d_c2(out)
 		out = self.lrelu(out)
 		context_2 = out
+		print_size('ds2-in', out)
+
+		out += masks[1]
 
 		# Level 3 context pathway
 		out = self.conv3d_c3(out)
@@ -106,6 +116,9 @@ class Discriminator(nn.Module):
 		out = self.inorm3d_c3(out)
 		out = self.lrelu(out)
 		context_3 = out
+		print_size('ds1-in', out)
+
+		out += masks[0]
 
 		# Level 4 context pathway
 		out = self.conv3d_c4(out)
@@ -119,6 +132,7 @@ class Discriminator(nn.Module):
 		context_4 = out
 
 		out = self.output_(out)
+		print_size('out', out)
 		# out = self.softmax(out)
 
 		return out

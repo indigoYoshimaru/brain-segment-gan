@@ -1,8 +1,0 @@
-[22:26:56.871] Checkpoints to be saved at: model/gan_multiscale/ver0
-[22:26:57.014] 2021train: 1125 images, has_mask: True
-[22:26:57.014] Combined dataset: 1125 images
-[22:26:59.400] Total epochs: 100
-[22:26:59.401] Iterations per epoch: 282
-[22:26:59.401] Starting at iter/epoch: 0/0
-[22:27:01.304] Predict real val: tensor([-3.3446, -3.3137, -2.9769,  ...,  1.9783,  2.2850,  2.5943],
-       device='cuda:0', grad_fn=<Unique2Backward0>)

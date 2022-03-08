@@ -120,6 +120,7 @@ if params_cfg['device']=='cuda':
 
 gen_net.train()
 dis_net.train()
+out_size = None
 
 # 6. Init optimizer and loss 
 gen_cfg = model_cfg['generator']
@@ -130,14 +131,13 @@ gen_opt = GOptClass(gen_net.parameters(), lr = gen_cfg['lr'], weight_decay = gen
 dis_opt = GOptClass(dis_net.parameters(), lr = dis_cfg['lr'], weight_decay = dis_cfg['decay'], betas = tuple(dis_cfg['betas']))
 print(dis_cfg)
 dis_epoch = dis_cfg['epochs']
-
-### dice loss 
-distributed_loss = focal_tversky_loss
+### region based loss: including dice loss, log cosh dice loss, focal tversky loss  
+region_loss = dice_loss_indiv
 class_weights = torch.ones(data_cfg['num_classes']).cuda()
 class_weights[0] = 0
 class_weights /= class_weights.sum()
 
-gan_loss_func = nn.BCEWithLogitsLoss()
+gan_loss_func = nn.MSELoss()
 
 # 7. Load checkpoint if there is
 gen_iter_num = 0
@@ -148,7 +148,6 @@ Tensor = torch.cuda.FloatTensor
 
 if args.gen_cp_dir: 
     gen_iter_num, start_epoch = load_model(args.gen_cp_dir, gen_net, gen_opt)
-    start_epoch -=1
 if args.dis_cp_dir: 
     dis_iter_num, start_epoch = load_model(args.dis_cp_dir, dis_net, dis_opt)
     # to_train_epoch = params_cfg['epochs']-start_epoch
@@ -157,33 +156,37 @@ logging.info(f'Total epochs: {params_cfg["epochs"]}')
 logging.info(f'Iterations per epoch: {len(trainloader)}')
 logging.info(f'Starting at iter/epoch: {gen_iter_num}/{start_epoch}')
 
+
+
 for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
 
     time1 = time.time()
     epoch_gen_loss = 0
     epoch_dis_loss = 0 
-    epoch_ce_loss= 0
-    epoch_dice_loss= 0
+    epoch_region_loss = 0
     epoch_gen_gan_loss_func = 0
 
+    #==========TRAIN DISCRIMINATOR==========#
     for de in tqdm(range(dis_epoch)): 
         for idx, sampled_batch in enumerate(trainloader):
             volume_batch, mask_batch = sampled_batch['image'].cuda(), sampled_batch['mask'].cuda()
             mask_batch = brats_map_label(mask_batch, binarize = False)
             volume_batch = F.interpolate(volume_batch, size=data_cfg['input_patch_size'], mode='trilinear', align_corners=False)
             dis_opt.zero_grad()
-
-            # Adversarial grounde truths, real = 1, fake = 0
-            valid_gt = Tensor(np.ones((volume_batch.size(0), 1,14,14,12)))
-            fake_gt = Tensor(np.zeros((volume_batch.size(0), 1,14,14,12)))
+            
             # compute loss for real prediction: L2[D(x,y), 1], x is image, y is mask
             pred_real = dis_net(mask_batch)
-            logging.debug(f'Predict real val: {torch.unique(pred_real)}')
+
+            # Adversarial grounde truths, real = 1, fake = 0
+            if epoch == start_epoch: 
+                out_size = pred_real.size()
+                valid_gt = Tensor(np.ones((volume_batch.size(0), out_size[1],out_size[2],out_size[3],out_size[4])))
+                fake_gt = Tensor(np.zeros((volume_batch.size(0), out_size[1],out_size[2],out_size[3],out_size[4])))
+            
             loss_real = gan_loss_func(pred_real, valid_gt)
             # compute loss for fake prediction: L2[D(x, y^), 0], x is image, y^ is generated mask
             fake_mask = gen_net(volume_batch)
             pred_fake = dis_net(fake_mask)
-            logging.debug(f'Predict fake val: {torch.unique(pred_fake)}')
 
             loss_fake = gan_loss_func(pred_fake, fake_gt)
             loss_d = loss_real + loss_fake
@@ -194,77 +197,71 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             loss_d.backward()
             dis_opt.step()
             
-            writer.add_scalar('discriminator/loss_real', loss_real.item(), dis_iter_num)
-            writer.add_scalar('discriminator/loss_fake', loss_fake.item(), dis_iter_num)
-            writer.add_scalar('discriminator/total_iter_loss', loss_d, dis_iter_num)
+            writer.add_scalar('discriminator/real_sample_loss', loss_real.item(), dis_iter_num)
+            writer.add_scalar('discriminator/fake_sample_loss', loss_fake.item(), dis_iter_num)
+            writer.add_scalar('discriminator/total_sample_loss', loss_d, dis_iter_num)
             del volume_batch, mask_batch
 
     if dis_epoch!=0: 
-        writer.add_scalar('discriminator/epoch_loss', epoch_dis_loss/(len(trainloader)*dis_epoch), epoch)
+        writer.add_scalar('discriminator/total_epoch_loss', epoch_dis_loss/(len(trainloader)*dis_epoch), epoch)
     if epoch%params_cfg['save_epoch']==0:
         save_model(checkpoint_root, 'discriminator', dis_net, dis_opt, epoch, dis_iter_num)
-    
-    #========TRAIN GENERATOR =========# 
-    
+
+    #==========TRAIN GENERATOR==========#
     for idx, sampled_batch in enumerate(trainloader):
         volume_batch, mask_batch = sampled_batch['image'].cuda(), sampled_batch['mask'].cuda()
         mask_batch = brats_map_label(mask_batch, binarize = False)
         volume_batch = F.interpolate(volume_batch, size=data_cfg['input_patch_size'], mode='trilinear', align_corners=False)
 
         fake_mask = gen_net(volume_batch)
-        # get the final output for validation
-    #   f  ake_mask = fake_masks[-1]
         pred_fake = dis_net(fake_mask)
-        # Adversarial grounde truths, real = 1, fake = 0
-        valid_gt = Tensor(np.ones((volume_batch.size(0),1,14,14,12)))
+        # out_size = pred_fake.size()
+        # valid_gt = Tensor(np.ones((volume_batch.size(0),out_size[1],out_size[2],out_size[3],out_size[4])))
+
         loss_GAN  = gan_loss_func(pred_fake, valid_gt)
-        
         # voxel-wise loss 
-        total_dice_loss = 0
-        dice_losses = []
+      
+        total_region_loss = 0
+        region_losses = []
         outputs_soft = torch.sigmoid(fake_mask)
 
         for cls in range(1, data_cfg['num_classes']):
             # bce_loss_func is actually nn.BCEWithLogitsLoss(), so use raw scores as input.
             # dice loss always uses sigmoid/softmax transformed probs as input.
-            dice_loss = distributed_loss(
+            loss_val = region_loss(
                 outputs_soft[:, cls], mask_batch[:, cls])
-            dice_losses.append(dice_loss.item())
-            total_dice_loss += dice_loss * class_weights[cls]
+            region_losses.append(loss_val.item())
+            total_region_loss += loss_val * class_weights[cls]
         
         if gen_iter_num % 50 ==0:
-            draw_image(writer, volume_batch,'train/Image', from_slice=0, to_slice=1, iter_num=gen_iter_num, coords = params_cfg['coords']) 
+            draw_image(writer, volume_batch,'train/image', from_slice=0, to_slice=1, iter_num=gen_iter_num, coords = params_cfg['coords']) 
             # draw_image(writer, softmax_pred,'train/Softmax_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords']) 
-            draw_image(writer, outputs_soft,'train/Predicted_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords']) 
-            draw_image(writer, mask_batch,'train/Groundtruth_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords'])
+            draw_image(writer, outputs_soft,'train/predicted_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords']) 
+            draw_image(writer, mask_batch,'train/groundtruth_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords'])
         
-        # del volume_batch, mask_batch
+        del volume_batch, mask_batch
         
         # total loss is total batch loss of all classes
-        loss_g =  3*total_dice_loss + loss_GAN
-        epoch_dice_loss += total_dice_loss
-        epoch_gen_gan_loss_func += loss_GAN
-        epoch_gen_loss += loss_g
-
+        loss_g =  3*total_region_loss + loss_GAN
         gen_iter_num += 1 
         gen_opt.zero_grad()
         loss_g.backward()
         gen_opt.step()
-        # epoch_ce_loss += total_ce_loss
-        
-        logging.info(f'Generator {idx}/{epoch}: \n  Dice loss: {total_dice_loss}\n   L2 loss: {loss_GAN}')
-        # logging.info(f'Class dice loss: {dice_losses}')
-        # writer.add_scalar('generator-sample/cross entropy loss', total_ce_loss.item(), gen_iter_num)
-        writer.add_scalar('generator-sample/dice loss',
-                            total_dice_loss.item(), gen_iter_num)
-        writer.add_scalar('generator-sample/GAN mse loss', loss_GAN.item(), gen_iter_num)
-        writer.add_scalar('generator-sample/Total sample loss', loss_g, gen_iter_num)
+        epoch_region_loss  += total_region_loss
+        epoch_gen_gan_loss_func += loss_GAN
+        epoch_gen_loss += loss_g
+
+        logging.info(f'Generator {idx}/{epoch}: \n  Region loss - Dice: {total_region_loss}\n   L2 loss: {loss_GAN}')
+        writer.add_scalar('generator_sample/region_loss',
+                            total_region_loss.item(), gen_iter_num)
+        writer.add_scalar('generator_sample/GAN_loss', loss_GAN.item(), gen_iter_num)
+        writer.add_scalar('generator_sample/total_sample_loss', loss_g, gen_iter_num)
    
 
     if epoch%params_cfg['save_epoch']==0: 
         save_model(checkpoint_root,'generator', gen_net, gen_opt, epoch, gen_iter_num)
 
-    writer.add_scalar('generator-epoch/epoch dice', epoch_dice_loss/len(trainloader), epoch)
+    writer.add_scalar('generator-epoch/region_loss', epoch_region_loss /len(trainloader), epoch)
     # writer.add_scalar('generator-epoch/cross entropy', epoch_ce_loss/len(trainloader), epoch)
-    writer.add_scalar('generator-epoch/GAN mse', epoch_gen_gan_loss_func/len(trainloader), epoch)
-    writer.add_scalar('generator-epoch/Total epoch loss',epoch_gen_loss/len(trainloader),epoch)
+    writer.add_scalar('generator-epoch/GAN_loss', epoch_gen_gan_loss_func/len(trainloader), epoch)
+    writer.add_scalar('generator-epoch/total_epoch_loss',epoch_gen_loss/len(trainloader),epoch)

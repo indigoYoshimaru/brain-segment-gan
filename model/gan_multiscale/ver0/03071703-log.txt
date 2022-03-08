@@ -1,7 +1,0 @@
-[17:03:41.405] Checkpoints to be saved at: model/gan_multiscale/ver0
-[17:03:41.544] 2021train: 1125 images, has_mask: True
-[17:03:41.544] Combined dataset: 1125 images
-[17:03:44.048] Total epochs: 100
-[17:03:44.048] Iterations per epoch: 282
-[17:03:44.048] Starting at iter/epoch: 0/0
-[17:03:44.061] save model to model/gan_multiscale/ver0/discriminator_epoch0.pth

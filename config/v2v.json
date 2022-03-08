@@ -1,6 +1,6 @@
 {
     "model_name": "v2v",
-    "version": "1", 
+    "version": "0", 
     "generator":{
         "opt": "Adam",
         "lr": 0.001,
@@ -14,6 +14,6 @@
         "decay": 0.0001, 
         "betas": [0.5, 0.999],
         "grad_clip": -1, 
-        "epochs": 0
+        "epochs": 2
     }
 }

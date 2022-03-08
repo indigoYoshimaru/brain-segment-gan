@@ -1,0 +1,3 @@
+[10:42:50.386] Checkpoints to be saved at: model/v2v/ver0
+[10:42:50.563] 2021train: 1125 images, has_mask: True
+[10:42:50.564] Combined dataset: 1125 images

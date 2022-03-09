@@ -69,15 +69,15 @@ def save_model(checkpoint_dir, model_type,net, optimizer, epoch_num,iter_num):
 
     logging.info(f'save model to {save_model_path}')
 
-def draw_image(writer, arr, img_name: str, from_slice: int, to_slice: int, iter_num: int, coords: list): 
+def draw_image(writer, arr, img_name: str, from_slice: int, to_slice: int, iter_num: int, size: list, mode='train'): 
     """Draw image to tensorboard"""
-    x, y, z = coords
-    # if type=='brain':
-    #     image = arr[0, 0:1, :, :, 20:61:10].permute(3, 0, 1, 2).repeat(1, 3, 1, 1)
-    # else: 
-    #     image =arr[0, 1:2, :, :, 20:61:10].permute(3, 0, 1, 2).repeat(1, 3, 1, 1)
+    x, y, z = size
     
-    image = arr[0, from_slice:to_slice, : , : , x:y:z].permute(3, 0, 1, 2).repeat(1, 3, 1, 1)
+    if mode =='test': 
+        image = arr[from_slice:to_slice, : , : , x:y:z].permute(3, 0, 1, 2).repeat(1, 3, 1, 1)
+    else:
+        image = arr[0, from_slice:to_slice, : , : , x:y:z].permute(3, 0, 1, 2).repeat(1, 3, 1, 1)
+    
     grid_image = make_grid(image, 5, normalize=True)
     writer.add_image(img_name, grid_image, iter_num)
 

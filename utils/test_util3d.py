@@ -10,9 +10,10 @@ from utils.common_util import get_filename
 from dataloaders.datasets3d import make_brats_pred_consistent, brats_map_label, brats_inv_map_label, harden_segmap3d
 from tqdm import tqdm
 import pdb
+from utils.run_util import draw_image
 
 # When test_interp is not None, it should be a tuple like (56,56,40) used as the size of interpolated masks.
-def test_all_cases(net, db_test, net_type, num_classes, batch_size=8,
+def test_all_cases(net, db_test, writer, num_classes, batch_size=8,
                    orig_patch_size=(128, 112, 80), input_patch_size=(128, 112, 64), 
                    stride_xy=56, stride_z=40, 
                    save_result=True, test_save_path=None, 
@@ -21,7 +22,8 @@ def test_all_cases(net, db_test, net_type, num_classes, batch_size=8,
     total_metric = np.zeros((num_classes - 1, 4))
     valid_metric_counts = np.zeros((num_classes - 1, 4))
     binarize = (num_classes == 2)
-    
+    class_name = ['ET', 'WT', 'TC']
+
     for image_idx in tqdm(range(len(db_test))):
         sample = db_test[image_idx]
         # image_tensor is 4D. First dim is modality. 
@@ -61,8 +63,7 @@ def test_all_cases(net, db_test, net_type, num_classes, batch_size=8,
             preds_hard  = harden_segmap3d(preds_soft, 0.5)
         else:
             preds_hard, preds_soft = test_single_case(net, image_tensor, orig_patch_size, input_patch_size, 
-                                                      batch_size, stride_xy, stride_z,
-                                                      net_type, num_classes)
+                                                      batch_size, stride_xy, stride_z, num_classes)
         
         if has_mask:    
             allcls_metric, allcls_metric_valid = calculate_metric_percase(preds_hard, mask_tensor, num_classes)
@@ -75,9 +76,21 @@ def test_all_cases(net, db_test, net_type, num_classes, batch_size=8,
         
         if (image_idx+1) % 20 == 0:
             avg_metric = total_metric / valid_metric_counts
-            print("{}:".format(image_idx+1))
+            print("Average {}:".format(image_idx+1))
             print(avg_metric)
-            
+        
+        # draw results
+        for cls_idx, name in enumerate(class_name): 
+            writer.add_scalar(f'{name}/dice-score', allcls_metric[cls_idx][0], image_idx)
+            writer.add_scalar(f'{name}/jaccard-score', allcls_metric[cls_idx][1], image_idx)
+            writer.add_scalar(f'{name}/hausdorff-distance', allcls_metric[cls_idx][2], image_idx)
+            writer.add_scalar(f'{name}/avg-surface-distance', allcls_metric[cls_idx][3], image_idx)
+
+        # draw images
+        draw_image(writer, image_tensor, 'test/image', from_slice=0, to_slice=1, iter_num=image_idx, size =[20,61,10], mode='test')
+        draw_image(writer, mask_tensor, 'test/groundtruth', from_slice=1, to_slice=2, iter_num=image_idx, size = [20,61,10], mode='test')
+        draw_image(writer, preds_hard, 'test/predicted', from_slice=1, to_slice=2, iter_num=image_idx, size = [20,61,10], mode='test')
+
         if save_result:
             inv_probs = brats_inv_map_label(preds_soft)
             preds_hard = torch.argmax(inv_probs, dim=0)
@@ -90,8 +103,7 @@ def test_all_cases(net, db_test, net_type, num_classes, batch_size=8,
     avg_metric = total_metric / valid_metric_counts
     return avg_metric
 
-def test_single_case(net, image, orig_patch_size, input_patch_size, batch_size, stride_xy, stride_z,
-                     net_type, num_classes):
+def test_single_case(net, image, orig_patch_size, input_patch_size, batch_size, stride_xy, stride_z, num_classes):
     C, H, W, D     = image.shape
     dx, dy, dz  = orig_patch_size
     
@@ -184,7 +196,7 @@ def calculate_metric_percase(allcls_pred, allcls_gt, num_classes):
     allcls_metric_valid = np.ones((num_classes - 1, 4))
     allcls_pred_np  = allcls_pred.data.cpu().numpy()
     allcls_gt_np    = allcls_gt.data.cpu().numpy()
-    
+
     for cls in range(1, num_classes):
         pred = allcls_pred_np[cls].astype(np.uint8)
         gt   = allcls_gt_np[cls].astype(np.uint8)
@@ -197,8 +209,8 @@ def calculate_metric_percase(allcls_pred, allcls_gt, num_classes):
             allcls_metric_valid[cls-1, 1] = 0
             
         if pred.sum() > 0 and gt.sum() > 0:
-            # hd = metric.binary.hd95(pred, gt)
-            hd = 0
+            hd = metric.binary.hd95(pred, gt)
+            # hd = 0
             asd  = metric.binary.asd(pred, gt)
         else:
             hd = 0

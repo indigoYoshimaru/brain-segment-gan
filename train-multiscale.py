@@ -16,9 +16,16 @@ from torchvision import transforms
 from torchvision.utils import make_grid
 
 from dataloaders.datasets3d import *
-from networks.multiscale_generator import MultiscaleGenerator as Unet3D
+from networks.multiscale_generator import MultiscaleGenerator as Generator
 from networks.multiscale_discriminator import MultiscaleDiscriminator as Discriminator
 from optimization.losses import *
+
+"""
+This file is the training file for multiscale GAN of brain tumor segmentation
+Multiscale generator produced rescaled of multiple output from the residual UNet3D
+This discriminator is residual and does not use auxiliary data 
+
+"""
 
 def worker_init_fn(worker_id):
     random.seed(params_cfg['seed']+worker_id)
@@ -112,7 +119,7 @@ trainloader = DataLoader(db_train_combo, batch_size=params_cfg['batch_size'], sa
                             worker_init_fn=worker_init_fn)
 
 # 5. Init models
-gen_net = Unet3D(in_channels=4, num_classes = data_cfg['num_classes']) 
+gen_net = Generator(in_channels=4, num_classes = data_cfg['num_classes']) 
 dis_net = Discriminator(in_channels = 4)
 if params_cfg['device']=='cuda': 
     gen_net.cuda()
@@ -215,12 +222,14 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
 
         fake_mask = gen_net(volume_batch)
         pred_fake = dis_net(fake_mask)
-        # out_size = pred_fake.size()
-        # valid_gt = Tensor(np.ones((volume_batch.size(0),out_size[1],out_size[2],out_size[3],out_size[4])))
-
+        
+        if epoch == start_epoch: 
+            out_size = pred_fake.size()
+            valid_gt = Tensor(np.ones((volume_batch.size(0), out_size[1],out_size[2],out_size[3],out_size[4])))
+                
         loss_GAN  = gan_loss_func(pred_fake, valid_gt)
+        
         # voxel-wise loss 
-      
         total_region_loss = 0
         region_losses = []
         outputs_soft = torch.sigmoid(fake_mask)
@@ -235,7 +244,6 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         
         if gen_iter_num % 50 ==0:
             draw_image(writer, volume_batch,'train/image', from_slice=0, to_slice=1, iter_num=gen_iter_num, coords = params_cfg['coords']) 
-            # draw_image(writer, softmax_pred,'train/Softmax_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords']) 
             draw_image(writer, outputs_soft,'train/predicted_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords']) 
             draw_image(writer, mask_batch,'train/groundtruth_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords'])
         
@@ -247,7 +255,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         gen_opt.zero_grad()
         loss_g.backward()
         gen_opt.step()
-        epoch_region_loss  += total_region_loss
+        epoch_region_loss += total_region_loss
         epoch_gen_gan_loss_func += loss_GAN
         epoch_gen_loss += loss_g
 

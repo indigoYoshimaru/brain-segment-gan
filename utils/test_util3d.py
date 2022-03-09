@@ -6,13 +6,13 @@ import numpy as np
 from medpy import metric
 import torch
 import torch.nn.functional as F
-from common_util import get_filename
+from utils.common_util import get_filename
 from dataloaders.datasets3d import make_brats_pred_consistent, brats_map_label, brats_inv_map_label, harden_segmap3d
 from tqdm import tqdm
 import pdb
 
 # When test_interp is not None, it should be a tuple like (56,56,40) used as the size of interpolated masks.
-def test_all_cases(net, db_test, task_name, net_type, num_classes, batch_size=8,
+def test_all_cases(net, db_test, net_type, num_classes, batch_size=8,
                    orig_patch_size=(128, 112, 80), input_patch_size=(128, 112, 64), 
                    stride_xy=56, stride_z=40, 
                    save_result=True, test_save_path=None, 
@@ -31,13 +31,13 @@ def test_all_cases(net, db_test, task_name, net_type, num_classes, batch_size=8,
         image_name = get_filename(image_path)
         image_name = image_name.split(".")[0]
         
-        if task_name == 'brats':
-            # Map 4 to 3, and keep 0,1,2 unchanged.
-            print(torch.unique(mask_tensor)) # but it is already 3! 
-            mask_tensor -= (mask_tensor == 4).long()
-            mask_tensor = mask_tensor.float()
-            mask_tensor = brats_map_label(mask_tensor, binarize)
         
+        # Map 4 to 3, and keep 0,1,2 unchanged.
+        print(torch.unique(mask_tensor)) # but it is already 3! 
+        mask_tensor -= (mask_tensor == 4).long()
+        mask_tensor = mask_tensor.float()
+        mask_tensor = brats_map_label(mask_tensor, binarize)
+    
         # preproc_fn is usually None for brats
         if preproc_fn is not None:
             image_tensor = preproc_fn(image_tensor)
@@ -62,7 +62,7 @@ def test_all_cases(net, db_test, task_name, net_type, num_classes, batch_size=8,
         else:
             preds_hard, preds_soft = test_single_case(net, image_tensor, orig_patch_size, input_patch_size, 
                                                       batch_size, stride_xy, stride_z,
-                                                      task_name, net_type, num_classes)
+                                                      net_type, num_classes)
         
         if has_mask:    
             allcls_metric, allcls_metric_valid = calculate_metric_percase(preds_hard, mask_tensor, num_classes)
@@ -79,11 +79,10 @@ def test_all_cases(net, db_test, task_name, net_type, num_classes, batch_size=8,
             print(avg_metric)
             
         if save_result:
-            if task_name == 'brats':
-                inv_probs = brats_inv_map_label(preds_soft)
-                preds_hard = torch.argmax(inv_probs, dim=0)
-                # Map 3 to 4, and keep 0, 1, 2 unchanged.
-                preds_hard += (preds_hard == 3).long()
+            inv_probs = brats_inv_map_label(preds_soft)
+            preds_hard = torch.argmax(inv_probs, dim=0)
+            # Map 3 to 4, and keep 0, 1, 2 unchanged.
+            preds_hard += (preds_hard == 3).long()
             preds_hard_np = preds_hard.data.cpu().numpy()
             nib.save(nib.Nifti1Image(preds_hard_np.astype(np.float32), np.eye(4)), 
                      os.path.join(test_save_path, image_name + ".nii.gz"))
@@ -92,7 +91,7 @@ def test_all_cases(net, db_test, task_name, net_type, num_classes, batch_size=8,
     return avg_metric
 
 def test_single_case(net, image, orig_patch_size, input_patch_size, batch_size, stride_xy, stride_z,
-                     task_name, net_type, num_classes):
+                     net_type, num_classes):
     C, H, W, D     = image.shape
     dx, dy, dz  = orig_patch_size
     
@@ -153,8 +152,8 @@ def test_single_case(net, image, orig_patch_size, input_patch_size, batch_size, 
                     with torch.no_grad():
                         scores_raw = net(test_batch)
                     
-                    if net_type == 'unet':
-                        scores_raw = scores_raw[1]
+                    # if net_type == 'unet':
+                    #     scores_raw = scores_raw[1]
                         
                     scores_raw = F.interpolate(scores_raw, size=orig_patch_size, 
                                                mode='trilinear', align_corners=False)
@@ -168,16 +167,12 @@ def test_single_case(net, image, orig_patch_size, input_patch_size, batch_size, 
                     yzs_batch = []
 
     preds_soft = preds_soft / cnt.unsqueeze(dim=0)
-    if task_name == 'brats':
-        preds_soft = make_brats_pred_consistent(preds_soft, is_conservative=False)
-        preds_hard = torch.zeros_like(preds_soft)
-        preds_hard[1:] = (preds_soft[1:] >= 0.5)
-        # A voxel is background if it's not ET, WT, TC.
-        preds_hard[0]  = (preds_hard[1:].sum(axis=0) == 0)
-    else:
-        # preds_hard: predicted mask; the mask with the highest predicted probabilities.
-        preds_hard = torch.argmax(preds_soft, dim=0)
-
+    preds_soft = make_brats_pred_consistent(preds_soft, is_conservative=False)
+    preds_hard = torch.zeros_like(preds_soft)
+    preds_hard[1:] = (preds_soft[1:] >= 0.5)
+    # A voxel is background if it's not ET, WT, TC.
+    preds_hard[0]  = (preds_hard[1:].sum(axis=0) == 0)
+     
     if add_pad:
         # Remove padded pixels. clone() to make memory contiguous.
         preds_hard = preds_hard[:, hl_pad:hl_pad+H, wl_pad:wl_pad+W, dl_pad:dl_pad+D].clone()

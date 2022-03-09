@@ -5,7 +5,7 @@
         "bce_weight":  [0, 3, 1, 1.75],
         "ds_class":    "BratsSet",
         "train_ds_names":  ["2021train"],
-        "test_ds_name":    "",
+        "test_ds_name":    "2021valid",
         "chosen_modality": -1,
         "xyz_permute":     "",  
         "orig_input_size": "",

@@ -20,6 +20,12 @@ from networks.v2v_generator import Generator
 from networks.v2v_discriminator import Discriminator
 from optimization.losses import *
 
+"""
+This file is the training file for conditional GAN of brain tumor segmentation (Vox2Vox)
+This generator only produce single scale output
+This discriminator receives brain's images as auxiliary data
+"""
+
 def worker_init_fn(worker_id):
     random.seed(params_cfg['seed']+worker_id)
 
@@ -131,7 +137,7 @@ print(dis_cfg)
 dis_epoch = dis_cfg['epochs']
 
 ### region based loss: including dice loss, log cosh dice loss, focal tversky loss  
-region_loss = loss_val_indiv
+region_loss = dice_loss_indiv
 class_weights = torch.ones(data_cfg['num_classes']).cuda()
 class_weights[0] = 0
 class_weights /= class_weights.sum()

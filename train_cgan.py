@@ -236,10 +236,10 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             total_region_loss += loss_val * class_weights[cls]
         
         if gen_iter_num % 50 ==0:
-            draw_image(writer, volume_batch,'train/image', from_slice=0, to_slice=1, iter_num=gen_iter_num, coords = params_cfg['coords']) 
+            draw_image(writer, volume_batch,'train/image', from_slice=0, to_slice=1, iter_num=gen_iter_num, size = params_cfg['coords']) 
             # draw_image(writer, softmax_pred,'train/Softmax_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords']) 
-            draw_image(writer, outputs_soft,'train/predicted_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords']) 
-            draw_image(writer, mask_batch,'train/groundtruth_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords'])
+            draw_image(writer, outputs_soft,'train/predicted_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, size = params_cfg['coords']) 
+            draw_image(writer, mask_batch,'train/groundtruth_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, size = params_cfg['coords'])
         
         del volume_batch, mask_batch
         

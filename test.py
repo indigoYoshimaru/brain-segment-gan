@@ -118,7 +118,7 @@ avg_scores = test_all_cases(seg_net, db_test, writer,
 #     dice, jc, hd, asd = allcls_avg_metric[cls-1]
 #     print('%d: dice: %.3f, jc: %.3f, hd: %.3f, asd: %.3f' %
 #             (cls, dice, jc, hd, asd))
-print(f'epoch: {epoch} - iteration: {iter_num} scores:')
+print(f'Model: {test_cfg["model_name"]} - epoch: {epoch} - iteration: {iter_num} scores:')
 class_name = ['ET', 'WT', 'TC']
 class_name = np.array(class_name)
 table = PrettyTable()

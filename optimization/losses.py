@@ -98,6 +98,12 @@ def dice_loss_mix(score, gt_mask):
     loss = 1 - loss
     return loss
 
+def bce_loss(): 
+    return nn.BCEWithLogitsLoss()
+
+def mse_loss(): 
+    return nn.MSELoss()
+
 # vcdr: vertical cup/disc ratio (non-differentiable).
 # mask_nhot_soft: [B, C, H, W]. 
 # mask_nhot_soft can also be a hard (groundtruth) mask, as threadholding doesn't change it.

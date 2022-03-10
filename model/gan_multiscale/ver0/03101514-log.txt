@@ -1,0 +1,19 @@
+[15:14:05.975] Checkpoints to be saved at: model/gan_multiscale/ver0
+[15:14:06.139] 2021train: 1125 images, has_mask: True
+[15:14:06.139] Combined dataset: 1125 images
+[15:14:08.492] model loaded from model/gan_multiscale/ver0/generator_epoch19.pth
+[15:14:08.504] model loaded from model/gan_multiscale/ver0/discriminator_epoch19.pth
+[15:14:08.504] Total epochs: 100
+[15:14:08.504] Iterations per epoch: 282
+[15:14:08.504] Starting at iter/epoch: 5647/20
+[15:14:10.707] Discriminator 0/0/20: loss real: 0.0016862466000020504 -- loss fake: 0.24999161064624786
+[15:14:12.445] Discriminator 1/0/20: loss real: 0.22060289978981018 -- loss fake: 0.10351550579071045
+[15:14:24.861] Checkpoints to be saved at: model/gan_multiscale/ver0
+[15:14:24.992] 2021train: 1125 images, has_mask: True
+[15:14:24.993] Combined dataset: 1125 images
+[15:14:27.370] model loaded from model/gan_multiscale/ver0/generator_epoch19.pth
+[15:14:27.381] model loaded from model/gan_multiscale/ver0/discriminator_epoch19.pth
+[15:14:27.382] Total epochs: 100
+[15:14:27.382] Iterations per epoch: 282
+[15:14:27.382] Starting at iter/epoch: 5647/20
+[15:14:27.393] save model to model/gan_multiscale/ver0/discriminator_epoch20.pth

@@ -6,7 +6,8 @@
         "lr": 0.001,
         "decay": 0.0001, 
         "betas": [0.5, 0.999],
-        "grad_clip": -1
+        "grad_clip": -1, 
+        "region_loss":"dice_loss_indiv"
     },
     "discriminator": {
         "opt": "Adam",
@@ -14,6 +15,7 @@
         "decay": 0.0001, 
         "betas": [0.5, 0.999],
         "grad_clip": -1, 
-        "epochs": 1
+        "epochs":1, 
+        "gan_loss": "mse_loss"
     }
 }

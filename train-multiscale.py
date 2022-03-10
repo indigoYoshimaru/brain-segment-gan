@@ -18,7 +18,7 @@ from torchvision.utils import make_grid
 from dataloaders.datasets3d import *
 from networks.multiscale_generator import MultiscaleGenerator as Generator
 from networks.multiscale_discriminator import MultiscaleDiscriminator as Discriminator
-from optimization.losses import *
+import optimization.losses as losses
 
 """
 This file is the training file for multiscale GAN of brain tumor segmentation
@@ -139,12 +139,13 @@ dis_opt = GOptClass(dis_net.parameters(), lr = dis_cfg['lr'], weight_decay = dis
 print(dis_cfg)
 dis_epoch = dis_cfg['epochs']
 ### region based loss: including dice loss, log cosh dice loss, focal tversky loss  
-region_loss = dice_loss_indiv
+region_loss = getattr(losses, gen_cfg['region_loss'])
 class_weights = torch.ones(data_cfg['num_classes']).cuda()
 class_weights[0] = 0
 class_weights /= class_weights.sum()
 
-gan_loss_func = nn.MSELoss()
+gan_loss_func = getattr(losses, dis_cfg['gan_loss'])()
+logging.info(f'Segmentation loss: {region_loss} - GAN loss: {gan_loss_func}')
 
 # 7. Load checkpoint if there is
 gen_iter_num = 0
@@ -162,8 +163,6 @@ if args.dis_cp_dir:
 logging.info(f'Total epochs: {params_cfg["epochs"]}')
 logging.info(f'Iterations per epoch: {len(trainloader)}')
 logging.info(f'Starting at iter/epoch: {gen_iter_num}/{start_epoch}')
-
-
 
 for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
 
@@ -243,9 +242,9 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             total_region_loss += loss_val * class_weights[cls]
         
         if gen_iter_num % 50 ==0:
-            draw_image(writer, volume_batch,'train/image', from_slice=0, to_slice=1, iter_num=gen_iter_num, coords = params_cfg['coords']) 
-            draw_image(writer, outputs_soft,'train/predicted_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords']) 
-            draw_image(writer, mask_batch,'train/groundtruth_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, coords = params_cfg['coords'])
+            draw_image(writer, volume_batch,'train/image', from_slice=0, to_slice=1, iter_num=gen_iter_num, size = params_cfg['coords']) 
+            draw_image(writer, outputs_soft,'train/predicted_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, size = params_cfg['coords']) 
+            draw_image(writer, mask_batch,'train/groundtruth_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, size = params_cfg['coords'])
         
         del volume_batch, mask_batch
         

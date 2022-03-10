@@ -79,10 +79,7 @@ image_save_path = os.path.join(args.writer_dir, 'predicted', test_dir)
 if not os.path.isdir(image_save_path):
     os.makedirs(image_save_path, exist_ok=True)
 # 6. Load dataset
-transform = compose(
-        RandomRotFlip(),
-        RandomCrop(brats_cfg['orig_patch_size']),
-        ToTensor())
+transform = compose(ToTensor())
 
 ds_name = brats_cfg['test_ds_name']
 test_data_path = os.path.join(root, ds_name)

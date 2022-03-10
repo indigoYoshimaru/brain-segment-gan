@@ -88,7 +88,7 @@ def test_all_cases(net, db_test, writer, num_classes, batch_size=8,
 
         # draw images
         draw_image(writer, image_tensor, 'test/image', from_slice=0, to_slice=1, iter_num=image_idx, size =[20,61,10], mode='test')
-        draw_image(writer, mask_tensor, 'test/groundtruth', from_slice=1, to_slice=2, iter_num=image_idx, size = [20,61,10], mode='test')
+        draw_image(writer, mask_tensor, 'test/label', from_slice=1, to_slice=2, iter_num=image_idx, size = [20,61,10], mode='test')
         draw_image(writer, preds_hard, 'test/predicted', from_slice=1, to_slice=2, iter_num=image_idx, size = [20,61,10], mode='test')
 
         if save_result:

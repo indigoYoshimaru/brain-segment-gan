@@ -258,7 +258,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         epoch_gen_gan_loss_func += loss_GAN
         epoch_gen_loss += loss_g
 
-        logging.info(f'Generator {idx}/{epoch}: \n  Region loss - Dice: {total_region_loss}\n   L2 loss: {loss_GAN}')
+        logging.info(f'Generator {idx}/{epoch}: \n  Region loss - {gen_cfg["region_loss"]}: {total_region_loss}\n   L2 loss: {loss_GAN}')
         writer.add_scalar('generator_sample/region_loss',
                             total_region_loss.item(), gen_iter_num)
         writer.add_scalar('generator_sample/GAN_loss', loss_GAN.item(), gen_iter_num)

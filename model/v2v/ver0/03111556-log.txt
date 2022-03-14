@@ -1,0 +1,15 @@
+[15:56:08.190] Checkpoints to be saved at: model/v2v/ver0
+[15:56:08.355] 2021train: 1125 images, has_mask: True
+[15:56:08.355] Combined dataset: 1125 images
+[15:56:13.014] model loaded from model/v2v/ver0/generator_epoch35.pth
+[15:56:13.127] model loaded from model/v2v/ver0/discriminator_epoch35.pth
+[15:56:13.127] Total epochs: 100
+[15:56:13.127] Iterations per epoch: 282
+[15:56:13.127] Starting at iter/epoch: 10156/36
+[15:56:16.206] Discriminator 0/0/36: loss real: 0.02754724770784378 -- loss fake: 1.0879228115081787
+[15:56:16.938] Discriminator 1/0/36: loss real: 1.7159148454666138 -- loss fake: 0.39518412947654724
+[15:56:17.563] Discriminator 2/0/36: loss real: 1.2271302938461304 -- loss fake: 2.8720757961273193
+[15:56:19.124] Discriminator 3/0/36: loss real: 4.148183345794678 -- loss fake: 1.8182846307754517
+[15:56:20.403] Discriminator 4/0/36: loss real: 5.959218502044678 -- loss fake: 7.38215446472168
+[15:56:41.555] Discriminator 5/0/36: loss real: 13.64736557006836 -- loss fake: 9.605978012084961
+[15:56:42.525] Discriminator 6/0/36: loss real: 3.153399705886841 -- loss fake: 7.03892183303833

@@ -162,7 +162,7 @@ logging.info(f'Iterations per epoch: {len(trainloader)}')
 logging.info(f'Starting at iter/epoch: {gen_iter_num}/{start_epoch}')
 
 
-for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
+for epoch in tqdm(range(start_epoch, max_epoch+1), ncols=70):
 
     time1 = time.time()
     epoch_gen_loss = 0

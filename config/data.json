@@ -24,9 +24,9 @@
     "params":{
         "seed": 1337, 
         "device": "cuda", 
-        "epochs": 100, 
-        "batch_size": 4, 
-        "save_epoch": 5, 
+        "epochs": 101, 
+        "batch_size": 3, 
+        "save_epoch": 1, 
         "num_workers": 4, 
         "coords": [20,61,10]
     }

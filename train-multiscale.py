@@ -18,6 +18,7 @@ from torchvision.utils import make_grid
 from dataloaders.datasets3d import *
 from networks.multiscale_generator import MultiscaleGenerator as Generator
 from networks.multiscale_discriminator import MultiscaleDiscriminator as Discriminator
+# from networks.v2v_discriminator import Discriminator
 import optimization.losses as losses
 
 """
@@ -192,8 +193,11 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             loss_real = gan_loss_func(pred_real, valid_gt)
             # compute loss for fake prediction: L2[D(x, y^), 0], x is image, y^ is generated mask
             fake_mask = gen_net(volume_batch)
-            pred_fake = dis_net(fake_mask)
-
+            output_hard = convert_to_hard(torch.sigmoid(fake_mask))
+            pred_fake = dis_net(output_hard)
+            # pred_fake = dis_net(fake_mask)
+            logging.debug(f'Pred_real: {pred_real.unique()}')
+            logging.debug(f'Pred_fake: {pred_fake.unique()}')
             loss_fake = gan_loss_func(pred_fake, fake_gt)
             loss_d = loss_real + loss_fake
             epoch_dis_loss+=loss_d
@@ -206,6 +210,11 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             writer.add_scalar('discriminator/real_sample_loss', loss_real.item(), dis_iter_num)
             writer.add_scalar('discriminator/fake_sample_loss', loss_fake.item(), dis_iter_num)
             writer.add_scalar('discriminator/total_sample_loss', loss_d, dis_iter_num)
+            if dis_iter_num %50==0: 
+                draw_image(writer, volume_batch,'discriminator/image', from_slice=0, to_slice=1, iter_num=gen_iter_num, size = params_cfg['coords']) 
+                draw_image(writer, mask_batch,'discriminator/groundtruth_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, size = params_cfg['coords'])
+                draw_image(writer, output_hard, 'discriminator/output_hard', from_slice=1, to_slice=2, iter_num=gen_iter_num, size=params_cfg['coords'])
+
             del volume_batch, mask_batch
 
     if dis_epoch!=0: 
@@ -220,7 +229,9 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         volume_batch = F.interpolate(volume_batch, size=data_cfg['input_patch_size'], mode='trilinear', align_corners=False)
 
         fake_mask = gen_net(volume_batch)
-        pred_fake = dis_net(fake_mask)
+        outputs_soft = torch.sigmoid(fake_mask)
+        outputs_hard = convert_to_hard(outputs_soft)
+        pred_fake = dis_net(outputs_hard)
         
         if epoch == start_epoch: 
             out_size = pred_fake.size()
@@ -231,7 +242,8 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         # voxel-wise loss 
         total_region_loss = 0
         region_losses = []
-        outputs_soft = torch.sigmoid(fake_mask)
+        logging.debug(f'Pred_soft: {outputs_soft.unique()}')
+        logging.debug(f'Pred_hard: {outputs_hard.unique()}')
 
         for cls in range(1, data_cfg['num_classes']):
             # bce_loss_func is actually nn.BCEWithLogitsLoss(), so use raw scores as input.
@@ -240,11 +252,13 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
                 outputs_soft[:, cls], mask_batch[:, cls])
             region_losses.append(loss_val.item())
             total_region_loss += loss_val * class_weights[cls]
-        
+
+        # fake_mask return the feature maps, while output_soft is the black and white version    
         if gen_iter_num % 50 ==0:
-            draw_image(writer, volume_batch,'train/image', from_slice=0, to_slice=1, iter_num=gen_iter_num, size = params_cfg['coords']) 
-            draw_image(writer, outputs_soft,'train/predicted_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, size = params_cfg['coords']) 
-            draw_image(writer, mask_batch,'train/groundtruth_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, size = params_cfg['coords'])
+            draw_image(writer, volume_batch,'generator/image', from_slice=0, to_slice=1, iter_num=gen_iter_num, size = params_cfg['coords']) 
+            draw_image(writer, outputs_soft,'generator/predicted_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, size = params_cfg['coords']) 
+            draw_image(writer, outputs_hard, 'generator/output_hard', from_slice=1, to_slice=2, iter_num=gen_iter_num, size=params_cfg['coords'])
+            draw_image(writer, mask_batch,'generator/groundtruth_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, size = params_cfg['coords'])
         
         del volume_batch, mask_batch
         

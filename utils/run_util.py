@@ -4,6 +4,7 @@ from functools import reduce
 import os
 import torch
 import logging
+from dataloaders.datasets3d import *
 
 from torchvision.utils import make_grid
 
@@ -81,3 +82,7 @@ def draw_image(writer, arr, img_name: str, from_slice: int, to_slice: int, iter_
     grid_image = make_grid(image, 5, normalize=True)
     writer.add_image(img_name, grid_image, iter_num)
 
+def convert_to_hard(preds_soft, thres=0.5): 
+    preds_hard = torch.zeros_like(preds_soft)
+    preds_hard[preds_soft>=thres]=1
+    return preds_hard

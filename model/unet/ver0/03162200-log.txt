@@ -1,0 +1,31 @@
+[22:00:39.131] Checkpoints to be saved at: model/unet/ver0
+[22:00:39.273] 2021train: 1125 images, has_mask: True
+[22:00:39.273] Combined dataset: 1125 images
+[22:00:41.724] Segmentation loss: <function dice_loss_indiv at 0x7f07d8b3df70>
+[22:00:41.724] Total epochs: 101
+[22:00:41.724] Iterations per epoch: 375
+[22:00:41.725] Starting at iter/epoch: 0/0
+[22:00:43.618] Pred_soft: tensor([0.0032, 0.0037, 0.0037,  ..., 0.9998, 0.9998, 0.9999], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[22:00:43.621] Pred_hard: tensor([0., 1.], device='cuda:0')
+[22:00:44.236] 0/0: 
+  Region loss - dice_loss_indiv: 0.9362918138504028
+
+[22:00:44.421] Pred_soft: tensor([0.0107, 0.0130, 0.0131,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[22:00:44.424] Pred_hard: tensor([0., 1.], device='cuda:0')
+[22:00:44.968] 1/0: 
+  Region loss - dice_loss_indiv: 0.8304224014282227
+
+[22:00:45.153] Pred_soft: tensor([0.0294, 0.0300, 0.0302,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[22:00:45.156] Pred_hard: tensor([0., 1.], device='cuda:0')
+[22:00:45.702] 2/0: 
+  Region loss - dice_loss_indiv: 0.6602135896682739
+
+[22:00:45.887] Pred_soft: tensor([0.0107, 0.0108, 0.0109,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[22:00:45.890] Pred_hard: tensor([0., 1.], device='cuda:0')
+[22:00:46.436] 3/0: 
+  Region loss - dice_loss_indiv: 0.6874996423721313
+

@@ -79,7 +79,6 @@ image_save_path = os.path.join(args.writer_dir, 'predicted', test_dir)
 if not os.path.isdir(image_save_path):
     os.makedirs(image_save_path, exist_ok=True)
 # 6. Load dataset
-transform = compose(ToTensor())
 
 ds_name = brats_cfg['test_ds_name']
 test_data_path = os.path.join(root, ds_name)
@@ -89,7 +88,7 @@ db_test = BratsSet(base_dir=test_data_path,
                     mode='test',
                     ds_weight=1,
                     xyz_permute=None,
-                    transform=transform,
+                    transform=ToTensor(),
                     chosen_modality=brats_cfg['chosen_modality'],
                     binarize=False,
                     train_loc_prob=brats_cfg['localization_prob'],
@@ -113,11 +112,6 @@ avg_scores = test_all_cases(seg_net, db_test, writer,
                                     test_interp=None,
                                     has_mask=has_mask)
 
-# print("%d scores:" % iter_num)
-# for cls in range(1, brats_cfg['num_classes']):
-#     dice, jc, hd, asd = allcls_avg_metric[cls-1]
-#     print('%d: dice: %.3f, jc: %.3f, hd: %.3f, asd: %.3f' %
-#             (cls, dice, jc, hd, asd))
 print(f'Model: {test_cfg["model_name"]} - epoch: {epoch} - iteration: {iter_num} scores:')
 class_name = ['ET', 'WT', 'TC']
 class_name = np.array(class_name)

@@ -1,0 +1,13 @@
+{
+    "model_name": "unet",
+    "version": "0", 
+    "module": "networks.multiscale_generator", 
+    "class": "MultiscaleGenerator",
+    "opt": "Adam",
+    "lr": 0.001,
+    "decay": 0.0001, 
+    "betas": [0.5, 0.999],
+    "grad_clip": -1, 
+    "region_loss":"dice_loss_indiv"
+    
+}

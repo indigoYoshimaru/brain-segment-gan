@@ -26,9 +26,9 @@
         "device": "cuda", 
         "epochs": 101, 
         "batch_size": 3, 
-        "save_epoch": 1, 
+        "save_epoch": 2, 
         "num_workers": 4, 
-        "coords": [20,61,10]
+        "coords": [30,71,10]
     }
     
 }

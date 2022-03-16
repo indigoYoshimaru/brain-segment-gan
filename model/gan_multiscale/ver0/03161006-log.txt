@@ -1,0 +1,24 @@
+[10:06:33.323] Checkpoints to be saved at: model/gan_multiscale/ver0
+[10:06:33.449] 2021train: 1125 images, has_mask: True
+[10:06:33.449] Combined dataset: 1125 images
+[10:06:35.819] Segmentation loss: <function dice_loss_indiv at 0x7fb660a2f790> - GAN loss: MSELoss()
+[10:06:35.836] model loaded from model/gan_multiscale/ver0/generator_epoch46.pth
+[10:06:35.843] model loaded from model/gan_multiscale/ver0/discriminator_epoch46.pth
+[10:06:35.843] Total epochs: 101
+[10:06:35.843] Iterations per epoch: 375
+[10:06:35.843] Starting at iter/epoch: 15590/47
+[10:06:37.445] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:06:37.445] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:06:37.445] gen: torch.Size([3, 4, 112, 112, 96])
+[10:06:37.660] Discriminator 0/0/47: loss real: 0.0011081472039222717 -- loss fake: 0.00044006077223457396
+[10:06:38.199] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:06:38.199] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:06:38.199] gen: torch.Size([3, 4, 112, 112, 96])
+[10:06:38.416] Discriminator 1/0/47: loss real: 0.0015192623250186443 -- loss fake: 0.000435079651651904
+[10:06:38.947] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:06:38.947] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:06:38.947] gen: torch.Size([3, 4, 112, 112, 96])
+[10:06:39.166] Discriminator 2/0/47: loss real: 0.0011344339000061154 -- loss fake: 0.00047627734602428973
+[10:06:39.700] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:06:39.701] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:06:39.701] gen: torch.Size([3, 4, 112, 112, 96])

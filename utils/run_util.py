@@ -8,8 +8,8 @@ from dataloaders.datasets3d import *
 
 from torchvision.utils import make_grid
 
-def print_size(name,x): 
-    print(f'Block {name} size: {x.size()}')
+def print_size(name,start): 
+    print(f'Block {name} size: {start.size()}')
 
 def print_arg(*print_args, **kwargs):
     #if args.local_rank == 0:
@@ -29,9 +29,9 @@ def compose2(f, g):
 def compose(*fs):
     return reduce(compose2, fs)
 
-def warmup_constant(x, warmup=500):
-    if x < warmup:
-        return x/warmup
+def warmup_constant(start, warmup=500):
+    if start < warmup:
+        return start/warmup
     return 1
 
 def set_deterministic_mode(): 
@@ -70,16 +70,20 @@ def save_model(checkpoint_dir, model_type,net, optimizer, epoch_num,iter_num):
 
     logging.info(f'save model to {save_model_path}')
 
-def draw_image(writer, arr, img_name: str, from_slice: int, to_slice: int, iter_num: int, size: list, mode='train'): 
+def draw_image(writer, arr, img_name: str, iter_num: int, size: list, c_start=0, c_end =0, n_grid = 5, mode='train', is_norm=True): 
     """Draw image to tensorboard"""
-    x, y, z = size
+    start, end, step = size
     
     if mode =='test': 
-        image = arr[from_slice:to_slice, : , : , x:y:z].permute(3, 0, 1, 2).repeat(1, 3, 1, 1)
+        image = arr[c_start:c_end, : , : , start:end:step]
+    elif mode=='map': 
+        image = arr[0, : , : , : , start:end:step]
+        is_norm = False
     else:
-        image = arr[0, from_slice:to_slice, : , : , x:y:z].permute(3, 0, 1, 2).repeat(1, 3, 1, 1)
+        image = arr[0, c_start:c_end, : , : , start:end:step]
     
-    grid_image = make_grid(image, 5, normalize=True)
+    image = image.permute(3, 0, 1, 2).repeat(1, 3, 1, 1)
+    grid_image = make_grid(image, n_grid, normalize=is_norm)
     writer.add_image(img_name, grid_image, iter_num)
 
 def convert_to_hard(preds_soft, thres=0.5): 

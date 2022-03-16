@@ -195,9 +195,10 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             fake_mask = gen_net(volume_batch)
             output_hard = convert_to_hard(torch.sigmoid(fake_mask))
             pred_fake = dis_net(output_hard)
-            # pred_fake = dis_net(fake_mask)
+
             logging.debug(f'Pred_real: {pred_real.unique()}')
             logging.debug(f'Pred_fake: {pred_fake.unique()}')
+
             loss_fake = gan_loss_func(pred_fake, fake_gt)
             loss_d = loss_real + loss_fake
             epoch_dis_loss+=loss_d
@@ -210,10 +211,12 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             writer.add_scalar('discriminator/real_sample_loss', loss_real.item(), dis_iter_num)
             writer.add_scalar('discriminator/fake_sample_loss', loss_fake.item(), dis_iter_num)
             writer.add_scalar('discriminator/total_sample_loss', loss_d, dis_iter_num)
-            if dis_iter_num %50==0: 
-                draw_image(writer, volume_batch,'discriminator/image', from_slice=0, to_slice=1, iter_num=gen_iter_num, size = params_cfg['coords']) 
-                draw_image(writer, mask_batch,'discriminator/groundtruth_label', from_slice=1, to_slice=2, iter_num=gen_iter_num, size = params_cfg['coords'])
-                draw_image(writer, output_hard, 'discriminator/output_hard', from_slice=1, to_slice=2, iter_num=gen_iter_num, size=params_cfg['coords'])
+            if idx %50==0: 
+                draw_image(writer, volume_batch,'discriminator/image', c_start=0, c_end=1, iter_num=dis_iter_num, size = params_cfg['coords']) 
+                draw_image(writer, mask_batch,'discriminator/groundtruth_label', c_start=1, c_end=2, iter_num=dis_iter_num, size = params_cfg['coords'])
+                draw_image(writer, output_hard, 'discriminator/output_hard', c_start=1, c_end=2, iter_num=dis_iter_num, size=params_cfg['coords'])
+                draw_image(writer, pred_real, 'discriminator/real_feat_map', iter_num=dis_iter_num, size = [2,11,2], mode='map')
+                draw_image(writer, pred_fake, 'discriminator/fake_feat_map', iter_num=dis_iter_num, size = [2,11,2], mode='map')
 
             del volume_batch, mask_batch
 

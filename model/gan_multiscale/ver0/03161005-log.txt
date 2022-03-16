@@ -1,0 +1,85 @@
+[10:05:08.366] Checkpoints to be saved at: model/gan_multiscale/ver0
+[10:05:08.504] 2021train: 1125 images, has_mask: True
+[10:05:08.504] Combined dataset: 1125 images
+[10:05:10.882] Segmentation loss: <function dice_loss_indiv at 0x7fba76c22700> - GAN loss: MSELoss()
+[10:05:10.900] model loaded from model/gan_multiscale/ver0/generator_epoch46.pth
+[10:05:10.907] model loaded from model/gan_multiscale/ver0/discriminator_epoch46.pth
+[10:05:10.907] Total epochs: 101
+[10:05:10.907] Iterations per epoch: 375
+[10:05:10.907] Starting at iter/epoch: 15590/47
+[10:05:12.383] Pred_real: <built-in method size of Tensor object at 0x7fba748e06d0>
+[10:05:12.383] Pred_fake: <built-in method size of Tensor object at 0x7fba74088220>
+[10:05:12.604] Discriminator 0/0/47: loss real: 0.0010875021107494831 -- loss fake: 0.0006203190423548222
+[10:05:13.143] Pred_real: <built-in method size of Tensor object at 0x7fba74087a90>
+[10:05:13.143] Pred_fake: <built-in method size of Tensor object at 0x7fba7408c720>
+[10:05:13.358] Discriminator 1/0/47: loss real: 0.0013861283659934998 -- loss fake: 0.0009170260746032
+[10:05:13.889] Pred_real: <built-in method size of Tensor object at 0x7fba740879a0>
+[10:05:13.889] Pred_fake: <built-in method size of Tensor object at 0x7fba74088b30>
+[10:05:14.110] Discriminator 2/0/47: loss real: 0.000908688351046294 -- loss fake: 0.00038135398062877357
+[10:05:14.636] Pred_real: <built-in method size of Tensor object at 0x7fba74088130>
+[10:05:14.636] Pred_fake: <built-in method size of Tensor object at 0x7fba74087a40>
+[10:05:14.854] Discriminator 3/0/47: loss real: 0.0009697600617073476 -- loss fake: 0.00032045316766016185
+[10:05:15.382] Pred_real: <built-in method size of Tensor object at 0x7fba7408c950>
+[10:05:15.382] Pred_fake: <built-in method size of Tensor object at 0x7fba74088e50>
+[10:05:15.599] Discriminator 4/0/47: loss real: 0.000720952230039984 -- loss fake: 0.0003318522358313203
+[10:05:16.128] Pred_real: <built-in method size of Tensor object at 0x7fba74088450>
+[10:05:16.128] Pred_fake: <built-in method size of Tensor object at 0x7fba7408ca90>
+[10:05:16.345] Discriminator 5/0/47: loss real: 0.0013650463661178946 -- loss fake: 0.0014136298559606075
+[10:05:16.875] Pred_real: <built-in method size of Tensor object at 0x7fba740870e0>
+[10:05:16.875] Pred_fake: <built-in method size of Tensor object at 0x7fba7408c6d0>
+[10:05:17.091] Discriminator 6/0/47: loss real: 0.003905749414116144 -- loss fake: 0.0006314137135632336
+[10:05:17.618] Pred_real: <built-in method size of Tensor object at 0x7fba740885e0>
+[10:05:17.618] Pred_fake: <built-in method size of Tensor object at 0x7fba74087450>
+[10:05:17.836] Discriminator 7/0/47: loss real: 0.0014135994715616107 -- loss fake: 0.0007900546188466251
+[10:05:18.362] Pred_real: <built-in method size of Tensor object at 0x7fba7408c9a0>
+[10:05:18.362] Pred_fake: <built-in method size of Tensor object at 0x7fba740878b0>
+[10:05:18.578] Discriminator 8/0/47: loss real: 0.0013223569840192795 -- loss fake: 0.0005196821293793619
+[10:05:19.106] Pred_real: <built-in method size of Tensor object at 0x7fba74088810>
+[10:05:19.106] Pred_fake: <built-in method size of Tensor object at 0x7fba7408ce50>
+[10:05:19.324] Discriminator 9/0/47: loss real: 0.0033832015469670296 -- loss fake: 0.0010511277941986918
+[10:05:19.851] Pred_real: <built-in method size of Tensor object at 0x7fba740874a0>
+[10:05:19.851] Pred_fake: <built-in method size of Tensor object at 0x7fba7408c040>
+[10:05:20.067] Discriminator 10/0/47: loss real: 0.0014530690386891365 -- loss fake: 0.0017000377411022782
+[10:05:20.593] Pred_real: <built-in method size of Tensor object at 0x7fba740889f0>
+[10:05:20.594] Pred_fake: <built-in method size of Tensor object at 0x7fba740886d0>
+[10:05:20.812] Discriminator 11/0/47: loss real: 0.0013733499217778444 -- loss fake: 0.0006355547811836004
+[10:05:21.339] Pred_real: <built-in method size of Tensor object at 0x7fba7408ce00>
+[10:05:21.339] Pred_fake: <built-in method size of Tensor object at 0x7fba74087d10>
+[10:05:21.556] Discriminator 12/0/47: loss real: 0.0017004763940349221 -- loss fake: 0.0006248645368032157
+[10:05:22.084] Pred_real: <built-in method size of Tensor object at 0x7fba74088c70>
+[10:05:22.085] Pred_fake: <built-in method size of Tensor object at 0x7fba74088770>
+[10:05:37.163] Checkpoints to be saved at: model/gan_multiscale/ver0
+[10:05:37.317] 2021train: 1125 images, has_mask: True
+[10:05:37.317] Combined dataset: 1125 images
+[10:05:39.727] Segmentation loss: <function dice_loss_indiv at 0x7fef2eb51790> - GAN loss: MSELoss()
+[10:05:39.745] model loaded from model/gan_multiscale/ver0/generator_epoch46.pth
+[10:05:39.753] model loaded from model/gan_multiscale/ver0/discriminator_epoch46.pth
+[10:05:39.753] Total epochs: 101
+[10:05:39.753] Iterations per epoch: 375
+[10:05:39.753] Starting at iter/epoch: 15590/47
+[10:05:41.406] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:05:41.407] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:05:41.627] Discriminator 0/0/47: loss real: 0.0017374054295942187 -- loss fake: 0.0009881078731268644
+[10:05:42.163] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:05:42.163] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:05:42.378] Discriminator 1/0/47: loss real: 0.0013231810880824924 -- loss fake: 0.0007891017012298107
+[10:05:42.905] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:05:42.905] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:05:43.122] Discriminator 2/0/47: loss real: 0.0008569546625949442 -- loss fake: 0.0003714944759849459
+[10:05:43.649] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:05:43.649] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:05:43.867] Discriminator 3/0/47: loss real: 0.0008009335724636912 -- loss fake: 0.0006167187239043415
+[10:05:44.397] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:05:44.397] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:05:44.614] Discriminator 4/0/47: loss real: 0.0012028815690428019 -- loss fake: 0.0004966728156432509
+[10:05:45.141] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:05:45.141] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:05:45.358] Discriminator 5/0/47: loss real: 0.0010202701669186354 -- loss fake: 0.000859385181684047
+[10:05:45.887] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:05:45.887] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:05:46.104] Discriminator 6/0/47: loss real: 0.0011441672686487436 -- loss fake: 0.0007019086042419076
+[10:05:46.631] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:05:46.631] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:05:46.848] Discriminator 7/0/47: loss real: 0.0008787213591858745 -- loss fake: 0.0006740919197909534
+[10:05:47.375] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:05:47.375] Pred_fake: torch.Size([3, 1, 14, 14, 12])

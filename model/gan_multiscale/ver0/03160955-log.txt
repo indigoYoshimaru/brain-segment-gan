@@ -1,0 +1,109 @@
+[09:55:42.186] Checkpoints to be saved at: model/gan_multiscale/ver0
+[09:55:42.312] 2021train: 1125 images, has_mask: True
+[09:55:42.312] Combined dataset: 1125 images
+[09:55:44.678] Segmentation loss: <function dice_loss_indiv at 0x7f0b6e47e700> - GAN loss: MSELoss()
+[09:55:44.714] model loaded from model/gan_multiscale/ver0/generator_epoch46.pth
+[09:55:44.721] model loaded from model/gan_multiscale/ver0/discriminator_epoch46.pth
+[09:55:44.721] Total epochs: 101
+[09:55:44.721] Iterations per epoch: 375
+[09:55:44.721] Starting at iter/epoch: 15590/47
+[09:55:46.510] Pred_real: tensor([0.8092, 0.8097, 0.8100,  ..., 1.3152, 1.3261, 1.3410], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:46.510] Pred_fake: tensor([-0.0660, -0.0567, -0.0548,  ...,  0.1429,  0.1657,  0.1676],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:46.511] Discriminator 0/0/47: loss real: 0.0016797418938949704 -- loss fake: 0.0007723370217718184
+[09:55:47.264] Pred_real: tensor([0.7681, 0.7875, 0.7946,  ..., 1.1653, 1.1693, 1.1818], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:47.265] Pred_fake: tensor([-0.0786, -0.0784, -0.0776,  ...,  0.1135,  0.1206,  0.1255],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:47.265] Discriminator 1/0/47: loss real: 0.0007266023894771934 -- loss fake: 0.0003189290582668036
+[09:55:48.012] Pred_real: tensor([0.4774, 0.4935, 0.5808,  ..., 1.1463, 1.1525, 1.1621], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:48.013] Pred_fake: tensor([-0.2463, -0.2213, -0.2196,  ...,  0.1097,  0.1303,  0.1550],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:48.013] Discriminator 2/0/47: loss real: 0.0010910514974966645 -- loss fake: 0.0005589040229097009
+[09:55:48.761] Pred_real: tensor([0.8147, 0.8324, 0.8360,  ..., 1.2771, 1.3138, 1.3233], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:48.762] Pred_fake: tensor([-0.0489, -0.0449, -0.0443,  ...,  0.7673,  0.7835,  0.8012],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:48.762] Discriminator 3/0/47: loss real: 0.001278876792639494 -- loss fake: 0.08579128980636597
+[09:55:49.511] Pred_real: tensor([0.4215, 0.4725, 0.4730,  ..., 0.9849, 0.9995, 1.0082], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:49.512] Pred_fake: tensor([-0.5022, -0.4885, -0.4885,  ...,  0.0333,  0.0518,  0.0543],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:49.512] Discriminator 4/0/47: loss real: 0.05390414223074913 -- loss fake: 0.051197368651628494
+[09:55:50.260] Pred_real: tensor([0.8844, 0.9033, 0.9161,  ..., 1.5091, 1.5242, 1.5300], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:50.261] Pred_fake: tensor([0.0217, 0.0227, 0.0227,  ..., 0.4499, 0.4675, 0.4758], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:50.261] Discriminator 5/0/47: loss real: 0.028291165828704834 -- loss fake: 0.02183777093887329
+[09:55:51.005] Pred_real: tensor([0.7721, 0.8227, 0.8545,  ..., 1.5234, 1.5301, 1.5891], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:51.006] Pred_fake: tensor([0.0126, 0.0211, 0.0215,  ..., 0.5788, 0.6004, 0.6203], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:51.006] Discriminator 6/0/47: loss real: 0.047814153134822845 -- loss fake: 0.04848143085837364
+[09:55:51.805] Pred_real: tensor([0.0709, 0.0858, 0.1393,  ..., 0.9365, 0.9380, 0.9382], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:51.806] Pred_fake: tensor([-0.5165, -0.5143, -0.4941,  ...,  0.0233,  0.0240,  0.0296],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:51.806] Discriminator 7/0/47: loss real: 0.04772672802209854 -- loss fake: 0.022002747282385826
+[09:55:52.588] Pred_real: tensor([0.7352, 0.7565, 0.7623,  ..., 1.1152, 1.1173, 1.1655], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:52.589] Pred_fake: tensor([-0.1319, -0.1294, -0.1294,  ...,  0.3276,  0.3289,  0.3565],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:52.589] Discriminator 8/0/47: loss real: 0.00421698484569788 -- loss fake: 0.0023832027800381184
+[09:55:53.368] Pred_real: tensor([0.6548, 0.6820, 0.7068,  ..., 1.4121, 1.4305, 1.4392], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:53.368] Pred_fake: tensor([0.0029, 0.0046, 0.0048,  ..., 0.5416, 0.5420, 0.5767], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:53.368] Discriminator 9/0/47: loss real: 0.009502793662250042 -- loss fake: 0.011287218891084194
+[09:55:54.117] Pred_real: tensor([0.5532, 0.5617, 0.6078,  ..., 1.1586, 1.1668, 1.1711], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:54.118] Pred_fake: tensor([-0.1996, -0.1869, -0.1830,  ...,  0.1837,  0.1921,  0.1990],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:54.119] Discriminator 10/0/47: loss real: 0.002271777717396617 -- loss fake: 0.0011052790796384215
+[09:55:54.869] Pred_real: tensor([0.3246, 0.3919, 0.3932,  ..., 1.0635, 1.0810, 1.0903], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:54.870] Pred_fake: tensor([-0.2210, -0.2098, -0.2097,  ...,  0.0817,  0.0827,  0.0926],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:54.870] Discriminator 11/0/47: loss real: 0.008391152136027813 -- loss fake: 0.004177207592874765
+[09:55:55.664] Pred_real: tensor([0.6362, 0.6728, 0.6840,  ..., 1.2854, 1.2960, 1.3089], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:55.666] Pred_fake: tensor([-0.0644, -0.0639, -0.0639,  ...,  0.3691,  0.3719,  0.3959],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:55.667] Discriminator 12/0/47: loss real: 0.005810091271996498 -- loss fake: 0.00256058806553483
+[09:55:56.465] Pred_real: tensor([0.5339, 0.5524, 0.5654,  ..., 1.2689, 1.2776, 1.2821], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:56.466] Pred_fake: tensor([-0.1132, -0.0971, -0.0927,  ...,  0.3252,  0.3399,  0.3421],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:56.466] Discriminator 13/0/47: loss real: 0.005376496817916632 -- loss fake: 0.002442130818963051
+[09:55:57.210] Pred_real: tensor([0.8006, 0.8075, 0.8093,  ..., 1.1353, 1.1471, 1.1573], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:57.211] Pred_fake: tensor([-0.2284, -0.2030, -0.2021,  ...,  0.1559,  0.1727,  0.1743],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:57.211] Discriminator 14/0/47: loss real: 0.0037815943360328674 -- loss fake: 0.0020817455369979143
+[09:55:57.953] Pred_real: tensor([0.8268, 0.8493, 0.8565,  ..., 1.2614, 1.2732, 1.3359], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:57.954] Pred_fake: tensor([-0.1201, -0.1180, -0.1123,  ...,  0.1889,  0.1924,  0.2053],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:57.954] Discriminator 15/0/47: loss real: 0.001758512225933373 -- loss fake: 0.001380660105496645
+[09:55:58.699] Pred_real: tensor([0.4698, 0.4870, 0.5374,  ..., 1.1235, 1.1329, 1.1478], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:58.700] Pred_fake: tensor([-0.1186, -0.1165, -0.0973,  ...,  0.1439,  0.1556,  0.1621],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:58.700] Discriminator 16/0/47: loss real: 0.0026757691521197557 -- loss fake: 0.0007126773125492036
+[09:55:59.475] Pred_real: tensor([0.6718, 0.7148, 0.7458,  ..., 1.2457, 1.2562, 1.2804], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:55:59.476] Pred_fake: tensor([-0.0889, -0.0829, -0.0804,  ...,  0.2175,  0.2177,  0.2363],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:55:59.477] Discriminator 17/0/47: loss real: 0.0022556057665497065 -- loss fake: 0.0018068510107696056
+[09:56:00.226] Pred_real: tensor([0.5860, 0.6089, 0.6107,  ..., 1.1119, 1.1120, 1.1571], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:56:00.227] Pred_fake: tensor([-0.0997, -0.0910, -0.0787,  ...,  0.0824,  0.0971,  0.1187],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:56:00.227] Discriminator 18/0/47: loss real: 0.001740040723234415 -- loss fake: 0.0005390311707742512
+[09:56:00.972] Pred_real: tensor([0.3478, 0.4060, 0.4502,  ..., 1.0783, 1.0803, 1.0840], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:56:00.972] Pred_fake: tensor([-0.1158, -0.1125, -0.1097,  ...,  0.2113,  0.2575,  0.2760],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:56:00.973] Discriminator 19/0/47: loss real: 0.0022151221055537462 -- loss fake: 0.001387899392284453

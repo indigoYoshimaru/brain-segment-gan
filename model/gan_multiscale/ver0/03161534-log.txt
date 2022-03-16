@@ -1,0 +1,142 @@
+[15:34:41.691] Checkpoints to be saved at: model/gan_multiscale/ver0
+[15:34:41.814] 2021train: 1125 images, has_mask: True
+[15:34:41.815] Combined dataset: 1125 images
+[15:34:44.190] Segmentation loss: <function dice_loss_indiv at 0x7ff50d8d9670> - GAN loss: MSELoss()
+[15:34:44.210] model loaded from model/gan_multiscale/ver0/generator_epoch50.pth
+[15:34:44.217] model loaded from model/gan_multiscale/ver0/discriminator_epoch50.pth
+[15:34:44.217] Total epochs: 101
+[15:34:44.217] Iterations per epoch: 375
+[15:34:44.217] Starting at iter/epoch: 17091/51
+[15:34:46.051] Pred_real: tensor([0.7378, 0.7434, 0.7637,  ..., 1.2525, 1.2790, 1.3073], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:46.052] Pred_fake: tensor([-0.0788, -0.0759, -0.0680,  ...,  0.1041,  0.1281,  0.1416],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:46.052] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:46.052] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:46.052] Discriminator 0/0/51: loss real: 0.0010678247781470418 -- loss fake: 0.00042744592064991593
+[15:34:46.804] Pred_real: tensor([0.8130, 0.8157, 0.8337,  ..., 1.2057, 1.2069, 1.2095], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:46.805] Pred_fake: tensor([-0.1121, -0.1083, -0.0970,  ...,  0.1093,  0.1122,  0.1215],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:46.805] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:46.805] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:46.805] Discriminator 1/0/51: loss real: 0.0007651615887880325 -- loss fake: 0.0003393919032532722
+[15:34:47.545] Pred_real: tensor([0.7339, 0.8119, 0.8122,  ..., 1.3376, 1.3672, 1.3926], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:47.546] Pred_fake: tensor([-0.1482, -0.1224, -0.1153,  ...,  0.4290,  0.5184,  0.5686],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:47.546] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:47.546] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:47.546] Discriminator 2/0/51: loss real: 0.0021737846545875072 -- loss fake: 0.004211197141557932
+[15:34:48.287] Pred_real: tensor([0.7476, 0.7513, 0.7642,  ..., 1.1692, 1.1795, 1.1808], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:48.288] Pred_fake: tensor([-0.2208, -0.2005, -0.1996,  ...,  0.0847,  0.0929,  0.1009],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:48.288] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:48.288] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:48.288] Discriminator 3/0/51: loss real: 0.0043100700713694096 -- loss fake: 0.0028575516771525145
+[15:34:49.032] Pred_real: tensor([0.8422, 0.8772, 0.8838,  ..., 1.1911, 1.2057, 1.2240], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:49.033] Pred_fake: tensor([-0.0609, -0.0554, -0.0547,  ...,  0.1125,  0.1154,  0.1374],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:49.033] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:49.033] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:49.033] Discriminator 4/0/51: loss real: 0.0011129594640806317 -- loss fake: 0.00040341890417039394
+[15:34:49.775] Pred_real: tensor([0.8879, 0.8932, 0.8973,  ..., 1.2344, 1.2351, 1.2747], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:49.776] Pred_fake: tensor([-0.0767, -0.0572, -0.0559,  ...,  0.1460,  0.1541,  0.1563],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:49.776] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:49.776] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:49.776] Discriminator 5/0/51: loss real: 0.0020778810139745474 -- loss fake: 0.0011070814216509461
+[15:34:50.518] Pred_real: tensor([0.7036, 0.7139, 0.7147,  ..., 1.1220, 1.1433, 1.1552], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:50.519] Pred_fake: tensor([-0.1581, -0.1525, -0.1515,  ...,  0.1170,  0.1512,  0.1534],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:50.519] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:50.519] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:50.519] Discriminator 6/0/51: loss real: 0.002465792465955019 -- loss fake: 0.001745964284054935
+[15:34:51.261] Pred_real: tensor([0.7049, 0.7134, 0.7213,  ..., 1.1127, 1.1150, 1.1333], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:51.262] Pred_fake: tensor([-0.1787, -0.1475, -0.1433,  ...,  0.1178,  0.1192,  0.1319],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:51.262] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:51.262] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:51.262] Discriminator 7/0/51: loss real: 0.0006249202415347099 -- loss fake: 0.000609625072684139
+[15:34:52.005] Pred_real: tensor([0.7256, 0.7351, 0.7641,  ..., 1.2345, 1.2364, 1.2607], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:52.006] Pred_fake: tensor([-0.0728, -0.0685, -0.0623,  ...,  0.1759,  0.1772,  0.1859],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:52.006] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:52.006] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:52.006] Discriminator 8/0/51: loss real: 0.0017868505092337728 -- loss fake: 0.0005389996222220361
+[15:34:52.749] Pred_real: tensor([0.3893, 0.4166, 0.5463,  ..., 1.1329, 1.1370, 1.1430], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:52.750] Pred_fake: tensor([-0.1256, -0.1057, -0.1024,  ...,  0.1052,  0.1167,  0.1343],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:52.750] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:52.750] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:52.751] Discriminator 9/0/51: loss real: 0.0012329724850133061 -- loss fake: 0.0004302322049625218
+[15:34:53.496] Pred_real: tensor([0.6449, 0.6913, 0.7251,  ..., 1.1249, 1.1428, 1.1677], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:53.497] Pred_fake: tensor([-0.1343, -0.1247, -0.1225,  ...,  0.1837,  0.1876,  0.2037],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:53.497] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:53.497] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:53.498] Discriminator 10/0/51: loss real: 0.001162077533081174 -- loss fake: 0.0007246580207720399
+[15:34:54.243] Pred_real: tensor([0.8917, 0.9057, 0.9066,  ..., 1.2324, 1.2377, 1.2560], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:54.244] Pred_fake: tensor([-0.0868, -0.0744, -0.0640,  ...,  0.1097,  0.1099,  0.1388],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:54.244] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:54.244] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:54.245] Discriminator 11/0/51: loss real: 0.0009479710715822875 -- loss fake: 0.0006060339510440826
+[15:34:54.991] Pred_real: tensor([0.7986, 0.8042, 0.8157,  ..., 1.1352, 1.1404, 1.1525], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:54.992] Pred_fake: tensor([-0.1713, -0.1532, -0.1487,  ...,  0.1867,  0.1992,  0.2032],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:54.992] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:54.992] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:54.992] Discriminator 12/0/51: loss real: 0.0008359785424545407 -- loss fake: 0.0008788537234067917
+[15:34:55.739] Pred_real: tensor([0.7246, 0.7322, 0.7771,  ..., 1.1093, 1.1102, 1.1404], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:55.740] Pred_fake: tensor([-0.1016, -0.1006, -0.0983,  ...,  0.0893,  0.0948,  0.0996],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:55.740] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:55.740] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:55.740] Discriminator 13/0/51: loss real: 0.0010015398729592562 -- loss fake: 0.0006254627951420844
+[15:34:56.484] Pred_real: tensor([0.8380, 0.8667, 0.8875,  ..., 1.1095, 1.1123, 1.1258], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:56.485] Pred_fake: tensor([-0.1060, -0.0968, -0.0843,  ...,  0.1190,  0.1209,  0.1408],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:56.485] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:56.486] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:56.486] Discriminator 14/0/51: loss real: 0.0005481084226630628 -- loss fake: 0.0004314783727750182
+[15:34:57.233] Pred_real: tensor([0.6992, 0.7647, 0.7662,  ..., 1.2990, 1.2995, 1.3070], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:57.233] Pred_fake: tensor([-0.1110, -0.1003, -0.0923,  ...,  0.2002,  0.2031,  0.2135],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:57.234] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:57.234] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:57.234] Discriminator 15/0/51: loss real: 0.0035573849454522133 -- loss fake: 0.0009325450519099832
+[15:34:57.980] Pred_real: tensor([0.6911, 0.7459, 0.7684,  ..., 1.0666, 1.0767, 1.0788], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:57.981] Pred_fake: tensor([-0.2035, -0.1613, -0.1581,  ...,  0.1230,  0.1398,  0.1622],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:57.981] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:57.981] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:57.981] Discriminator 16/0/51: loss real: 0.0033375807106494904 -- loss fake: 0.0018463287269696593
+[15:34:58.728] Pred_real: tensor([0.8621, 0.8678, 0.8714,  ..., 1.2693, 1.2759, 1.2791], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:58.729] Pred_fake: tensor([-0.0834, -0.0733, -0.0582,  ...,  0.2045,  0.2205,  0.2231],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:58.729] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:58.729] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:58.729] Discriminator 17/0/51: loss real: 0.0020780505146831274 -- loss fake: 0.0022012447007000446
+[15:34:59.475] Pred_real: tensor([0.6247, 0.7030, 0.7096,  ..., 1.1690, 1.1798, 1.1819], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:34:59.476] Pred_fake: tensor([-0.1114, -0.1102, -0.1022,  ...,  0.1258,  0.1395,  0.1499],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:34:59.476] gen: torch.Size([3, 4, 112, 112, 96])
+[15:34:59.476] Pred_fake shape: torch.Size([3, 1, 14, 14, 12])
+[15:34:59.476] Discriminator 18/0/51: loss real: 0.0012422932777553797 -- loss fake: 0.00036165514029562473

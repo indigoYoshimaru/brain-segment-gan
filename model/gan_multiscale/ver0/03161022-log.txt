@@ -1,0 +1,178 @@
+[10:22:05.605] Checkpoints to be saved at: model/gan_multiscale/ver0
+[10:22:05.729] 2021train: 1125 images, has_mask: True
+[10:22:05.729] Combined dataset: 1125 images
+[10:22:08.090] Segmentation loss: <function dice_loss_indiv at 0x7f72e1c1d820> - GAN loss: MSELoss()
+[10:22:08.110] model loaded from model/gan_multiscale/ver0/generator_epoch46.pth
+[10:22:08.117] model loaded from model/gan_multiscale/ver0/discriminator_epoch46.pth
+[10:22:08.117] Total epochs: 101
+[10:22:08.117] Iterations per epoch: 375
+[10:22:08.117] Starting at iter/epoch: 15590/47
+[10:22:09.762] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:09.762] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:09.762] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:09.978] Discriminator 0/0/47: loss real: 0.0007199643296189606 -- loss fake: 0.0005020257085561752
+[10:22:10.516] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:10.516] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:10.516] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:10.732] Discriminator 1/0/47: loss real: 0.0008799491915851831 -- loss fake: 0.0004530598525889218
+[10:22:11.265] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:11.266] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:11.266] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:11.485] Discriminator 2/0/47: loss real: 0.0011008860310539603 -- loss fake: 0.00063676992431283
+[10:22:12.015] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:12.015] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:12.015] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:12.234] Discriminator 3/0/47: loss real: 0.0010519272182136774 -- loss fake: 0.0003222375235054642
+[10:22:12.767] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:12.767] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:12.767] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:12.985] Discriminator 4/0/47: loss real: 0.0007772876997478306 -- loss fake: 0.0006093488191254437
+[10:22:13.512] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:13.512] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:13.512] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:13.729] Discriminator 5/0/47: loss real: 0.0009475800325162709 -- loss fake: 0.0003940983733627945
+[10:22:14.257] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:14.258] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:14.258] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:14.475] Discriminator 6/0/47: loss real: 0.0011401156662032008 -- loss fake: 0.0006934949196875095
+[10:22:15.002] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:15.003] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:15.003] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:15.221] Discriminator 7/0/47: loss real: 0.000732599466573447 -- loss fake: 0.0007210586336441338
+[10:22:15.747] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:15.747] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:15.747] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:15.965] Discriminator 8/0/47: loss real: 0.000663348997477442 -- loss fake: 0.00035427507827989757
+[10:22:16.493] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:16.493] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:16.493] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:16.710] Discriminator 9/0/47: loss real: 0.0007169547025114298 -- loss fake: 0.0002848213480319828
+[10:22:17.238] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:17.238] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:17.238] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:17.455] Discriminator 10/0/47: loss real: 0.000691867433488369 -- loss fake: 0.0004752981476485729
+[10:22:17.985] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:17.985] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:17.985] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:18.203] Discriminator 11/0/47: loss real: 0.0009602869977243245 -- loss fake: 0.0005169177311472595
+[10:22:18.729] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:18.730] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:18.730] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:18.948] Discriminator 12/0/47: loss real: 0.0014908284647390246 -- loss fake: 0.0003335691581014544
+[10:22:19.475] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:19.475] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:19.475] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:19.693] Discriminator 13/0/47: loss real: 0.0010398994199931622 -- loss fake: 0.0005151797086000443
+[10:22:20.221] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:20.221] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:20.221] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:20.438] Discriminator 14/0/47: loss real: 0.0007573014008812606 -- loss fake: 0.00038332390249706805
+[10:22:20.967] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:20.967] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:20.967] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:21.184] Discriminator 15/0/47: loss real: 0.0008910240139812231 -- loss fake: 0.0004891374846920371
+[10:22:21.710] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:21.711] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:21.711] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:21.929] Discriminator 16/0/47: loss real: 0.0008219414157792926 -- loss fake: 0.00047899881610646844
+[10:22:22.457] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:22.457] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:22.457] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:22.675] Discriminator 17/0/47: loss real: 0.0009605746599845588 -- loss fake: 0.0005854504997842014
+[10:22:23.202] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:23.202] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:23.203] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:23.420] Discriminator 18/0/47: loss real: 0.0007425124640576541 -- loss fake: 0.00032138466485776007
+[10:22:23.947] Pred_real: torch.Size([3, 1, 14, 14, 12])
+[10:22:23.947] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:22:23.947] gen: torch.Size([3, 4, 112, 112, 96])
+[10:22:24.165] Discriminator 19/0/47: loss real: 0.0010051305871456861 -- loss fake: 0.0005245225038379431
+[10:22:58.949] Checkpoints to be saved at: model/gan_multiscale/ver0
+[10:22:59.074] 2021train: 1125 images, has_mask: True
+[10:22:59.074] Combined dataset: 1125 images
+[10:23:01.434] Segmentation loss: <function dice_loss_indiv at 0x7fa016e20700> - GAN loss: MSELoss()
+[10:23:01.453] model loaded from model/gan_multiscale/ver0/generator_epoch46.pth
+[10:23:01.460] model loaded from model/gan_multiscale/ver0/discriminator_epoch46.pth
+[10:23:01.460] Total epochs: 101
+[10:23:01.460] Iterations per epoch: 375
+[10:23:01.460] Starting at iter/epoch: 15590/47
+[10:23:02.929] Pred_real: torch.Size([14, 14, 12])
+[10:23:02.929] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:02.929] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:03.138] Discriminator 0/0/47: loss real: 0.0010962809901684523 -- loss fake: 0.000827668234705925
+[10:23:03.675] Pred_real: torch.Size([14, 14, 12])
+[10:23:03.675] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:03.675] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:03.892] Discriminator 1/0/47: loss real: 0.0009139474714174867 -- loss fake: 0.000542034802492708
+[10:23:04.417] Pred_real: torch.Size([14, 14, 12])
+[10:23:04.417] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:04.417] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:04.635] Discriminator 2/0/47: loss real: 0.0015244255773723125 -- loss fake: 0.0005476752994582057
+[10:23:05.162] Pred_real: torch.Size([14, 14, 12])
+[10:23:05.162] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:05.162] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:05.380] Discriminator 3/0/47: loss real: 0.000715145783033222 -- loss fake: 0.00047247373731806874
+[10:23:05.908] Pred_real: torch.Size([14, 14, 12])
+[10:23:05.908] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:05.908] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:06.126] Discriminator 4/0/47: loss real: 0.0011918526142835617 -- loss fake: 0.0014300321927294135
+[10:23:06.653] Pred_real: torch.Size([14, 14, 12])
+[10:23:06.653] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:06.653] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:06.872] Discriminator 5/0/47: loss real: 0.001501559279859066 -- loss fake: 0.0004403551574796438
+[10:23:07.399] Pred_real: torch.Size([14, 14, 12])
+[10:23:07.399] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:07.399] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:07.617] Discriminator 6/0/47: loss real: 0.0006110133253969252 -- loss fake: 0.00048602541210129857
+[10:23:08.143] Pred_real: torch.Size([14, 14, 12])
+[10:23:08.143] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:08.143] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:08.361] Discriminator 7/0/47: loss real: 0.0009351137559860945 -- loss fake: 0.0004960733349435031
+[10:23:08.889] Pred_real: torch.Size([14, 14, 12])
+[10:23:08.889] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:08.889] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:09.107] Discriminator 8/0/47: loss real: 0.00041729328222572803 -- loss fake: 0.0005102603463456035
+[10:23:09.632] Pred_real: torch.Size([14, 14, 12])
+[10:23:09.632] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:09.632] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:09.851] Discriminator 9/0/47: loss real: 0.0010741139994934201 -- loss fake: 0.001278857234865427
+[10:23:10.378] Pred_real: torch.Size([14, 14, 12])
+[10:23:10.378] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:10.378] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:10.595] Discriminator 10/0/47: loss real: 0.0018486280459910631 -- loss fake: 0.0004320829757489264
+[10:23:11.122] Pred_real: torch.Size([14, 14, 12])
+[10:23:11.122] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:11.122] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:11.340] Discriminator 11/0/47: loss real: 0.0006120723555795848 -- loss fake: 0.0005355687462724745
+[10:23:11.867] Pred_real: torch.Size([14, 14, 12])
+[10:23:11.867] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:11.867] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:12.085] Discriminator 12/0/47: loss real: 0.0006818842375651002 -- loss fake: 0.0006905071204528213
+[10:23:12.612] Pred_real: torch.Size([14, 14, 12])
+[10:23:12.612] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:12.612] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:12.830] Discriminator 13/0/47: loss real: 0.0014155597891658545 -- loss fake: 0.0007955337641760707
+[10:23:13.357] Pred_real: torch.Size([14, 14, 12])
+[10:23:13.357] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:13.357] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:13.575] Discriminator 14/0/47: loss real: 0.003420975524932146 -- loss fake: 0.33892983198165894
+[10:23:14.103] Pred_real: torch.Size([14, 14, 12])
+[10:23:14.103] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:14.103] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:14.321] Discriminator 15/0/47: loss real: 1.126365065574646 -- loss fake: 0.5028992891311646
+[10:23:14.850] Pred_real: torch.Size([14, 14, 12])
+[10:23:14.850] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:14.850] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:15.068] Discriminator 16/0/47: loss real: 0.7875673770904541 -- loss fake: 0.5770273804664612
+[10:23:15.595] Pred_real: torch.Size([14, 14, 12])
+[10:23:15.595] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:15.595] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:15.814] Discriminator 17/0/47: loss real: 0.1383541077375412 -- loss fake: 0.10045994073152542
+[10:23:16.341] Pred_real: torch.Size([14, 14, 12])
+[10:23:16.342] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:16.342] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:16.560] Discriminator 18/0/47: loss real: 0.3015056550502777 -- loss fake: 0.11833903938531876
+[10:23:17.087] Pred_real: torch.Size([14, 14, 12])
+[10:23:17.087] Pred_fake: torch.Size([3, 1, 14, 14, 12])
+[10:23:17.087] gen: torch.Size([3, 4, 112, 112, 96])
+[10:23:17.305] Discriminator 19/0/47: loss real: 0.03572772070765495 -- loss fake: 0.07295263558626175

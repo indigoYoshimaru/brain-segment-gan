@@ -1,3 +1,0 @@
-[21:58:53.373] Checkpoints to be saved at: model/unet/ver0
-[21:58:53.545] 2021train: 1125 images, has_mask: True
-[21:58:53.545] Combined dataset: 1125 images

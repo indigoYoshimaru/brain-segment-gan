@@ -10,7 +10,7 @@ from utils.common_util import get_filename
 from dataloaders.datasets3d import make_brats_pred_consistent, brats_map_label, brats_inv_map_label, harden_segmap3d
 from tqdm import tqdm
 import pdb
-from utils.run_util import draw_image
+from utils.run_util import draw_image, rotate_visual
 
 # When test_interp is not None, it should be a tuple like (56,56,40) used as the size of interpolated masks.
 def test_all_cases(net, db_test, writer, num_classes, batch_size=8,
@@ -23,7 +23,8 @@ def test_all_cases(net, db_test, writer, num_classes, batch_size=8,
     valid_metric_counts = np.zeros((num_classes - 1, 4))
     binarize = (num_classes == 2)
     class_name = ['ET', 'WT', 'TC']
-
+    rotate_axes = [{'top':(0,0)}, {'front':(0,1)}, {'side':(1,2)}]
+    
     for image_idx in tqdm(range(len(db_test))):
         sample = db_test[image_idx]
         # image_tensor is 4D. First dim is modality. 
@@ -87,9 +88,12 @@ def test_all_cases(net, db_test, writer, num_classes, batch_size=8,
             writer.add_scalar(f'{name}/avg-surface-distance', allcls_metric[cls_idx][3], image_idx)
 
         # draw images
-        draw_image(writer, image_tensor, 'test/image', c_start=0, c_end=1, iter_num=image_idx, size =[20,61,10], mode='test')
-        draw_image(writer, mask_tensor, 'test/label', c_start=1, c_end=2, iter_num=image_idx, size = [20,61,10], mode='test')
-        draw_image(writer, preds_hard, 'test/predicted', c_start=1, c_end=2, iter_num=image_idx, size = [20,61,10], mode='test')
+        for direction in rotate_axes:
+            name, axes = direction.items()
+            to_draws = rotate_visual(image_tensor, mask_tensor, preds_hard, axes)
+            draw_image(writer, image_tensor, f'test/{name}/image', c_start=0, c_end=1, iter_num=image_idx, size =[20,61,10], mode='test')
+            draw_image(writer, mask_tensor, f'test/{name}/label', c_start=1, c_end=2, iter_num=image_idx, size = [20,61,10], mode='test')
+            draw_image(writer, preds_hard, f'test/{name}predicted', c_start=1, c_end=2, iter_num=image_idx, size = [20,61,10], mode='test')
         
         if save_result:
             inv_probs = brats_inv_map_label(preds_soft)

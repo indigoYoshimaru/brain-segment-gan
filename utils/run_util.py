@@ -90,3 +90,18 @@ def convert_to_hard(preds_soft, thres=0.5):
     preds_hard = torch.zeros_like(preds_soft)
     preds_hard[preds_soft>=thres]=1
     return preds_hard
+
+def rotate_visual(img, gt, pred, axes: tuple): 
+    """
+    Rotate brain image and masks for perspective visualization
+    Args: 
+        img: image tensor
+        gt: groundtruth tensor
+        pred: predicted tumor tensor
+        axes: tuple of axis to rotate image. 
+            the initial perspective is from the top
+    """
+    img_rot = np.rot90(img, 1, axes)
+    gt_rot = np.rot90(gt, 1, axes)
+    pred_rot = np.rot90(pred, 1, axes)
+    return {'image': img_rot, 'gt': gt_rot, 'pred': pred_rot}

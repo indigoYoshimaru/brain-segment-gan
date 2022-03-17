@@ -1,0 +1,2963 @@
+[09:57:00.834] Checkpoints to be saved at: model/unet/ver1
+[09:57:00.999] 2021train: 1125 images, has_mask: True
+[09:57:01.000] Combined dataset: 1125 images
+[09:57:04.463] Segmentation loss: <function dice_loss_indiv at 0x7faa2a181310>
+[09:57:04.463] Total epochs: 101
+[09:57:04.463] Iterations per epoch: 375
+[09:57:04.463] Starting at iter/epoch: 0/0
+[09:57:06.652] Pred_soft: tensor([1.5085e-04, 3.3642e-04, 3.3920e-04,  ..., 9.9427e-01, 9.9428e-01,
+        9.9645e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:06.654] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:07.278] 0/0: 
+  Region loss - dice_loss_indiv: 0.9006000757217407
+  Total loss : 0.9006000757217407
+[09:57:07.466] Pred_soft: tensor([0.0046, 0.0047, 0.0047,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:07.468] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:08.010] 1/0: 
+  Region loss - dice_loss_indiv: 0.8566476106643677
+  Total loss : 0.8566476106643677
+[09:57:08.194] Pred_soft: tensor([0.0051, 0.0052, 0.0055,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:08.197] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:08.740] 2/0: 
+  Region loss - dice_loss_indiv: 0.8688379526138306
+  Total loss : 0.8688379526138306
+[09:57:08.927] Pred_soft: tensor([0.0040, 0.0049, 0.0052,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:08.929] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:09.472] 3/0: 
+  Region loss - dice_loss_indiv: 0.7584095597267151
+  Total loss : 0.7584095597267151
+[09:57:09.657] Pred_soft: tensor([8.4605e-05, 8.5839e-05, 1.0046e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:09.659] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:10.201] 4/0: 
+  Region loss - dice_loss_indiv: 0.8285229206085205
+  Total loss : 0.8285229206085205
+[09:57:10.387] Pred_soft: tensor([0.0028, 0.0031, 0.0035,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:10.390] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:10.941] 5/0: 
+  Region loss - dice_loss_indiv: 0.740323543548584
+  Total loss : 0.740323543548584
+[09:57:11.154] Pred_soft: tensor([0.0023, 0.0023, 0.0028,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:11.156] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:11.716] 6/0: 
+  Region loss - dice_loss_indiv: 0.720151424407959
+  Total loss : 0.720151424407959
+[09:57:11.898] Pred_soft: tensor([0.0112, 0.0123, 0.0124,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:11.901] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:12.447] 7/0: 
+  Region loss - dice_loss_indiv: 0.47263312339782715
+  Total loss : 0.47263312339782715
+[09:57:12.629] Pred_soft: tensor([0.0183, 0.0185, 0.0192,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:12.632] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:13.175] 8/0: 
+  Region loss - dice_loss_indiv: 0.7845526337623596
+  Total loss : 0.7845526337623596
+[09:57:13.357] Pred_soft: tensor([0.0043, 0.0045, 0.0045,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:13.360] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:13.902] 9/0: 
+  Region loss - dice_loss_indiv: 0.6609200239181519
+  Total loss : 0.6609200239181519
+[09:57:14.092] Pred_soft: tensor([0.0011, 0.0011, 0.0011,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:14.095] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:14.639] 10/0: 
+  Region loss - dice_loss_indiv: 0.5538662672042847
+  Total loss : 0.5538662672042847
+[09:57:14.824] Pred_soft: tensor([0.0019, 0.0021, 0.0022,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:14.826] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:15.369] 11/0: 
+  Region loss - dice_loss_indiv: 0.6048582792282104
+  Total loss : 0.6048582792282104
+[09:57:15.561] Pred_soft: tensor([0.0071, 0.0073, 0.0074,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:15.564] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:16.136] 12/0: 
+  Region loss - dice_loss_indiv: 0.48156124353408813
+  Total loss : 0.48156124353408813
+[09:57:16.330] Pred_soft: tensor([0.0092, 0.0094, 0.0094,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:16.333] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:16.902] 13/0: 
+  Region loss - dice_loss_indiv: 0.6289239525794983
+  Total loss : 0.6289239525794983
+[09:57:17.097] Pred_soft: tensor([0.0038, 0.0039, 0.0042,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:17.099] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:17.673] 14/0: 
+  Region loss - dice_loss_indiv: 0.5105760097503662
+  Total loss : 0.5105760097503662
+[09:57:17.865] Pred_soft: tensor([0.0041, 0.0042, 0.0043,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:17.868] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:18.443] 15/0: 
+  Region loss - dice_loss_indiv: 0.5649276971817017
+  Total loss : 0.5649276971817017
+[09:57:18.635] Pred_soft: tensor([0.0031, 0.0031, 0.0032,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:18.638] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:19.208] 16/0: 
+  Region loss - dice_loss_indiv: 0.6760137677192688
+  Total loss : 0.6760137677192688
+[09:57:19.405] Pred_soft: tensor([0.0059, 0.0060, 0.0060,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:19.407] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:19.976] 17/0: 
+  Region loss - dice_loss_indiv: 0.3660835921764374
+  Total loss : 0.3660835921764374
+[09:57:20.173] Pred_soft: tensor([8.0146e-04, 8.1728e-04, 8.2298e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:20.176] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:20.747] 18/0: 
+  Region loss - dice_loss_indiv: 0.3012835681438446
+  Total loss : 0.3012835681438446
+[09:57:20.939] Pred_soft: tensor([0.0091, 0.0092, 0.0092,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:20.941] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:21.518] 19/0: 
+  Region loss - dice_loss_indiv: 0.5762485861778259
+  Total loss : 0.5762485861778259
+[09:57:21.709] Pred_soft: tensor([0.0065, 0.0071, 0.0072,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:21.712] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:22.287] 20/0: 
+  Region loss - dice_loss_indiv: 0.30520355701446533
+  Total loss : 0.30520355701446533
+[09:57:22.479] Pred_soft: tensor([0.0023, 0.0024, 0.0024,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:22.482] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:23.051] 21/0: 
+  Region loss - dice_loss_indiv: 0.3959566056728363
+  Total loss : 0.3959566056728363
+[09:57:23.249] Pred_soft: tensor([1.0699e-05, 1.1040e-05, 1.1414e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:23.252] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:23.823] 22/0: 
+  Region loss - dice_loss_indiv: 0.6911370754241943
+  Total loss : 0.6911370754241943
+[09:57:24.017] Pred_soft: tensor([0.0013, 0.0014, 0.0014,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:24.020] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:24.597] 23/0: 
+  Region loss - dice_loss_indiv: 0.3616693615913391
+  Total loss : 0.3616693615913391
+[09:57:24.792] Pred_soft: tensor([0.0025, 0.0026, 0.0026,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:24.795] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:25.373] 24/0: 
+  Region loss - dice_loss_indiv: 0.3459876775741577
+  Total loss : 0.3459876775741577
+[09:57:25.566] Pred_soft: tensor([6.6641e-05, 6.7348e-05, 7.0371e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:25.569] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:26.145] 25/0: 
+  Region loss - dice_loss_indiv: 0.5218367576599121
+  Total loss : 0.5218367576599121
+[09:57:26.341] Pred_soft: tensor([0.0012, 0.0012, 0.0013,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:26.344] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:26.913] 26/0: 
+  Region loss - dice_loss_indiv: 0.5408068895339966
+  Total loss : 0.5408068895339966
+[09:57:27.109] Pred_soft: tensor([9.9700e-04, 1.0542e-03, 1.0840e-03,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:27.112] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:27.687] 27/0: 
+  Region loss - dice_loss_indiv: 0.2986301779747009
+  Total loss : 0.2986301779747009
+[09:57:27.880] Pred_soft: tensor([4.3787e-05, 4.6894e-05, 4.9280e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:27.883] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:28.459] 28/0: 
+  Region loss - dice_loss_indiv: 0.35615283250808716
+  Total loss : 0.35615283250808716
+[09:57:28.652] Pred_soft: tensor([2.6269e-04, 2.6306e-04, 2.6350e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:28.655] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:29.231] 29/0: 
+  Region loss - dice_loss_indiv: 0.4651588201522827
+  Total loss : 0.4651588201522827
+[09:57:29.428] Pred_soft: tensor([2.3574e-04, 2.3740e-04, 2.3949e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:29.430] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:30.014] 30/0: 
+  Region loss - dice_loss_indiv: 0.40916842222213745
+  Total loss : 0.40916842222213745
+[09:57:30.220] Pred_soft: tensor([0.0013, 0.0013, 0.0013,  ..., 0.9999, 0.9999, 0.9999], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:30.223] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:30.813] 31/0: 
+  Region loss - dice_loss_indiv: 0.2589307725429535
+  Total loss : 0.2589307725429535
+[09:57:31.014] Pred_soft: tensor([0.0017, 0.0017, 0.0017,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:31.017] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:31.594] 32/0: 
+  Region loss - dice_loss_indiv: 0.15438804030418396
+  Total loss : 0.15438804030418396
+[09:57:31.788] Pred_soft: tensor([0.0029, 0.0029, 0.0030,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:31.790] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:32.375] 33/0: 
+  Region loss - dice_loss_indiv: 0.7987470626831055
+  Total loss : 0.7987470626831055
+[09:57:32.565] Pred_soft: tensor([5.0643e-05, 5.1111e-05, 5.3213e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:32.568] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:33.114] 34/0: 
+  Region loss - dice_loss_indiv: 0.3027149438858032
+  Total loss : 0.3027149438858032
+[09:57:33.301] Pred_soft: tensor([0.0021, 0.0021, 0.0021,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:33.303] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:33.851] 35/0: 
+  Region loss - dice_loss_indiv: 0.3347238302230835
+  Total loss : 0.3347238302230835
+[09:57:34.037] Pred_soft: tensor([1.7618e-04, 1.8061e-04, 1.8393e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:34.040] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:34.587] 36/0: 
+  Region loss - dice_loss_indiv: 0.18900913000106812
+  Total loss : 0.18900913000106812
+[09:57:34.773] Pred_soft: tensor([9.4614e-04, 9.4894e-04, 9.5358e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:34.776] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:35.327] 37/0: 
+  Region loss - dice_loss_indiv: 0.4237028956413269
+  Total loss : 0.4237028956413269
+[09:57:35.512] Pred_soft: tensor([7.2137e-05, 8.1626e-05, 8.6176e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:35.515] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:36.068] 38/0: 
+  Region loss - dice_loss_indiv: 0.42624494433403015
+  Total loss : 0.42624494433403015
+[09:57:36.257] Pred_soft: tensor([4.3434e-06, 4.6081e-06, 4.6111e-06,  ..., 9.9995e-01, 9.9995e-01,
+        9.9995e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:36.260] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:36.807] 39/0: 
+  Region loss - dice_loss_indiv: 0.2769004702568054
+  Total loss : 0.2769004702568054
+[09:57:36.994] Pred_soft: tensor([6.5146e-04, 6.6164e-04, 6.7205e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:36.996] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:37.593] 40/0: 
+  Region loss - dice_loss_indiv: 0.3190215229988098
+  Total loss : 0.3190215229988098
+[09:57:37.786] Pred_soft: tensor([0.0016, 0.0016, 0.0016,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:37.788] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:38.382] 41/0: 
+  Region loss - dice_loss_indiv: 0.549508273601532
+  Total loss : 0.549508273601532
+[09:57:38.592] Pred_soft: tensor([2.8406e-06, 2.8609e-06, 2.9715e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:38.595] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:39.189] 42/0: 
+  Region loss - dice_loss_indiv: 0.3360903859138489
+  Total loss : 0.3360903859138489
+[09:57:39.387] Pred_soft: tensor([1.7519e-06, 1.9267e-06, 2.1447e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:39.390] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:39.979] 43/0: 
+  Region loss - dice_loss_indiv: 0.2857739329338074
+  Total loss : 0.2857739329338074
+[09:57:40.179] Pred_soft: tensor([3.6822e-04, 3.7670e-04, 3.7933e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:40.182] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:40.791] 44/0: 
+  Region loss - dice_loss_indiv: 0.43359264731407166
+  Total loss : 0.43359264731407166
+[09:57:40.995] Pred_soft: tensor([3.0158e-04, 3.0373e-04, 3.0484e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:40.998] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:41.593] 45/0: 
+  Region loss - dice_loss_indiv: 0.29262617230415344
+  Total loss : 0.29262617230415344
+[09:57:41.782] Pred_soft: tensor([1.0170e-06, 1.0451e-06, 1.0459e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:41.785] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:42.390] 46/0: 
+  Region loss - dice_loss_indiv: 0.6363353729248047
+  Total loss : 0.6363353729248047
+[09:57:42.598] Pred_soft: tensor([2.5803e-05, 2.6564e-05, 2.7243e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:42.600] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:43.154] 47/0: 
+  Region loss - dice_loss_indiv: 0.2757952809333801
+  Total loss : 0.2757952809333801
+[09:57:43.339] Pred_soft: tensor([5.2330e-04, 5.2833e-04, 5.2921e-04,  ..., 9.9998e-01, 9.9998e-01,
+        9.9998e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:43.341] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:43.932] 48/0: 
+  Region loss - dice_loss_indiv: 0.31525900959968567
+  Total loss : 0.31525900959968567
+[09:57:44.127] Pred_soft: tensor([0.0013, 0.0013, 0.0013,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:44.129] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:44.697] 49/0: 
+  Region loss - dice_loss_indiv: 0.5265472531318665
+  Total loss : 0.5265472531318665
+[09:57:44.882] Pred_soft: tensor([0.0018, 0.0018, 0.0019,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:44.884] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:45.508] 50/0: 
+  Region loss - dice_loss_indiv: 0.27424919605255127
+  Total loss : 0.27424919605255127
+[09:57:45.694] Pred_soft: tensor([1.0521e-04, 1.0953e-04, 1.1489e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:45.696] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:46.260] 51/0: 
+  Region loss - dice_loss_indiv: 0.47596338391304016
+  Total loss : 0.47596338391304016
+[09:57:46.446] Pred_soft: tensor([1.2784e-04, 1.2893e-04, 1.3073e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:46.448] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:47.012] 52/0: 
+  Region loss - dice_loss_indiv: 0.3802456557750702
+  Total loss : 0.3802456557750702
+[09:57:47.217] Pred_soft: tensor([2.8341e-08, 2.9266e-08, 2.9666e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:47.220] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:47.814] 53/0: 
+  Region loss - dice_loss_indiv: 0.20476354658603668
+  Total loss : 0.20476354658603668
+[09:57:48.018] Pred_soft: tensor([9.5829e-07, 9.6672e-07, 9.8025e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:48.020] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:48.565] 54/0: 
+  Region loss - dice_loss_indiv: 0.22579258680343628
+  Total loss : 0.22579258680343628
+[09:57:48.750] Pred_soft: tensor([6.5061e-04, 6.5065e-04, 6.5107e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:48.753] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:49.299] 55/0: 
+  Region loss - dice_loss_indiv: 0.4804539680480957
+  Total loss : 0.4804539680480957
+[09:57:49.484] Pred_soft: tensor([6.5323e-04, 6.8006e-04, 7.0535e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:49.487] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:50.034] 56/0: 
+  Region loss - dice_loss_indiv: 0.18065327405929565
+  Total loss : 0.18065327405929565
+[09:57:50.220] Pred_soft: tensor([2.8936e-05, 2.9046e-05, 3.0263e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:50.223] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:50.773] 57/0: 
+  Region loss - dice_loss_indiv: 0.20664021372795105
+  Total loss : 0.20664021372795105
+[09:57:50.977] Pred_soft: tensor([2.9377e-04, 2.9385e-04, 2.9555e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:50.981] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:51.589] 58/0: 
+  Region loss - dice_loss_indiv: 0.5641505718231201
+  Total loss : 0.5641505718231201
+[09:57:51.793] Pred_soft: tensor([1.5518e-05, 1.5542e-05, 1.5646e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:51.795] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:52.378] 59/0: 
+  Region loss - dice_loss_indiv: 0.16066484153270721
+  Total loss : 0.16066484153270721
+[09:57:52.570] Pred_soft: tensor([1.2144e-06, 1.2871e-06, 1.2968e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:52.573] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:53.146] 60/0: 
+  Region loss - dice_loss_indiv: 0.22642026841640472
+  Total loss : 0.22642026841640472
+[09:57:53.333] Pred_soft: tensor([6.0920e-06, 6.5523e-06, 6.7860e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:53.335] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:53.889] 61/0: 
+  Region loss - dice_loss_indiv: 0.24000191688537598
+  Total loss : 0.24000191688537598
+[09:57:54.099] Pred_soft: tensor([3.2109e-04, 3.2210e-04, 3.4763e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:54.102] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:54.692] 62/0: 
+  Region loss - dice_loss_indiv: 0.20363309979438782
+  Total loss : 0.20363309979438782
+[09:57:54.880] Pred_soft: tensor([0.0013, 0.0014, 0.0014,  ..., 1.0000, 1.0000, 1.0000], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[09:57:54.883] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:55.449] 63/0: 
+  Region loss - dice_loss_indiv: 0.7008090615272522
+  Total loss : 0.7008090615272522
+[09:57:55.656] Pred_soft: tensor([9.8033e-04, 9.8209e-04, 9.8409e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:55.658] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:56.250] 64/0: 
+  Region loss - dice_loss_indiv: 0.3776351809501648
+  Total loss : 0.3776351809501648
+[09:57:56.447] Pred_soft: tensor([4.1117e-04, 4.1128e-04, 4.2564e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:56.450] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:57.007] 65/0: 
+  Region loss - dice_loss_indiv: 0.21708962321281433
+  Total loss : 0.21708962321281433
+[09:57:57.200] Pred_soft: tensor([3.2940e-04, 3.3840e-04, 3.7251e-04,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:57.203] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:57.753] 66/0: 
+  Region loss - dice_loss_indiv: 0.6597511768341064
+  Total loss : 0.6597511768341064
+[09:57:57.945] Pred_soft: tensor([1.7099e-04, 1.7181e-04, 1.8525e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:57.948] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:58.516] 67/0: 
+  Region loss - dice_loss_indiv: 0.2678419053554535
+  Total loss : 0.2678419053554535
+[09:57:58.704] Pred_soft: tensor([2.6373e-04, 2.7099e-04, 2.8709e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:58.707] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:57:59.267] 68/0: 
+  Region loss - dice_loss_indiv: 0.4993189573287964
+  Total loss : 0.4993189573287964
+[09:57:59.457] Pred_soft: tensor([4.1666e-04, 4.2276e-04, 4.4471e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:57:59.460] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:00.025] 69/0: 
+  Region loss - dice_loss_indiv: 0.45248958468437195
+  Total loss : 0.45248958468437195
+[09:58:00.221] Pred_soft: tensor([3.1224e-04, 3.2146e-04, 3.3091e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:00.224] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:00.776] 70/0: 
+  Region loss - dice_loss_indiv: 0.25581249594688416
+  Total loss : 0.25581249594688416
+[09:58:00.962] Pred_soft: tensor([3.8507e-04, 3.8819e-04, 3.9372e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:00.965] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:01.531] 71/0: 
+  Region loss - dice_loss_indiv: 0.2933756709098816
+  Total loss : 0.2933756709098816
+[09:58:01.720] Pred_soft: tensor([5.8969e-04, 6.0055e-04, 6.0893e-04,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:01.722] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:02.278] 72/0: 
+  Region loss - dice_loss_indiv: 0.24270427227020264
+  Total loss : 0.24270427227020264
+[09:58:02.463] Pred_soft: tensor([6.2572e-04, 6.3346e-04, 6.3863e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:02.466] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:03.012] 73/0: 
+  Region loss - dice_loss_indiv: 0.5097858905792236
+  Total loss : 0.5097858905792236
+[09:58:03.201] Pred_soft: tensor([1.2535e-04, 1.3181e-04, 1.5137e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:03.204] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:03.754] 74/0: 
+  Region loss - dice_loss_indiv: 0.36999809741973877
+  Total loss : 0.36999809741973877
+[09:58:03.941] Pred_soft: tensor([3.1999e-04, 3.2231e-04, 3.3111e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:03.943] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:04.487] 75/0: 
+  Region loss - dice_loss_indiv: 0.3038315773010254
+  Total loss : 0.3038315773010254
+[09:58:04.683] Pred_soft: tensor([1.4792e-04, 1.5068e-04, 1.6873e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:04.686] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:05.273] 76/0: 
+  Region loss - dice_loss_indiv: 0.45811641216278076
+  Total loss : 0.45811641216278076
+[09:58:05.458] Pred_soft: tensor([2.1291e-04, 2.1668e-04, 2.1885e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:05.460] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:06.005] 77/0: 
+  Region loss - dice_loss_indiv: 0.15058428049087524
+  Total loss : 0.15058428049087524
+[09:58:06.192] Pred_soft: tensor([9.3170e-05, 9.3842e-05, 9.4936e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:06.194] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:06.751] 78/0: 
+  Region loss - dice_loss_indiv: 0.28455591201782227
+  Total loss : 0.28455591201782227
+[09:58:06.946] Pred_soft: tensor([6.3639e-04, 6.7113e-04, 6.8577e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:06.950] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:07.494] 79/0: 
+  Region loss - dice_loss_indiv: 0.25389087200164795
+  Total loss : 0.25389087200164795
+[09:58:07.686] Pred_soft: tensor([2.0017e-04, 2.0076e-04, 2.0369e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:07.689] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:08.248] 80/0: 
+  Region loss - dice_loss_indiv: 0.6115713119506836
+  Total loss : 0.6115713119506836
+[09:58:08.437] Pred_soft: tensor([2.3877e-05, 2.4393e-05, 2.5326e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:08.440] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:09.001] 81/0: 
+  Region loss - dice_loss_indiv: 0.16310331225395203
+  Total loss : 0.16310331225395203
+[09:58:09.195] Pred_soft: tensor([6.0798e-04, 6.2163e-04, 6.2467e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:09.198] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:09.755] 82/0: 
+  Region loss - dice_loss_indiv: 0.2636871933937073
+  Total loss : 0.2636871933937073
+[09:58:09.946] Pred_soft: tensor([3.2708e-05, 3.4511e-05, 3.6783e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:09.949] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:10.507] 83/0: 
+  Region loss - dice_loss_indiv: 0.5561981201171875
+  Total loss : 0.5561981201171875
+[09:58:10.697] Pred_soft: tensor([2.4957e-07, 2.6011e-07, 2.6813e-07,  ..., 9.9999e-01, 9.9999e-01,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:10.699] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:11.260] 84/0: 
+  Region loss - dice_loss_indiv: 0.6293511390686035
+  Total loss : 0.6293511390686035
+[09:58:11.452] Pred_soft: tensor([4.2515e-04, 4.3998e-04, 4.5018e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:11.455] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:12.012] 85/0: 
+  Region loss - dice_loss_indiv: 0.4545519948005676
+  Total loss : 0.4545519948005676
+[09:58:12.201] Pred_soft: tensor([3.7806e-04, 3.9400e-04, 3.9729e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:12.204] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:12.773] 86/0: 
+  Region loss - dice_loss_indiv: 0.25697797536849976
+  Total loss : 0.25697797536849976
+[09:58:12.963] Pred_soft: tensor([1.7683e-04, 1.8129e-04, 1.8602e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:12.965] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:13.514] 87/0: 
+  Region loss - dice_loss_indiv: 0.14530298113822937
+  Total loss : 0.14530298113822937
+[09:58:13.702] Pred_soft: tensor([4.6737e-04, 4.8579e-04, 5.1228e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:13.705] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:14.265] 88/0: 
+  Region loss - dice_loss_indiv: 0.5949683785438538
+  Total loss : 0.5949683785438538
+[09:58:14.459] Pred_soft: tensor([3.5604e-05, 3.6163e-05, 3.6243e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:14.461] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:15.061] 89/0: 
+  Region loss - dice_loss_indiv: 0.32056915760040283
+  Total loss : 0.32056915760040283
+[09:58:15.275] Pred_soft: tensor([3.9042e-05, 4.1554e-05, 5.0558e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:15.278] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:15.861] 90/0: 
+  Region loss - dice_loss_indiv: 0.5287618637084961
+  Total loss : 0.5287618637084961
+[09:58:16.055] Pred_soft: tensor([2.6554e-04, 2.7399e-04, 2.8750e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:16.058] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:16.643] 91/0: 
+  Region loss - dice_loss_indiv: 0.15517644584178925
+  Total loss : 0.15517644584178925
+[09:58:16.829] Pred_soft: tensor([2.2949e-04, 2.3556e-04, 2.4089e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:16.831] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:17.387] 92/0: 
+  Region loss - dice_loss_indiv: 0.40054115653038025
+  Total loss : 0.40054115653038025
+[09:58:17.572] Pred_soft: tensor([1.3090e-04, 1.3763e-04, 1.3957e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:17.575] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:18.126] 93/0: 
+  Region loss - dice_loss_indiv: 0.3455390930175781
+  Total loss : 0.3455390930175781
+[09:58:18.311] Pred_soft: tensor([2.5685e-04, 2.8258e-04, 2.9011e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:18.314] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:18.860] 94/0: 
+  Region loss - dice_loss_indiv: 0.5107073187828064
+  Total loss : 0.5107073187828064
+[09:58:19.046] Pred_soft: tensor([3.0118e-05, 3.0210e-05, 3.0318e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:19.049] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:19.602] 95/0: 
+  Region loss - dice_loss_indiv: 0.4789862632751465
+  Total loss : 0.4789862632751465
+[09:58:19.789] Pred_soft: tensor([8.1076e-06, 1.0344e-05, 1.0526e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:19.792] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:20.341] 96/0: 
+  Region loss - dice_loss_indiv: 0.24965108931064606
+  Total loss : 0.24965108931064606
+[09:58:20.526] Pred_soft: tensor([3.4384e-04, 3.5731e-04, 3.6528e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:20.529] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:21.079] 97/0: 
+  Region loss - dice_loss_indiv: 0.1885293424129486
+  Total loss : 0.1885293424129486
+[09:58:21.270] Pred_soft: tensor([4.1552e-04, 4.3278e-04, 4.4744e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:21.272] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:21.820] 98/0: 
+  Region loss - dice_loss_indiv: 0.3058117926120758
+  Total loss : 0.3058117926120758
+[09:58:22.009] Pred_soft: tensor([2.0463e-04, 2.0807e-04, 2.1011e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:22.012] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:22.564] 99/0: 
+  Region loss - dice_loss_indiv: 0.36203545331954956
+  Total loss : 0.36203545331954956
+[09:58:22.751] Pred_soft: tensor([1.5791e-04, 1.5899e-04, 1.7197e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:22.753] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:23.353] 100/0: 
+  Region loss - dice_loss_indiv: 0.204621821641922
+  Total loss : 0.204621821641922
+[09:58:23.539] Pred_soft: tensor([1.5304e-04, 1.6613e-04, 1.7329e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:23.542] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:24.091] 101/0: 
+  Region loss - dice_loss_indiv: 0.17268909513950348
+  Total loss : 0.17268909513950348
+[09:58:24.278] Pred_soft: tensor([8.2729e-05, 8.4527e-05, 8.6671e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:24.281] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:24.829] 102/0: 
+  Region loss - dice_loss_indiv: 0.21706221997737885
+  Total loss : 0.21706221997737885
+[09:58:25.015] Pred_soft: tensor([7.8612e-05, 7.9495e-05, 8.0117e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:25.017] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:25.569] 103/0: 
+  Region loss - dice_loss_indiv: 0.4326446056365967
+  Total loss : 0.4326446056365967
+[09:58:25.757] Pred_soft: tensor([5.5890e-06, 6.3429e-06, 6.6073e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:25.760] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:26.350] 104/0: 
+  Region loss - dice_loss_indiv: 0.18121950328350067
+  Total loss : 0.18121950328350067
+[09:58:26.546] Pred_soft: tensor([5.7454e-05, 5.7993e-05, 6.0306e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:26.549] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:27.129] 105/0: 
+  Region loss - dice_loss_indiv: 0.3760957717895508
+  Total loss : 0.3760957717895508
+[09:58:27.325] Pred_soft: tensor([1.5177e-04, 1.5252e-04, 1.5255e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:27.328] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:27.912] 106/0: 
+  Region loss - dice_loss_indiv: 0.2078116536140442
+  Total loss : 0.2078116536140442
+[09:58:28.101] Pred_soft: tensor([3.4137e-04, 3.9191e-04, 3.9256e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:28.103] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:28.665] 107/0: 
+  Region loss - dice_loss_indiv: 0.6090930700302124
+  Total loss : 0.6090930700302124
+[09:58:28.858] Pred_soft: tensor([1.7903e-04, 1.8239e-04, 2.2901e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:28.860] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:29.409] 108/0: 
+  Region loss - dice_loss_indiv: 0.2298363596200943
+  Total loss : 0.2298363596200943
+[09:58:29.594] Pred_soft: tensor([4.7772e-05, 4.8842e-05, 6.2057e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:29.597] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:30.146] 109/0: 
+  Region loss - dice_loss_indiv: 0.4790411591529846
+  Total loss : 0.4790411591529846
+[09:58:30.332] Pred_soft: tensor([2.1493e-04, 2.3087e-04, 2.3514e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:30.334] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:30.882] 110/0: 
+  Region loss - dice_loss_indiv: 0.37946921586990356
+  Total loss : 0.37946921586990356
+[09:58:31.067] Pred_soft: tensor([1.8276e-04, 1.9269e-04, 1.9767e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:31.070] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:31.621] 111/0: 
+  Region loss - dice_loss_indiv: 0.2530309557914734
+  Total loss : 0.2530309557914734
+[09:58:31.826] Pred_soft: tensor([7.5796e-05, 8.1509e-05, 9.7179e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:31.829] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:32.391] 112/0: 
+  Region loss - dice_loss_indiv: 0.2965770363807678
+  Total loss : 0.2965770363807678
+[09:58:32.579] Pred_soft: tensor([2.6240e-04, 2.6281e-04, 2.6475e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:32.582] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:33.141] 113/0: 
+  Region loss - dice_loss_indiv: 0.4022267460823059
+  Total loss : 0.4022267460823059
+[09:58:33.338] Pred_soft: tensor([1.4017e-04, 1.4046e-04, 1.4716e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:33.340] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:33.902] 114/0: 
+  Region loss - dice_loss_indiv: 0.1685638129711151
+  Total loss : 0.1685638129711151
+[09:58:34.090] Pred_soft: tensor([1.9873e-04, 2.0220e-04, 2.0425e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:34.092] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:34.646] 115/0: 
+  Region loss - dice_loss_indiv: 0.38460060954093933
+  Total loss : 0.38460060954093933
+[09:58:34.838] Pred_soft: tensor([3.4063e-06, 3.4595e-06, 3.8519e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:34.841] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:35.395] 116/0: 
+  Region loss - dice_loss_indiv: 0.18633785843849182
+  Total loss : 0.18633785843849182
+[09:58:35.584] Pred_soft: tensor([8.6889e-05, 9.0270e-05, 9.6918e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:35.586] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:36.144] 117/0: 
+  Region loss - dice_loss_indiv: 0.25321733951568604
+  Total loss : 0.25321733951568604
+[09:58:36.330] Pred_soft: tensor([9.1301e-05, 9.1572e-05, 9.2014e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:36.333] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:36.881] 118/0: 
+  Region loss - dice_loss_indiv: 0.337944895029068
+  Total loss : 0.337944895029068
+[09:58:37.068] Pred_soft: tensor([1.1495e-04, 1.1562e-04, 1.1732e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:37.071] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:37.626] 119/0: 
+  Region loss - dice_loss_indiv: 0.3519134521484375
+  Total loss : 0.3519134521484375
+[09:58:37.814] Pred_soft: tensor([1.0336e-04, 1.0371e-04, 1.0440e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:37.817] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:38.372] 120/0: 
+  Region loss - dice_loss_indiv: 0.4214305877685547
+  Total loss : 0.4214305877685547
+[09:58:38.561] Pred_soft: tensor([5.3050e-05, 5.5983e-05, 5.6258e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:38.563] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:39.120] 121/0: 
+  Region loss - dice_loss_indiv: 0.36187341809272766
+  Total loss : 0.36187341809272766
+[09:58:39.305] Pred_soft: tensor([6.9368e-06, 7.7011e-06, 7.7769e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:39.307] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:39.863] 122/0: 
+  Region loss - dice_loss_indiv: 0.20778802037239075
+  Total loss : 0.20778802037239075
+[09:58:40.054] Pred_soft: tensor([1.0455e-05, 1.0593e-05, 1.1324e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:40.056] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:40.614] 123/0: 
+  Region loss - dice_loss_indiv: 0.360747754573822
+  Total loss : 0.360747754573822
+[09:58:40.802] Pred_soft: tensor([3.3873e-05, 3.5137e-05, 3.5635e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:40.805] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:41.363] 124/0: 
+  Region loss - dice_loss_indiv: 0.29510703682899475
+  Total loss : 0.29510703682899475
+[09:58:41.551] Pred_soft: tensor([1.6886e-04, 1.7406e-04, 1.7618e-04,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:41.553] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:42.107] 125/0: 
+  Region loss - dice_loss_indiv: 0.7570885419845581
+  Total loss : 0.7570885419845581
+[09:58:42.297] Pred_soft: tensor([1.2611e-04, 1.3247e-04, 1.3895e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:42.300] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:42.855] 126/0: 
+  Region loss - dice_loss_indiv: 0.11544054746627808
+  Total loss : 0.11544054746627808
+[09:58:43.043] Pred_soft: tensor([1.7262e-04, 1.7810e-04, 1.8581e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:43.046] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:43.602] 127/0: 
+  Region loss - dice_loss_indiv: 0.3098635971546173
+  Total loss : 0.3098635971546173
+[09:58:43.788] Pred_soft: tensor([1.7751e-05, 1.7942e-05, 1.8162e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:43.791] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:44.367] 128/0: 
+  Region loss - dice_loss_indiv: 0.333601713180542
+  Total loss : 0.333601713180542
+[09:58:44.563] Pred_soft: tensor([1.3551e-05, 1.4052e-05, 1.5085e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:44.566] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:45.125] 129/0: 
+  Region loss - dice_loss_indiv: 0.4796079993247986
+  Total loss : 0.4796079993247986
+[09:58:45.311] Pred_soft: tensor([3.3246e-04, 3.6504e-04, 3.6758e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:45.313] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:45.868] 130/0: 
+  Region loss - dice_loss_indiv: 0.3448761999607086
+  Total loss : 0.3448761999607086
+[09:58:46.058] Pred_soft: tensor([3.0680e-05, 3.1001e-05, 3.3950e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:46.061] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:46.612] 131/0: 
+  Region loss - dice_loss_indiv: 0.5815669298171997
+  Total loss : 0.5815669298171997
+[09:58:46.798] Pred_soft: tensor([5.9210e-05, 6.9771e-05, 7.2647e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:46.801] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:47.359] 132/0: 
+  Region loss - dice_loss_indiv: 0.49145740270614624
+  Total loss : 0.49145740270614624
+[09:58:47.545] Pred_soft: tensor([1.7810e-04, 1.7941e-04, 1.7977e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:47.548] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:48.102] 133/0: 
+  Region loss - dice_loss_indiv: 0.2596133351325989
+  Total loss : 0.2596133351325989
+[09:58:48.290] Pred_soft: tensor([4.4236e-05, 4.5913e-05, 4.6418e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:48.293] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:48.849] 134/0: 
+  Region loss - dice_loss_indiv: 0.19301939010620117
+  Total loss : 0.19301939010620117
+[09:58:49.037] Pred_soft: tensor([2.6895e-06, 4.0064e-06, 4.7225e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:49.040] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:49.592] 135/0: 
+  Region loss - dice_loss_indiv: 0.14641207456588745
+  Total loss : 0.14641207456588745
+[09:58:49.779] Pred_soft: tensor([4.3888e-05, 4.4402e-05, 4.5365e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:49.782] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:50.340] 136/0: 
+  Region loss - dice_loss_indiv: 0.470315545797348
+  Total loss : 0.470315545797348
+[09:58:50.531] Pred_soft: tensor([4.5623e-05, 4.5690e-05, 4.6537e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:50.534] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:51.085] 137/0: 
+  Region loss - dice_loss_indiv: 0.22782260179519653
+  Total loss : 0.22782260179519653
+[09:58:51.274] Pred_soft: tensor([1.3173e-05, 1.3810e-05, 1.3947e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:51.276] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:51.849] 138/0: 
+  Region loss - dice_loss_indiv: 0.19804053008556366
+  Total loss : 0.19804053008556366
+[09:58:52.052] Pred_soft: tensor([8.4888e-05, 8.6286e-05, 8.6367e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:52.055] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:52.612] 139/0: 
+  Region loss - dice_loss_indiv: 0.27259519696235657
+  Total loss : 0.27259519696235657
+[09:58:52.799] Pred_soft: tensor([6.0205e-05, 6.2744e-05, 6.6619e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:52.802] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:53.354] 140/0: 
+  Region loss - dice_loss_indiv: 0.27983930706977844
+  Total loss : 0.27983930706977844
+[09:58:53.539] Pred_soft: tensor([3.5443e-05, 3.6567e-05, 3.7149e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:53.542] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:54.108] 141/0: 
+  Region loss - dice_loss_indiv: 0.773218035697937
+  Total loss : 0.773218035697937
+[09:58:54.296] Pred_soft: tensor([5.6538e-05, 5.7465e-05, 6.7033e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:54.298] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:54.850] 142/0: 
+  Region loss - dice_loss_indiv: 0.2916560769081116
+  Total loss : 0.2916560769081116
+[09:58:55.036] Pred_soft: tensor([5.0016e-06, 5.5402e-06, 5.7786e-06,  ..., 9.9996e-01, 9.9996e-01,
+        9.9996e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:55.039] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:55.587] 143/0: 
+  Region loss - dice_loss_indiv: 0.2570507824420929
+  Total loss : 0.2570507824420929
+[09:58:55.773] Pred_soft: tensor([5.6824e-05, 5.8494e-05, 6.9173e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:55.775] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:56.326] 144/0: 
+  Region loss - dice_loss_indiv: 0.15660473704338074
+  Total loss : 0.15660473704338074
+[09:58:56.513] Pred_soft: tensor([8.8151e-05, 8.8716e-05, 9.0677e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:56.516] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:57.065] 145/0: 
+  Region loss - dice_loss_indiv: 0.16532012820243835
+  Total loss : 0.16532012820243835
+[09:58:57.253] Pred_soft: tensor([4.0514e-05, 4.1481e-05, 4.2279e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:57.256] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:57.803] 146/0: 
+  Region loss - dice_loss_indiv: 0.39441978931427
+  Total loss : 0.39441978931427
+[09:58:57.991] Pred_soft: tensor([6.9715e-05, 7.2861e-05, 7.4290e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:57.994] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:58.543] 147/0: 
+  Region loss - dice_loss_indiv: 0.13889259099960327
+  Total loss : 0.13889259099960327
+[09:58:58.740] Pred_soft: tensor([2.1805e-05, 2.2438e-05, 2.4893e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:58.743] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:58:59.306] 148/0: 
+  Region loss - dice_loss_indiv: 0.28031715750694275
+  Total loss : 0.28031715750694275
+[09:58:59.496] Pred_soft: tensor([2.2503e-05, 2.3663e-05, 2.4236e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:58:59.499] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:00.064] 149/0: 
+  Region loss - dice_loss_indiv: 0.6826930642127991
+  Total loss : 0.6826930642127991
+[09:59:00.258] Pred_soft: tensor([1.2538e-05, 1.7751e-05, 1.8122e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:00.261] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:00.858] 150/0: 
+  Region loss - dice_loss_indiv: 0.6945486068725586
+  Total loss : 0.6945486068725586
+[09:59:01.043] Pred_soft: tensor([1.2205e-05, 1.3197e-05, 1.3600e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:01.046] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:01.614] 151/0: 
+  Region loss - dice_loss_indiv: 0.17999987304210663
+  Total loss : 0.17999987304210663
+[09:59:01.802] Pred_soft: tensor([4.6055e-06, 4.7913e-06, 5.0617e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:01.805] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:02.366] 152/0: 
+  Region loss - dice_loss_indiv: 0.48065128922462463
+  Total loss : 0.48065128922462463
+[09:59:02.556] Pred_soft: tensor([7.2099e-06, 8.9767e-06, 9.3810e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:02.559] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:03.129] 153/0: 
+  Region loss - dice_loss_indiv: 0.2682769298553467
+  Total loss : 0.2682769298553467
+[09:59:03.324] Pred_soft: tensor([1.5413e-06, 2.0712e-06, 2.1153e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:03.327] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:03.885] 154/0: 
+  Region loss - dice_loss_indiv: 0.16918320953845978
+  Total loss : 0.16918320953845978
+[09:59:04.071] Pred_soft: tensor([2.3999e-06, 2.6726e-06, 3.2137e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:04.073] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:04.644] 155/0: 
+  Region loss - dice_loss_indiv: 0.3005993664264679
+  Total loss : 0.3005993664264679
+[09:59:04.841] Pred_soft: tensor([1.6835e-05, 1.6984e-05, 1.7894e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:04.844] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:05.406] 156/0: 
+  Region loss - dice_loss_indiv: 0.22910010814666748
+  Total loss : 0.22910010814666748
+[09:59:05.595] Pred_soft: tensor([3.6779e-05, 3.6931e-05, 3.7743e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:05.598] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:06.150] 157/0: 
+  Region loss - dice_loss_indiv: 0.08859902620315552
+  Total loss : 0.08859902620315552
+[09:59:06.344] Pred_soft: tensor([5.2061e-08, 9.1768e-08, 9.3451e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:06.347] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:06.927] 158/0: 
+  Region loss - dice_loss_indiv: 0.2224244773387909
+  Total loss : 0.2224244773387909
+[09:59:07.114] Pred_soft: tensor([6.8937e-05, 7.1032e-05, 7.1525e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:07.117] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:07.664] 159/0: 
+  Region loss - dice_loss_indiv: 0.11831849813461304
+  Total loss : 0.11831849813461304
+[09:59:07.851] Pred_soft: tensor([1.1129e-05, 1.1348e-05, 1.2441e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:07.854] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:08.402] 160/0: 
+  Region loss - dice_loss_indiv: 0.24743221700191498
+  Total loss : 0.24743221700191498
+[09:59:08.591] Pred_soft: tensor([4.4968e-06, 4.7176e-06, 4.7696e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:08.594] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:09.143] 161/0: 
+  Region loss - dice_loss_indiv: 0.2361232489347458
+  Total loss : 0.2361232489347458
+[09:59:09.328] Pred_soft: tensor([1.3930e-05, 1.6656e-05, 2.1695e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:09.331] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:09.879] 162/0: 
+  Region loss - dice_loss_indiv: 0.20873917639255524
+  Total loss : 0.20873917639255524
+[09:59:10.068] Pred_soft: tensor([3.1431e-05, 3.3104e-05, 3.4350e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:10.071] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:10.620] 163/0: 
+  Region loss - dice_loss_indiv: 0.2688135802745819
+  Total loss : 0.2688135802745819
+[09:59:10.807] Pred_soft: tensor([6.4546e-06, 6.6500e-06, 7.0032e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:10.810] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:11.360] 164/0: 
+  Region loss - dice_loss_indiv: 0.3442412316799164
+  Total loss : 0.3442412316799164
+[09:59:11.548] Pred_soft: tensor([7.8702e-06, 9.2429e-06, 9.3777e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:11.551] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:12.099] 165/0: 
+  Region loss - dice_loss_indiv: 0.1856735348701477
+  Total loss : 0.1856735348701477
+[09:59:12.285] Pred_soft: tensor([6.9082e-05, 7.0105e-05, 7.0351e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:12.288] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:12.836] 166/0: 
+  Region loss - dice_loss_indiv: 0.2692311108112335
+  Total loss : 0.2692311108112335
+[09:59:13.023] Pred_soft: tensor([2.7645e-05, 2.8282e-05, 3.1072e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:13.025] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:13.577] 167/0: 
+  Region loss - dice_loss_indiv: 0.3600204885005951
+  Total loss : 0.3600204885005951
+[09:59:13.764] Pred_soft: tensor([1.1247e-04, 1.1605e-04, 1.1608e-04,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:13.766] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:14.315] 168/0: 
+  Region loss - dice_loss_indiv: 0.21172992885112762
+  Total loss : 0.21172992885112762
+[09:59:14.502] Pred_soft: tensor([4.7385e-05, 4.8654e-05, 5.3422e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:14.505] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:15.055] 169/0: 
+  Region loss - dice_loss_indiv: 0.22534656524658203
+  Total loss : 0.22534656524658203
+[09:59:15.245] Pred_soft: tensor([1.9206e-05, 2.5238e-05, 2.9008e-05,  ..., 9.9996e-01, 9.9996e-01,
+        9.9996e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:15.247] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:15.796] 170/0: 
+  Region loss - dice_loss_indiv: 0.41396015882492065
+  Total loss : 0.41396015882492065
+[09:59:15.982] Pred_soft: tensor([5.0014e-05, 5.4178e-05, 5.9906e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:15.984] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:16.537] 171/0: 
+  Region loss - dice_loss_indiv: 0.5858713984489441
+  Total loss : 0.5858713984489441
+[09:59:16.723] Pred_soft: tensor([1.9396e-08, 2.5245e-08, 2.5505e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:16.726] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:17.276] 172/0: 
+  Region loss - dice_loss_indiv: 0.3708621859550476
+  Total loss : 0.3708621859550476
+[09:59:17.462] Pred_soft: tensor([2.2594e-05, 2.3237e-05, 2.3695e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:17.465] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:18.016] 173/0: 
+  Region loss - dice_loss_indiv: 0.15883216261863708
+  Total loss : 0.15883216261863708
+[09:59:18.204] Pred_soft: tensor([9.0746e-06, 9.4409e-06, 1.0425e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:18.207] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:18.755] 174/0: 
+  Region loss - dice_loss_indiv: 0.4490441083908081
+  Total loss : 0.4490441083908081
+[09:59:18.941] Pred_soft: tensor([1.0435e-05, 1.0479e-05, 1.0840e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:18.944] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:19.496] 175/0: 
+  Region loss - dice_loss_indiv: 0.48694607615470886
+  Total loss : 0.48694607615470886
+[09:59:19.682] Pred_soft: tensor([4.2851e-07, 7.3460e-07, 7.4552e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:19.685] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:20.234] 176/0: 
+  Region loss - dice_loss_indiv: 0.407859742641449
+  Total loss : 0.407859742641449
+[09:59:20.422] Pred_soft: tensor([1.9986e-06, 2.0203e-06, 2.0491e-06,  ..., 9.9988e-01, 9.9988e-01,
+        9.9989e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:20.425] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:20.975] 177/0: 
+  Region loss - dice_loss_indiv: 0.26664191484451294
+  Total loss : 0.26664191484451294
+[09:59:21.162] Pred_soft: tensor([2.4096e-05, 2.4498e-05, 2.6330e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:21.165] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:21.714] 178/0: 
+  Region loss - dice_loss_indiv: 0.4357551336288452
+  Total loss : 0.4357551336288452
+[09:59:21.904] Pred_soft: tensor([7.2003e-05, 7.7553e-05, 8.2676e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:21.906] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:22.459] 179/0: 
+  Region loss - dice_loss_indiv: 0.4800845980644226
+  Total loss : 0.4800845980644226
+[09:59:22.644] Pred_soft: tensor([5.0383e-05, 5.3477e-05, 5.3480e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:22.647] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:23.198] 180/0: 
+  Region loss - dice_loss_indiv: 0.4093746542930603
+  Total loss : 0.4093746542930603
+[09:59:23.386] Pred_soft: tensor([2.0132e-05, 2.1647e-05, 2.2292e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:23.388] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:23.939] 181/0: 
+  Region loss - dice_loss_indiv: 0.14547684788703918
+  Total loss : 0.14547684788703918
+[09:59:24.126] Pred_soft: tensor([3.2325e-06, 3.2993e-06, 3.4778e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:24.129] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:24.677] 182/0: 
+  Region loss - dice_loss_indiv: 0.42201969027519226
+  Total loss : 0.42201969027519226
+[09:59:24.864] Pred_soft: tensor([4.5059e-11, 4.9745e-11, 5.2294e-11,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:24.866] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:25.418] 183/0: 
+  Region loss - dice_loss_indiv: 0.39381638169288635
+  Total loss : 0.39381638169288635
+[09:59:25.604] Pred_soft: tensor([1.5069e-06, 1.5073e-06, 1.5169e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:25.607] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:26.156] 184/0: 
+  Region loss - dice_loss_indiv: 0.256146639585495
+  Total loss : 0.256146639585495
+[09:59:26.342] Pred_soft: tensor([2.2514e-06, 3.1202e-06, 3.4365e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:26.345] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:26.897] 185/0: 
+  Region loss - dice_loss_indiv: 0.4228401482105255
+  Total loss : 0.4228401482105255
+[09:59:27.082] Pred_soft: tensor([2.2302e-06, 2.3578e-06, 2.4557e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:27.085] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:27.634] 186/0: 
+  Region loss - dice_loss_indiv: 0.508287787437439
+  Total loss : 0.508287787437439
+[09:59:27.820] Pred_soft: tensor([3.5624e-06, 3.6099e-06, 3.8421e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:27.822] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:28.372] 187/0: 
+  Region loss - dice_loss_indiv: 0.34036558866500854
+  Total loss : 0.34036558866500854
+[09:59:28.560] Pred_soft: tensor([9.2145e-06, 9.8247e-06, 1.0024e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:28.563] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:29.111] 188/0: 
+  Region loss - dice_loss_indiv: 0.1963973194360733
+  Total loss : 0.1963973194360733
+[09:59:29.301] Pred_soft: tensor([4.5090e-07, 5.1139e-07, 5.4280e-07,  ..., 9.9999e-01, 9.9999e-01,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:29.304] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:29.851] 189/0: 
+  Region loss - dice_loss_indiv: 0.27100473642349243
+  Total loss : 0.27100473642349243
+[09:59:30.041] Pred_soft: tensor([1.0733e-05, 1.0853e-05, 1.1182e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:30.043] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:30.594] 190/0: 
+  Region loss - dice_loss_indiv: 0.12036274373531342
+  Total loss : 0.12036274373531342
+[09:59:30.781] Pred_soft: tensor([2.7450e-06, 3.1571e-06, 3.5726e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:30.783] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:31.333] 191/0: 
+  Region loss - dice_loss_indiv: 0.4406369626522064
+  Total loss : 0.4406369626522064
+[09:59:31.527] Pred_soft: tensor([5.3846e-08, 5.9924e-08, 6.2025e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:31.530] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:32.110] 192/0: 
+  Region loss - dice_loss_indiv: 0.37822747230529785
+  Total loss : 0.37822747230529785
+[09:59:32.301] Pred_soft: tensor([6.5595e-06, 7.3767e-06, 7.4774e-06,  ..., 9.9996e-01, 9.9996e-01,
+        9.9996e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:32.304] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:32.862] 193/0: 
+  Region loss - dice_loss_indiv: 0.1759406328201294
+  Total loss : 0.1759406328201294
+[09:59:33.055] Pred_soft: tensor([3.6490e-06, 3.8127e-06, 4.5483e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:33.058] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:33.638] 194/0: 
+  Region loss - dice_loss_indiv: 0.4358745813369751
+  Total loss : 0.4358745813369751
+[09:59:33.824] Pred_soft: tensor([5.1320e-06, 5.1551e-06, 5.2552e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:33.827] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:34.395] 195/0: 
+  Region loss - dice_loss_indiv: 0.17193102836608887
+  Total loss : 0.17193102836608887
+[09:59:34.589] Pred_soft: tensor([5.5327e-06, 5.5677e-06, 6.1229e-06,  ..., 9.9995e-01, 9.9995e-01,
+        9.9995e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:34.592] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:35.181] 196/0: 
+  Region loss - dice_loss_indiv: 0.08086404949426651
+  Total loss : 0.08086404949426651
+[09:59:35.384] Pred_soft: tensor([6.3419e-06, 6.7367e-06, 6.8769e-06,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:35.387] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:36.016] 197/0: 
+  Region loss - dice_loss_indiv: 0.3241344690322876
+  Total loss : 0.3241344690322876
+[09:59:36.215] Pred_soft: tensor([1.5955e-07, 1.7717e-07, 1.8679e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:36.217] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:36.811] 198/0: 
+  Region loss - dice_loss_indiv: 0.403500497341156
+  Total loss : 0.403500497341156
+[09:59:37.011] Pred_soft: tensor([7.7448e-07, 7.8387e-07, 7.9877e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:37.014] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:37.591] 199/0: 
+  Region loss - dice_loss_indiv: 0.21390849351882935
+  Total loss : 0.21390849351882935
+[09:59:37.784] Pred_soft: tensor([1.3796e-06, 1.5979e-06, 1.8934e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:37.786] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:38.397] 200/0: 
+  Region loss - dice_loss_indiv: 0.17107152938842773
+  Total loss : 0.17107152938842773
+[09:59:38.600] Pred_soft: tensor([4.2308e-06, 4.5473e-06, 5.0784e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:38.602] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:39.189] 201/0: 
+  Region loss - dice_loss_indiv: 0.16413140296936035
+  Total loss : 0.16413140296936035
+[09:59:39.382] Pred_soft: tensor([5.8707e-06, 6.2835e-06, 6.4825e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:39.385] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:39.971] 202/0: 
+  Region loss - dice_loss_indiv: 0.25987640023231506
+  Total loss : 0.25987640023231506
+[09:59:40.168] Pred_soft: tensor([1.3047e-11, 1.7571e-11, 1.9615e-11,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:40.172] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:40.723] 203/0: 
+  Region loss - dice_loss_indiv: 0.22087803483009338
+  Total loss : 0.22087803483009338
+[09:59:40.910] Pred_soft: tensor([3.5013e-06, 3.6736e-06, 3.7085e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:40.913] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:41.502] 204/0: 
+  Region loss - dice_loss_indiv: 0.1823321431875229
+  Total loss : 0.1823321431875229
+[09:59:41.695] Pred_soft: tensor([4.3248e-07, 4.3466e-07, 4.7965e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:41.698] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:42.270] 205/0: 
+  Region loss - dice_loss_indiv: 0.25853899121284485
+  Total loss : 0.25853899121284485
+[09:59:42.463] Pred_soft: tensor([4.9127e-07, 5.1035e-07, 5.7243e-07,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:42.466] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:43.039] 206/0: 
+  Region loss - dice_loss_indiv: 0.2993229925632477
+  Total loss : 0.2993229925632477
+[09:59:43.233] Pred_soft: tensor([1.6587e-05, 1.6773e-05, 1.6959e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:43.235] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:43.803] 207/0: 
+  Region loss - dice_loss_indiv: 0.31416988372802734
+  Total loss : 0.31416988372802734
+[09:59:43.995] Pred_soft: tensor([7.3966e-06, 7.5943e-06, 8.1741e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:43.998] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:44.564] 208/0: 
+  Region loss - dice_loss_indiv: 0.32068416476249695
+  Total loss : 0.32068416476249695
+[09:59:44.764] Pred_soft: tensor([1.4681e-05, 1.5134e-05, 1.5265e-05,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:44.766] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:45.349] 209/0: 
+  Region loss - dice_loss_indiv: 0.3954172432422638
+  Total loss : 0.3954172432422638
+[09:59:45.542] Pred_soft: tensor([1.9593e-06, 2.9731e-06, 3.0127e-06,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:45.545] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:46.114] 210/0: 
+  Region loss - dice_loss_indiv: 0.41418933868408203
+  Total loss : 0.41418933868408203
+[09:59:46.308] Pred_soft: tensor([5.1783e-06, 5.5049e-06, 5.5079e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:46.311] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:46.881] 211/0: 
+  Region loss - dice_loss_indiv: 0.13445429503917694
+  Total loss : 0.13445429503917694
+[09:59:47.074] Pred_soft: tensor([1.3722e-06, 1.7849e-06, 1.7986e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:47.077] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:47.645] 212/0: 
+  Region loss - dice_loss_indiv: 0.14322656393051147
+  Total loss : 0.14322656393051147
+[09:59:47.844] Pred_soft: tensor([2.6900e-07, 2.8518e-07, 3.2160e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:47.846] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:48.434] 213/0: 
+  Region loss - dice_loss_indiv: 0.36563408374786377
+  Total loss : 0.36563408374786377
+[09:59:48.625] Pred_soft: tensor([2.6983e-09, 3.3782e-09, 4.2109e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:48.628] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:49.198] 214/0: 
+  Region loss - dice_loss_indiv: 0.1733960509300232
+  Total loss : 0.1733960509300232
+[09:59:49.391] Pred_soft: tensor([5.9283e-06, 5.9480e-06, 6.4338e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:49.394] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:49.962] 215/0: 
+  Region loss - dice_loss_indiv: 0.21120315790176392
+  Total loss : 0.21120315790176392
+[09:59:50.157] Pred_soft: tensor([3.5269e-08, 3.8895e-08, 3.9336e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:50.159] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:50.726] 216/0: 
+  Region loss - dice_loss_indiv: 0.1836777627468109
+  Total loss : 0.1836777627468109
+[09:59:50.929] Pred_soft: tensor([9.8147e-07, 9.8603e-07, 9.9339e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:50.932] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:51.514] 217/0: 
+  Region loss - dice_loss_indiv: 0.35932114720344543
+  Total loss : 0.35932114720344543
+[09:59:51.706] Pred_soft: tensor([6.0595e-06, 6.1118e-06, 6.3343e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:51.709] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:52.278] 218/0: 
+  Region loss - dice_loss_indiv: 0.30502891540527344
+  Total loss : 0.30502891540527344
+[09:59:52.471] Pred_soft: tensor([4.0654e-06, 4.3967e-06, 4.4209e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:52.473] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:53.044] 219/0: 
+  Region loss - dice_loss_indiv: 0.4145983159542084
+  Total loss : 0.4145983159542084
+[09:59:53.239] Pred_soft: tensor([1.3252e-05, 1.3376e-05, 1.3379e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:53.242] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:53.806] 220/0: 
+  Region loss - dice_loss_indiv: 0.11333058774471283
+  Total loss : 0.11333058774471283
+[09:59:54.010] Pred_soft: tensor([1.0093e-06, 1.0139e-06, 1.0903e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:54.013] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:54.596] 221/0: 
+  Region loss - dice_loss_indiv: 0.25961095094680786
+  Total loss : 0.25961095094680786
+[09:59:54.788] Pred_soft: tensor([1.2426e-05, 1.2836e-05, 1.2953e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:54.790] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:55.359] 222/0: 
+  Region loss - dice_loss_indiv: 0.11531424522399902
+  Total loss : 0.11531424522399902
+[09:59:55.551] Pred_soft: tensor([4.7710e-06, 5.3914e-06, 5.4480e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:55.553] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:56.125] 223/0: 
+  Region loss - dice_loss_indiv: 0.13554996252059937
+  Total loss : 0.13554996252059937
+[09:59:56.317] Pred_soft: tensor([1.5293e-06, 1.6479e-06, 1.6516e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:56.320] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:56.891] 224/0: 
+  Region loss - dice_loss_indiv: 0.5151971578598022
+  Total loss : 0.5151971578598022
+[09:59:57.089] Pred_soft: tensor([1.4312e-06, 1.5040e-06, 1.5354e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:57.091] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:57.670] 225/0: 
+  Region loss - dice_loss_indiv: 0.15207183361053467
+  Total loss : 0.15207183361053467
+[09:59:57.865] Pred_soft: tensor([5.7051e-06, 6.3662e-06, 6.9806e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:57.868] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:58.438] 226/0: 
+  Region loss - dice_loss_indiv: 0.3236317038536072
+  Total loss : 0.3236317038536072
+[09:59:58.631] Pred_soft: tensor([5.6095e-06, 5.6838e-06, 5.6914e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:58.633] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:59.205] 227/0: 
+  Region loss - dice_loss_indiv: 0.3391101360321045
+  Total loss : 0.3391101360321045
+[09:59:59.397] Pred_soft: tensor([4.6007e-07, 5.7073e-07, 5.8560e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[09:59:59.400] Pred_hard: tensor([0., 1.], device='cuda:0')
+[09:59:59.971] 228/0: 
+  Region loss - dice_loss_indiv: 0.3456147313117981
+  Total loss : 0.3456147313117981
+[10:00:00.170] Pred_soft: tensor([6.9437e-06, 7.0945e-06, 7.1799e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:00.173] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:00.750] 229/0: 
+  Region loss - dice_loss_indiv: 0.14363378286361694
+  Total loss : 0.14363378286361694
+[10:00:00.945] Pred_soft: tensor([2.1284e-06, 2.3455e-06, 2.3967e-06,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:00.947] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:01.517] 230/0: 
+  Region loss - dice_loss_indiv: 0.2928265929222107
+  Total loss : 0.2928265929222107
+[10:00:01.711] Pred_soft: tensor([2.9340e-06, 2.9623e-06, 3.2364e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:01.713] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:02.284] 231/0: 
+  Region loss - dice_loss_indiv: 0.17368972301483154
+  Total loss : 0.17368972301483154
+[10:00:02.477] Pred_soft: tensor([2.9895e-06, 3.1005e-06, 3.1359e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:02.480] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:03.050] 232/0: 
+  Region loss - dice_loss_indiv: 0.6239036321640015
+  Total loss : 0.6239036321640015
+[10:00:03.245] Pred_soft: tensor([1.2855e-06, 1.2980e-06, 1.3219e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:03.248] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:03.816] 233/0: 
+  Region loss - dice_loss_indiv: 0.16722212731838226
+  Total loss : 0.16722212731838226
+[10:00:04.010] Pred_soft: tensor([3.2061e-07, 3.6463e-07, 4.3042e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:04.012] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:04.582] 234/0: 
+  Region loss - dice_loss_indiv: 0.42174845933914185
+  Total loss : 0.42174845933914185
+[10:00:04.780] Pred_soft: tensor([1.8585e-06, 1.9088e-06, 2.0374e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:04.783] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:05.355] 235/0: 
+  Region loss - dice_loss_indiv: 0.11905178427696228
+  Total loss : 0.11905178427696228
+[10:00:05.549] Pred_soft: tensor([4.3218e-06, 4.5666e-06, 4.5966e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:05.552] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:06.125] 236/0: 
+  Region loss - dice_loss_indiv: 0.275444358587265
+  Total loss : 0.275444358587265
+[10:00:06.322] Pred_soft: tensor([1.4738e-09, 1.8096e-09, 1.9081e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:06.325] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:06.903] 237/0: 
+  Region loss - dice_loss_indiv: 0.44870778918266296
+  Total loss : 0.44870778918266296
+[10:00:07.095] Pred_soft: tensor([8.9042e-07, 1.0347e-06, 1.1000e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:07.098] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:07.665] 238/0: 
+  Region loss - dice_loss_indiv: 0.38979390263557434
+  Total loss : 0.38979390263557434
+[10:00:07.859] Pred_soft: tensor([3.8448e-06, 4.4005e-06, 4.4619e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:07.862] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:08.432] 239/0: 
+  Region loss - dice_loss_indiv: 0.48139846324920654
+  Total loss : 0.48139846324920654
+[10:00:08.625] Pred_soft: tensor([6.5979e-08, 1.0264e-07, 1.0376e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:08.628] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:09.205] 240/0: 
+  Region loss - dice_loss_indiv: 0.5227339267730713
+  Total loss : 0.5227339267730713
+[10:00:09.405] Pred_soft: tensor([1.9606e-05, 2.2338e-05, 2.3632e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:09.408] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:09.982] 241/0: 
+  Region loss - dice_loss_indiv: 0.13689512014389038
+  Total loss : 0.13689512014389038
+[10:00:10.177] Pred_soft: tensor([1.0363e-05, 1.1932e-05, 1.4232e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:10.180] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:10.747] 242/0: 
+  Region loss - dice_loss_indiv: 0.12008495628833771
+  Total loss : 0.12008495628833771
+[10:00:10.941] Pred_soft: tensor([7.9688e-07, 8.2983e-07, 8.4933e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:10.944] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:11.514] 243/0: 
+  Region loss - dice_loss_indiv: 0.20837663114070892
+  Total loss : 0.20837663114070892
+[10:00:11.707] Pred_soft: tensor([5.1866e-07, 5.9898e-07, 6.9145e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:11.710] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:12.288] 244/0: 
+  Region loss - dice_loss_indiv: 0.08372828364372253
+  Total loss : 0.08372828364372253
+[10:00:12.485] Pred_soft: tensor([7.1294e-07, 7.7851e-07, 7.9983e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:12.488] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:13.091] 245/0: 
+  Region loss - dice_loss_indiv: 0.378011554479599
+  Total loss : 0.378011554479599
+[10:00:13.299] Pred_soft: tensor([3.0431e-10, 3.5408e-10, 3.6615e-10,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:13.303] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:13.867] 246/0: 
+  Region loss - dice_loss_indiv: 0.3656359910964966
+  Total loss : 0.3656359910964966
+[10:00:14.054] Pred_soft: tensor([6.9112e-07, 7.7989e-07, 8.2643e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:14.057] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:14.606] 247/0: 
+  Region loss - dice_loss_indiv: 0.10603064298629761
+  Total loss : 0.10603064298629761
+[10:00:14.793] Pred_soft: tensor([2.0982e-08, 3.1290e-08, 3.6542e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:14.796] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:15.346] 248/0: 
+  Region loss - dice_loss_indiv: 0.26364240050315857
+  Total loss : 0.26364240050315857
+[10:00:15.531] Pred_soft: tensor([3.5759e-07, 4.3604e-07, 6.0620e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:15.534] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:16.096] 249/0: 
+  Region loss - dice_loss_indiv: 0.1690596491098404
+  Total loss : 0.1690596491098404
+[10:00:16.309] Pred_soft: tensor([4.5398e-06, 4.8677e-06, 4.9036e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:16.311] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:16.928] 250/0: 
+  Region loss - dice_loss_indiv: 0.40023475885391235
+  Total loss : 0.40023475885391235
+[10:00:17.119] Pred_soft: tensor([1.2920e-05, 1.4383e-05, 1.4397e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:17.121] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:17.710] 251/0: 
+  Region loss - dice_loss_indiv: 0.4304238259792328
+  Total loss : 0.4304238259792328
+[10:00:17.906] Pred_soft: tensor([1.9205e-05, 1.9828e-05, 1.9836e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:17.909] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:18.471] 252/0: 
+  Region loss - dice_loss_indiv: 0.31894975900650024
+  Total loss : 0.31894975900650024
+[10:00:18.664] Pred_soft: tensor([3.6616e-05, 4.0668e-05, 4.1255e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:18.667] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:19.266] 253/0: 
+  Region loss - dice_loss_indiv: 0.5264343023300171
+  Total loss : 0.5264343023300171
+[10:00:19.452] Pred_soft: tensor([3.2420e-05, 3.2840e-05, 3.3745e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:19.454] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:20.011] 254/0: 
+  Region loss - dice_loss_indiv: 0.11724558472633362
+  Total loss : 0.11724558472633362
+[10:00:20.201] Pred_soft: tensor([2.3209e-13, 2.4885e-13, 3.8556e-13,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:20.203] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:20.767] 255/0: 
+  Region loss - dice_loss_indiv: 0.1699288934469223
+  Total loss : 0.1699288934469223
+[10:00:20.972] Pred_soft: tensor([2.6110e-05, 3.1375e-05, 3.2087e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:20.975] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:21.527] 256/0: 
+  Region loss - dice_loss_indiv: 0.3080381751060486
+  Total loss : 0.3080381751060486
+[10:00:21.714] Pred_soft: tensor([3.6278e-05, 3.7134e-05, 3.7551e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:21.716] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:22.266] 257/0: 
+  Region loss - dice_loss_indiv: 0.1780572086572647
+  Total loss : 0.1780572086572647
+[10:00:22.452] Pred_soft: tensor([4.2964e-07, 5.0670e-07, 5.4591e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:22.455] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:23.037] 258/0: 
+  Region loss - dice_loss_indiv: 0.3909144401550293
+  Total loss : 0.3909144401550293
+[10:00:23.225] Pred_soft: tensor([1.1234e-06, 2.0453e-06, 2.3858e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:23.227] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:23.783] 259/0: 
+  Region loss - dice_loss_indiv: 0.2914326786994934
+  Total loss : 0.2914326786994934
+[10:00:23.981] Pred_soft: tensor([9.1594e-07, 9.5736e-07, 9.7424e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:23.983] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:24.542] 260/0: 
+  Region loss - dice_loss_indiv: 0.30646634101867676
+  Total loss : 0.30646634101867676
+[10:00:24.728] Pred_soft: tensor([6.8924e-06, 9.2000e-06, 1.0384e-05,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:24.731] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:25.281] 261/0: 
+  Region loss - dice_loss_indiv: 0.4190383553504944
+  Total loss : 0.4190383553504944
+[10:00:25.467] Pred_soft: tensor([2.6085e-06, 2.7104e-06, 2.9945e-06,  ..., 9.9990e-01, 9.9990e-01,
+        9.9991e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:25.470] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:26.029] 262/0: 
+  Region loss - dice_loss_indiv: 0.12159651517868042
+  Total loss : 0.12159651517868042
+[10:00:26.223] Pred_soft: tensor([1.0948e-05, 1.1425e-05, 1.1889e-05,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:26.225] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:26.779] 263/0: 
+  Region loss - dice_loss_indiv: 0.1375897228717804
+  Total loss : 0.1375897228717804
+[10:00:26.969] Pred_soft: tensor([2.0667e-06, 2.1250e-06, 2.1524e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:26.972] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:27.555] 264/0: 
+  Region loss - dice_loss_indiv: 0.27861887216567993
+  Total loss : 0.27861887216567993
+[10:00:27.780] Pred_soft: tensor([1.1540e-06, 1.3126e-06, 1.3378e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:27.784] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:28.365] 265/0: 
+  Region loss - dice_loss_indiv: 0.25690823793411255
+  Total loss : 0.25690823793411255
+[10:00:28.564] Pred_soft: tensor([1.0417e-06, 1.2134e-06, 1.4579e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:28.567] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:29.137] 266/0: 
+  Region loss - dice_loss_indiv: 0.13120827078819275
+  Total loss : 0.13120827078819275
+[10:00:29.329] Pred_soft: tensor([4.2986e-13, 4.6543e-13, 4.9179e-13,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:29.332] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:29.889] 267/0: 
+  Region loss - dice_loss_indiv: 0.2077532857656479
+  Total loss : 0.2077532857656479
+[10:00:30.086] Pred_soft: tensor([3.8431e-09, 4.5641e-09, 4.8857e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:30.089] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:30.683] 268/0: 
+  Region loss - dice_loss_indiv: 0.25927239656448364
+  Total loss : 0.25927239656448364
+[10:00:30.876] Pred_soft: tensor([3.9631e-07, 4.3907e-07, 5.1218e-07,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:30.879] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:31.442] 269/0: 
+  Region loss - dice_loss_indiv: 0.09821449220180511
+  Total loss : 0.09821449220180511
+[10:00:31.628] Pred_soft: tensor([2.0547e-07, 2.1621e-07, 2.6681e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:31.631] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:32.181] 270/0: 
+  Region loss - dice_loss_indiv: 0.3671802878379822
+  Total loss : 0.3671802878379822
+[10:00:32.367] Pred_soft: tensor([5.1066e-07, 5.2330e-07, 5.5110e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:32.370] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:32.920] 271/0: 
+  Region loss - dice_loss_indiv: 0.09967940300703049
+  Total loss : 0.09967940300703049
+[10:00:33.105] Pred_soft: tensor([2.2528e-07, 2.4926e-07, 2.5026e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:33.108] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:33.655] 272/0: 
+  Region loss - dice_loss_indiv: 0.2526666522026062
+  Total loss : 0.2526666522026062
+[10:00:33.846] Pred_soft: tensor([5.4338e-06, 5.6974e-06, 6.1081e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:33.848] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:34.396] 273/0: 
+  Region loss - dice_loss_indiv: 0.18395967781543732
+  Total loss : 0.18395967781543732
+[10:00:34.583] Pred_soft: tensor([8.2289e-08, 1.2574e-07, 1.4931e-07,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:34.585] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:35.134] 274/0: 
+  Region loss - dice_loss_indiv: 0.4215849041938782
+  Total loss : 0.4215849041938782
+[10:00:35.322] Pred_soft: tensor([1.4220e-06, 1.5018e-06, 1.5312e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:35.324] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:35.876] 275/0: 
+  Region loss - dice_loss_indiv: 0.3252413868904114
+  Total loss : 0.3252413868904114
+[10:00:36.070] Pred_soft: tensor([1.2684e-06, 1.2686e-06, 1.3551e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:36.073] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:36.675] 276/0: 
+  Region loss - dice_loss_indiv: 0.48120731115341187
+  Total loss : 0.48120731115341187
+[10:00:36.872] Pred_soft: tensor([1.2725e-06, 1.4211e-06, 1.4530e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:36.876] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:37.443] 277/0: 
+  Region loss - dice_loss_indiv: 0.1754465401172638
+  Total loss : 0.1754465401172638
+[10:00:37.629] Pred_soft: tensor([1.2576e-06, 1.2686e-06, 1.3725e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:37.631] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:38.184] 278/0: 
+  Region loss - dice_loss_indiv: 0.6951953172683716
+  Total loss : 0.6951953172683716
+[10:00:38.368] Pred_soft: tensor([8.1591e-07, 8.9622e-07, 8.9863e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:38.371] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:38.922] 279/0: 
+  Region loss - dice_loss_indiv: 0.42032718658447266
+  Total loss : 0.42032718658447266
+[10:00:39.107] Pred_soft: tensor([1.1751e-06, 1.2391e-06, 1.2738e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:39.110] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:39.657] 280/0: 
+  Region loss - dice_loss_indiv: 0.4380398690700531
+  Total loss : 0.4380398690700531
+[10:00:39.846] Pred_soft: tensor([4.7524e-07, 5.0387e-07, 5.2899e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:39.849] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:40.402] 281/0: 
+  Region loss - dice_loss_indiv: 0.31385213136672974
+  Total loss : 0.31385213136672974
+[10:00:40.588] Pred_soft: tensor([5.4552e-06, 5.7291e-06, 5.9869e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:40.591] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:41.143] 282/0: 
+  Region loss - dice_loss_indiv: 0.09928083419799805
+  Total loss : 0.09928083419799805
+[10:00:41.329] Pred_soft: tensor([2.7643e-06, 2.7724e-06, 2.7836e-06,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:41.331] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:41.881] 283/0: 
+  Region loss - dice_loss_indiv: 0.25354236364364624
+  Total loss : 0.25354236364364624
+[10:00:42.069] Pred_soft: tensor([4.0929e-08, 4.1184e-08, 4.2478e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:42.071] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:42.618] 284/0: 
+  Region loss - dice_loss_indiv: 0.1519777774810791
+  Total loss : 0.1519777774810791
+[10:00:42.804] Pred_soft: tensor([3.1795e-06, 3.1953e-06, 3.5245e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:42.807] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:43.357] 285/0: 
+  Region loss - dice_loss_indiv: 0.14759279787540436
+  Total loss : 0.14759279787540436
+[10:00:43.544] Pred_soft: tensor([6.2853e-09, 6.4405e-09, 7.9782e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:43.547] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:44.096] 286/0: 
+  Region loss - dice_loss_indiv: 0.43488961458206177
+  Total loss : 0.43488961458206177
+[10:00:44.283] Pred_soft: tensor([1.1480e-07, 1.1720e-07, 1.1947e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:44.286] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:44.833] 287/0: 
+  Region loss - dice_loss_indiv: 0.6641454696655273
+  Total loss : 0.6641454696655273
+[10:00:45.020] Pred_soft: tensor([1.3274e-06, 1.5776e-06, 1.9384e-06,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:45.023] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:45.571] 288/0: 
+  Region loss - dice_loss_indiv: 0.19455543160438538
+  Total loss : 0.19455543160438538
+[10:00:45.757] Pred_soft: tensor([4.9280e-07, 5.0397e-07, 5.1871e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:45.759] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:46.313] 289/0: 
+  Region loss - dice_loss_indiv: 0.5349235534667969
+  Total loss : 0.5349235534667969
+[10:00:46.499] Pred_soft: tensor([5.0206e-06, 5.5244e-06, 5.8184e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:46.501] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:47.050] 290/0: 
+  Region loss - dice_loss_indiv: 0.1428312212228775
+  Total loss : 0.1428312212228775
+[10:00:47.239] Pred_soft: tensor([5.4288e-07, 5.6368e-07, 6.0230e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:47.242] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:47.788] 291/0: 
+  Region loss - dice_loss_indiv: 0.417308509349823
+  Total loss : 0.417308509349823
+[10:00:47.980] Pred_soft: tensor([2.5206e-07, 2.8295e-07, 3.0815e-07,  ..., 9.9996e-01, 9.9997e-01,
+        9.9997e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:47.982] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:48.531] 292/0: 
+  Region loss - dice_loss_indiv: 0.324548602104187
+  Total loss : 0.324548602104187
+[10:00:48.717] Pred_soft: tensor([5.4669e-07, 5.9845e-07, 6.4094e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:48.720] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:49.273] 293/0: 
+  Region loss - dice_loss_indiv: 0.21704284846782684
+  Total loss : 0.21704284846782684
+[10:00:49.460] Pred_soft: tensor([7.1288e-07, 7.5646e-07, 7.9274e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:49.463] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:50.014] 294/0: 
+  Region loss - dice_loss_indiv: 0.24352723360061646
+  Total loss : 0.24352723360061646
+[10:00:50.203] Pred_soft: tensor([7.2659e-06, 7.3944e-06, 7.7422e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:50.205] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:50.752] 295/0: 
+  Region loss - dice_loss_indiv: 0.07656832039356232
+  Total loss : 0.07656832039356232
+[10:00:50.940] Pred_soft: tensor([2.3158e-06, 2.3968e-06, 2.4170e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:50.943] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:51.491] 296/0: 
+  Region loss - dice_loss_indiv: 0.15000221133232117
+  Total loss : 0.15000221133232117
+[10:00:51.677] Pred_soft: tensor([1.1117e-05, 1.2069e-05, 1.2421e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:51.679] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:52.231] 297/0: 
+  Region loss - dice_loss_indiv: 0.41649240255355835
+  Total loss : 0.41649240255355835
+[10:00:52.417] Pred_soft: tensor([1.0646e-05, 1.1497e-05, 1.1649e-05,  ..., 9.9999e-01, 9.9999e-01,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:52.419] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:52.969] 298/0: 
+  Region loss - dice_loss_indiv: 0.14079493284225464
+  Total loss : 0.14079493284225464
+[10:00:53.156] Pred_soft: tensor([1.8719e-06, 2.1857e-06, 2.1934e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:53.159] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:53.720] 299/0: 
+  Region loss - dice_loss_indiv: 0.36650723218917847
+  Total loss : 0.36650723218917847
+[10:00:53.914] Pred_soft: tensor([1.0501e-05, 1.1105e-05, 1.2029e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:53.917] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:54.510] 300/0: 
+  Region loss - dice_loss_indiv: 0.46400129795074463
+  Total loss : 0.46400129795074463
+[10:00:54.701] Pred_soft: tensor([4.5093e-07, 4.7644e-07, 5.8010e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:54.704] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:55.274] 301/0: 
+  Region loss - dice_loss_indiv: 0.5493680238723755
+  Total loss : 0.5493680238723755
+[10:00:55.465] Pred_soft: tensor([6.6979e-06, 7.3181e-06, 7.3576e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:55.468] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:56.051] 302/0: 
+  Region loss - dice_loss_indiv: 0.28128737211227417
+  Total loss : 0.28128737211227417
+[10:00:56.253] Pred_soft: tensor([6.9242e-07, 7.7527e-07, 8.0040e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:56.257] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:56.873] 303/0: 
+  Region loss - dice_loss_indiv: 0.27207186818122864
+  Total loss : 0.27207186818122864
+[10:00:57.077] Pred_soft: tensor([1.0849e-07, 1.2599e-07, 1.4844e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:57.079] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:57.628] 304/0: 
+  Region loss - dice_loss_indiv: 0.252902626991272
+  Total loss : 0.252902626991272
+[10:00:57.833] Pred_soft: tensor([1.7870e-06, 1.9574e-06, 2.0176e-06,  ..., 9.9998e-01, 9.9998e-01,
+        9.9998e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:57.837] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:58.410] 305/0: 
+  Region loss - dice_loss_indiv: 0.14308710396289825
+  Total loss : 0.14308710396289825
+[10:00:58.596] Pred_soft: tensor([9.4738e-07, 9.6123e-07, 1.0014e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:58.598] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:59.152] 306/0: 
+  Region loss - dice_loss_indiv: 0.09105821698904037
+  Total loss : 0.09105821698904037
+[10:00:59.355] Pred_soft: tensor([1.7876e-06, 1.9112e-06, 1.9162e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:00:59.358] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:00:59.921] 307/0: 
+  Region loss - dice_loss_indiv: 0.502689778804779
+  Total loss : 0.502689778804779
+[10:01:00.108] Pred_soft: tensor([1.7545e-06, 2.0104e-06, 2.3877e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:00.110] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:00.664] 308/0: 
+  Region loss - dice_loss_indiv: 0.14190815389156342
+  Total loss : 0.14190815389156342
+[10:01:00.853] Pred_soft: tensor([1.1630e-06, 1.6154e-06, 1.7453e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:00.856] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:01.404] 309/0: 
+  Region loss - dice_loss_indiv: 0.27490365505218506
+  Total loss : 0.27490365505218506
+[10:01:01.591] Pred_soft: tensor([1.1572e-06, 1.1982e-06, 1.2503e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:01.593] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:02.146] 310/0: 
+  Region loss - dice_loss_indiv: 0.49460598826408386
+  Total loss : 0.49460598826408386
+[10:01:02.332] Pred_soft: tensor([1.0302e-06, 1.1121e-06, 1.3618e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:02.334] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:02.898] 311/0: 
+  Region loss - dice_loss_indiv: 0.2194061279296875
+  Total loss : 0.2194061279296875
+[10:01:03.102] Pred_soft: tensor([4.2753e-06, 4.3220e-06, 4.6736e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:03.105] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:03.653] 312/0: 
+  Region loss - dice_loss_indiv: 0.17338761687278748
+  Total loss : 0.17338761687278748
+[10:01:03.841] Pred_soft: tensor([8.1712e-07, 9.9433e-07, 1.0058e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:03.843] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:04.391] 313/0: 
+  Region loss - dice_loss_indiv: 0.6242079734802246
+  Total loss : 0.6242079734802246
+[10:01:04.577] Pred_soft: tensor([7.0363e-07, 1.6783e-06, 1.6790e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:04.580] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:05.133] 314/0: 
+  Region loss - dice_loss_indiv: 0.14499446749687195
+  Total loss : 0.14499446749687195
+[10:01:05.319] Pred_soft: tensor([3.5344e-06, 3.8869e-06, 4.1907e-06,  ..., 9.9990e-01, 9.9990e-01,
+        9.9991e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:05.321] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:05.873] 315/0: 
+  Region loss - dice_loss_indiv: 0.36000561714172363
+  Total loss : 0.36000561714172363
+[10:01:06.059] Pred_soft: tensor([3.0924e-06, 3.4674e-06, 3.6588e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:06.062] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:06.611] 316/0: 
+  Region loss - dice_loss_indiv: 0.23443415760993958
+  Total loss : 0.23443415760993958
+[10:01:06.797] Pred_soft: tensor([9.2924e-07, 1.1675e-06, 1.2091e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:06.799] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:07.348] 317/0: 
+  Region loss - dice_loss_indiv: 0.12408098578453064
+  Total loss : 0.12408098578453064
+[10:01:07.533] Pred_soft: tensor([1.8911e-09, 1.9144e-09, 2.3716e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:07.536] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:08.085] 318/0: 
+  Region loss - dice_loss_indiv: 0.08677726984024048
+  Total loss : 0.08677726984024048
+[10:01:08.272] Pred_soft: tensor([2.7536e-07, 3.2326e-07, 3.6704e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:08.275] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:08.822] 319/0: 
+  Region loss - dice_loss_indiv: 0.17288628220558167
+  Total loss : 0.17288628220558167
+[10:01:09.008] Pred_soft: tensor([2.2449e-06, 2.8752e-06, 3.2681e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:09.010] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:09.570] 320/0: 
+  Region loss - dice_loss_indiv: 0.3016180694103241
+  Total loss : 0.3016180694103241
+[10:01:09.784] Pred_soft: tensor([3.7077e-06, 3.7511e-06, 4.3928e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:09.788] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:10.349] 321/0: 
+  Region loss - dice_loss_indiv: 0.29501959681510925
+  Total loss : 0.29501959681510925
+[10:01:10.535] Pred_soft: tensor([2.8762e-05, 3.0841e-05, 3.5450e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:10.537] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:11.086] 322/0: 
+  Region loss - dice_loss_indiv: 0.08768448978662491
+  Total loss : 0.08768448978662491
+[10:01:11.277] Pred_soft: tensor([1.1761e-06, 1.2689e-06, 1.2929e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:11.280] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:11.828] 323/0: 
+  Region loss - dice_loss_indiv: 0.4135762155056
+  Total loss : 0.4135762155056
+[10:01:12.020] Pred_soft: tensor([8.4555e-06, 1.1216e-05, 1.5022e-05,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:12.023] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:12.605] 324/0: 
+  Region loss - dice_loss_indiv: 0.1468634307384491
+  Total loss : 0.1468634307384491
+[10:01:12.810] Pred_soft: tensor([4.4523e-06, 4.8590e-06, 5.1076e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:12.813] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:13.372] 325/0: 
+  Region loss - dice_loss_indiv: 0.19589027762413025
+  Total loss : 0.19589027762413025
+[10:01:13.558] Pred_soft: tensor([2.5409e-06, 2.7161e-06, 2.8027e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:13.560] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:14.110] 326/0: 
+  Region loss - dice_loss_indiv: 0.11505773663520813
+  Total loss : 0.11505773663520813
+[10:01:14.303] Pred_soft: tensor([1.1964e-10, 1.2810e-10, 1.9961e-10,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:14.306] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:14.885] 327/0: 
+  Region loss - dice_loss_indiv: 0.36291611194610596
+  Total loss : 0.36291611194610596
+[10:01:15.074] Pred_soft: tensor([4.7208e-07, 4.7627e-07, 5.1584e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:15.077] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:15.641] 328/0: 
+  Region loss - dice_loss_indiv: 0.310488760471344
+  Total loss : 0.310488760471344
+[10:01:15.832] Pred_soft: tensor([2.5100e-06, 3.4781e-06, 3.5520e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:15.834] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:16.382] 329/0: 
+  Region loss - dice_loss_indiv: 0.10622042417526245
+  Total loss : 0.10622042417526245
+[10:01:16.569] Pred_soft: tensor([7.9740e-08, 9.5104e-08, 9.8387e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:16.572] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:17.122] 330/0: 
+  Region loss - dice_loss_indiv: 0.13836663961410522
+  Total loss : 0.13836663961410522
+[10:01:17.311] Pred_soft: tensor([4.1037e-06, 4.2999e-06, 4.5716e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:17.313] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:17.863] 331/0: 
+  Region loss - dice_loss_indiv: 0.14808538556098938
+  Total loss : 0.14808538556098938
+[10:01:18.049] Pred_soft: tensor([4.6211e-06, 5.3682e-06, 5.7265e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:18.051] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:18.603] 332/0: 
+  Region loss - dice_loss_indiv: 0.15553075075149536
+  Total loss : 0.15553075075149536
+[10:01:18.790] Pred_soft: tensor([8.8541e-07, 9.4207e-07, 9.6111e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:18.793] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:19.342] 333/0: 
+  Region loss - dice_loss_indiv: 0.11827435344457626
+  Total loss : 0.11827435344457626
+[10:01:19.530] Pred_soft: tensor([9.8052e-06, 1.0511e-05, 1.0531e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:19.533] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:20.083] 334/0: 
+  Region loss - dice_loss_indiv: 0.17035087943077087
+  Total loss : 0.17035087943077087
+[10:01:20.270] Pred_soft: tensor([6.7984e-06, 7.2031e-06, 7.2186e-06,  ..., 9.9993e-01, 9.9993e-01,
+        9.9994e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:20.273] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:20.825] 335/0: 
+  Region loss - dice_loss_indiv: 0.15580332279205322
+  Total loss : 0.15580332279205322
+[10:01:21.011] Pred_soft: tensor([5.9395e-06, 8.9692e-06, 9.7178e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:21.014] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:21.562] 336/0: 
+  Region loss - dice_loss_indiv: 0.4598676860332489
+  Total loss : 0.4598676860332489
+[10:01:21.749] Pred_soft: tensor([1.4653e-05, 1.7598e-05, 1.8203e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:21.752] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:22.304] 337/0: 
+  Region loss - dice_loss_indiv: 0.11985300481319427
+  Total loss : 0.11985300481319427
+[10:01:22.494] Pred_soft: tensor([1.4470e-05, 1.9152e-05, 2.3832e-05,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:22.497] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:23.049] 338/0: 
+  Region loss - dice_loss_indiv: 0.25478750467300415
+  Total loss : 0.25478750467300415
+[10:01:23.239] Pred_soft: tensor([1.2484e-07, 1.7457e-07, 1.7777e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:23.242] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:23.789] 339/0: 
+  Region loss - dice_loss_indiv: 0.3620421290397644
+  Total loss : 0.3620421290397644
+[10:01:23.979] Pred_soft: tensor([1.6735e-06, 1.7783e-06, 1.8323e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:23.981] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:24.531] 340/0: 
+  Region loss - dice_loss_indiv: 0.22319647669792175
+  Total loss : 0.22319647669792175
+[10:01:24.718] Pred_soft: tensor([4.3865e-06, 4.5230e-06, 4.6310e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:24.721] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:25.271] 341/0: 
+  Region loss - dice_loss_indiv: 0.10031738877296448
+  Total loss : 0.10031738877296448
+[10:01:25.457] Pred_soft: tensor([8.1639e-07, 9.5874e-07, 1.3695e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:25.460] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:26.008] 342/0: 
+  Region loss - dice_loss_indiv: 0.37747547030448914
+  Total loss : 0.37747547030448914
+[10:01:26.194] Pred_soft: tensor([8.5622e-06, 8.8224e-06, 8.8642e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:26.197] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:26.744] 343/0: 
+  Region loss - dice_loss_indiv: 0.1460224837064743
+  Total loss : 0.1460224837064743
+[10:01:26.932] Pred_soft: tensor([2.4346e-07, 2.4854e-07, 2.5178e-07,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:26.934] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:27.481] 344/0: 
+  Region loss - dice_loss_indiv: 0.1827993243932724
+  Total loss : 0.1827993243932724
+[10:01:27.667] Pred_soft: tensor([1.6624e-06, 2.0543e-06, 2.7551e-06,  ..., 9.9993e-01, 9.9993e-01,
+        9.9994e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:27.670] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:28.222] 345/0: 
+  Region loss - dice_loss_indiv: 0.2899414300918579
+  Total loss : 0.2899414300918579
+[10:01:28.409] Pred_soft: tensor([6.0408e-07, 6.4664e-07, 7.0514e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:28.412] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:28.962] 346/0: 
+  Region loss - dice_loss_indiv: 0.5562258958816528
+  Total loss : 0.5562258958816528
+[10:01:29.149] Pred_soft: tensor([2.7335e-10, 3.8112e-10, 4.1093e-10,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:29.152] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:29.698] 347/0: 
+  Region loss - dice_loss_indiv: 0.4194929599761963
+  Total loss : 0.4194929599761963
+[10:01:29.888] Pred_soft: tensor([9.1884e-07, 9.3717e-07, 9.5694e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:29.890] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:30.437] 348/0: 
+  Region loss - dice_loss_indiv: 0.19827520847320557
+  Total loss : 0.19827520847320557
+[10:01:30.624] Pred_soft: tensor([3.0111e-06, 3.0820e-06, 3.1081e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:30.627] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:31.178] 349/0: 
+  Region loss - dice_loss_indiv: 0.2975779175758362
+  Total loss : 0.2975779175758362
+[10:01:31.365] Pred_soft: tensor([1.2477e-06, 1.3036e-06, 1.3163e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:31.368] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:31.957] 350/0: 
+  Region loss - dice_loss_indiv: 0.28926974534988403
+  Total loss : 0.28926974534988403
+[10:01:32.145] Pred_soft: tensor([2.7207e-06, 2.9151e-06, 3.3643e-06,  ..., 9.9932e-01, 9.9938e-01,
+        9.9947e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:32.148] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:32.696] 351/0: 
+  Region loss - dice_loss_indiv: 0.4026508927345276
+  Total loss : 0.4026508927345276
+[10:01:32.886] Pred_soft: tensor([5.0284e-09, 5.2486e-09, 5.3087e-09,  ..., 9.9999e-01, 9.9999e-01,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:32.888] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:33.435] 352/0: 
+  Region loss - dice_loss_indiv: 0.2400679886341095
+  Total loss : 0.2400679886341095
+[10:01:33.622] Pred_soft: tensor([9.5514e-07, 1.0695e-06, 1.1015e-06,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:33.625] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:34.175] 353/0: 
+  Region loss - dice_loss_indiv: 0.3477899134159088
+  Total loss : 0.3477899134159088
+[10:01:34.367] Pred_soft: tensor([1.0895e-08, 1.6718e-08, 2.0970e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:34.370] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:34.921] 354/0: 
+  Region loss - dice_loss_indiv: 0.2858886122703552
+  Total loss : 0.2858886122703552
+[10:01:35.107] Pred_soft: tensor([4.8607e-09, 5.1449e-09, 5.4690e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:35.109] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:35.657] 355/0: 
+  Region loss - dice_loss_indiv: 0.3789965808391571
+  Total loss : 0.3789965808391571
+[10:01:35.849] Pred_soft: tensor([1.1089e-07, 1.1187e-07, 1.1298e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:35.852] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:36.400] 356/0: 
+  Region loss - dice_loss_indiv: 0.1159975677728653
+  Total loss : 0.1159975677728653
+[10:01:36.586] Pred_soft: tensor([2.7981e-08, 3.3271e-08, 5.7916e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:36.588] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:37.139] 357/0: 
+  Region loss - dice_loss_indiv: 0.16415901482105255
+  Total loss : 0.16415901482105255
+[10:01:37.325] Pred_soft: tensor([8.3618e-09, 9.2363e-09, 1.0267e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:37.327] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:37.877] 358/0: 
+  Region loss - dice_loss_indiv: 0.205693781375885
+  Total loss : 0.205693781375885
+[10:01:38.064] Pred_soft: tensor([1.0292e-09, 1.0434e-09, 1.0864e-09,  ..., 9.9997e-01, 9.9998e-01,
+        9.9998e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:38.067] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:38.614] 359/0: 
+  Region loss - dice_loss_indiv: 0.5443578958511353
+  Total loss : 0.5443578958511353
+[10:01:38.802] Pred_soft: tensor([5.6719e-08, 6.2248e-08, 7.7852e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:38.804] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:39.355] 360/0: 
+  Region loss - dice_loss_indiv: 0.3726347088813782
+  Total loss : 0.3726347088813782
+[10:01:39.542] Pred_soft: tensor([3.0593e-07, 3.2106e-07, 3.7214e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:39.545] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:40.094] 361/0: 
+  Region loss - dice_loss_indiv: 0.4587670564651489
+  Total loss : 0.4587670564651489
+[10:01:40.282] Pred_soft: tensor([1.0088e-08, 1.0801e-08, 1.1260e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:40.285] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:40.835] 362/0: 
+  Region loss - dice_loss_indiv: 0.18151921033859253
+  Total loss : 0.18151921033859253
+[10:01:41.021] Pred_soft: tensor([2.8581e-08, 2.9631e-08, 3.0066e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:41.024] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:41.572] 363/0: 
+  Region loss - dice_loss_indiv: 0.16727137565612793
+  Total loss : 0.16727137565612793
+[10:01:41.758] Pred_soft: tensor([6.9146e-08, 7.1487e-08, 7.1749e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:41.760] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:42.313] 364/0: 
+  Region loss - dice_loss_indiv: 0.3741447925567627
+  Total loss : 0.3741447925567627
+[10:01:42.513] Pred_soft: tensor([2.4923e-07, 2.8585e-07, 2.9617e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:42.515] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:43.068] 365/0: 
+  Region loss - dice_loss_indiv: 0.2061527967453003
+  Total loss : 0.2061527967453003
+[10:01:43.264] Pred_soft: tensor([3.9769e-08, 4.9349e-08, 5.1007e-08,  ..., 9.9988e-01, 9.9989e-01,
+        9.9989e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:43.267] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:43.815] 366/0: 
+  Region loss - dice_loss_indiv: 0.14017613232135773
+  Total loss : 0.14017613232135773
+[10:01:44.012] Pred_soft: tensor([9.6741e-07, 1.0798e-06, 1.0999e-06,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:44.015] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:44.576] 367/0: 
+  Region loss - dice_loss_indiv: 0.0656290203332901
+  Total loss : 0.0656290203332901
+[10:01:44.773] Pred_soft: tensor([2.0732e-06, 2.2226e-06, 2.2309e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:44.776] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:45.348] 368/0: 
+  Region loss - dice_loss_indiv: 0.1795368194580078
+  Total loss : 0.1795368194580078
+[10:01:45.534] Pred_soft: tensor([6.0805e-06, 6.2785e-06, 8.1805e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:45.536] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:46.084] 369/0: 
+  Region loss - dice_loss_indiv: 0.3840654194355011
+  Total loss : 0.3840654194355011
+[10:01:46.271] Pred_soft: tensor([2.5347e-07, 2.7117e-07, 4.4194e-07,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:46.274] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:46.822] 370/0: 
+  Region loss - dice_loss_indiv: 0.5920217037200928
+  Total loss : 0.5920217037200928
+[10:01:47.008] Pred_soft: tensor([1.9153e-07, 1.9914e-07, 2.1712e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:47.011] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:47.557] 371/0: 
+  Region loss - dice_loss_indiv: 0.27593177556991577
+  Total loss : 0.27593177556991577
+[10:01:47.742] Pred_soft: tensor([1.1761e-06, 1.4929e-06, 1.6734e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:47.745] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:48.294] 372/0: 
+  Region loss - dice_loss_indiv: 0.08637262880802155
+  Total loss : 0.08637262880802155
+[10:01:48.479] Pred_soft: tensor([6.1976e-06, 6.6321e-06, 6.8304e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:48.482] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:49.029] 373/0: 
+  Region loss - dice_loss_indiv: 0.35173800587654114
+  Total loss : 0.35173800587654114
+[10:01:49.215] Pred_soft: tensor([1.1818e-06, 1.2481e-06, 1.3565e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:49.218] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:49.765] 374/0: 
+  Region loss - dice_loss_indiv: 0.1747518628835678
+  Total loss : 0.1747518628835678
+[10:01:49.857] save model to model/unet/ver1/unet_epoch0.pth
+[10:01:50.979] Pred_soft: tensor([6.2285e-07, 8.3269e-07, 9.6740e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:50.982] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:51.611] 0/1: 
+  Region loss - dice_loss_indiv: 0.4100164771080017
+  Total loss : 0.4100164771080017
+[10:01:51.811] Pred_soft: tensor([1.9744e-07, 2.1390e-07, 2.1810e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:51.814] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:52.364] 1/1: 
+  Region loss - dice_loss_indiv: 0.2020840048789978
+  Total loss : 0.2020840048789978
+[10:01:52.551] Pred_soft: tensor([2.7504e-07, 3.0011e-07, 3.1261e-07,  ..., 9.9991e-01, 9.9992e-01,
+        9.9992e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:52.553] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:53.102] 2/1: 
+  Region loss - dice_loss_indiv: 0.5275605916976929
+  Total loss : 0.5275605916976929
+[10:01:53.289] Pred_soft: tensor([7.4468e-07, 1.0431e-06, 1.0506e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:53.291] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:53.840] 3/1: 
+  Region loss - dice_loss_indiv: 0.20235157012939453
+  Total loss : 0.20235157012939453
+[10:01:54.025] Pred_soft: tensor([5.1570e-07, 5.1729e-07, 5.5311e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:54.027] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:54.575] 4/1: 
+  Region loss - dice_loss_indiv: 0.3391614556312561
+  Total loss : 0.3391614556312561
+[10:01:54.763] Pred_soft: tensor([2.5801e-08, 2.7650e-08, 2.7673e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:54.765] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:55.313] 5/1: 
+  Region loss - dice_loss_indiv: 0.2162555605173111
+  Total loss : 0.2162555605173111
+[10:01:55.502] Pred_soft: tensor([9.3002e-08, 9.3891e-08, 1.0570e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:55.504] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:56.053] 6/1: 
+  Region loss - dice_loss_indiv: 0.20375123620033264
+  Total loss : 0.20375123620033264
+[10:01:56.239] Pred_soft: tensor([5.2345e-08, 5.4360e-08, 1.1739e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:56.242] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:56.787] 7/1: 
+  Region loss - dice_loss_indiv: 0.32684871554374695
+  Total loss : 0.32684871554374695
+[10:01:56.974] Pred_soft: tensor([3.1338e-06, 3.1577e-06, 3.1859e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:56.977] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:57.526] 8/1: 
+  Region loss - dice_loss_indiv: 0.0709250196814537
+  Total loss : 0.0709250196814537
+[10:01:57.712] Pred_soft: tensor([4.1836e-07, 4.4419e-07, 4.4615e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:57.715] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:58.263] 9/1: 
+  Region loss - dice_loss_indiv: 0.2460876703262329
+  Total loss : 0.2460876703262329
+[10:01:58.450] Pred_soft: tensor([5.6423e-07, 6.2284e-07, 6.6514e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:58.452] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:59.001] 10/1: 
+  Region loss - dice_loss_indiv: 0.11684055626392365
+  Total loss : 0.11684055626392365
+[10:01:59.187] Pred_soft: tensor([1.3096e-06, 1.3343e-06, 1.4107e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:59.189] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:01:59.734] 11/1: 
+  Region loss - dice_loss_indiv: 0.14933058619499207
+  Total loss : 0.14933058619499207
+[10:01:59.921] Pred_soft: tensor([1.2530e-06, 1.3178e-06, 1.3235e-06,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:01:59.924] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:00.472] 12/1: 
+  Region loss - dice_loss_indiv: 0.3991662859916687
+  Total loss : 0.3991662859916687
+[10:02:00.658] Pred_soft: tensor([1.0178e-06, 1.0714e-06, 1.1100e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:00.660] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:01.210] 13/1: 
+  Region loss - dice_loss_indiv: 0.44808200001716614
+  Total loss : 0.44808200001716614
+[10:02:01.396] Pred_soft: tensor([1.6880e-05, 1.8667e-05, 1.9689e-05,  ..., 9.9998e-01, 9.9998e-01,
+        9.9998e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:01.398] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:01.948] 14/1: 
+  Region loss - dice_loss_indiv: 0.5807582139968872
+  Total loss : 0.5807582139968872
+[10:02:02.138] Pred_soft: tensor([4.7334e-08, 7.1741e-08, 7.4081e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:02.140] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:02.687] 15/1: 
+  Region loss - dice_loss_indiv: 0.30812132358551025
+  Total loss : 0.30812132358551025
+[10:02:02.874] Pred_soft: tensor([5.1736e-06, 6.0294e-06, 7.5842e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:02.877] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:03.447] 16/1: 
+  Region loss - dice_loss_indiv: 0.1348957121372223
+  Total loss : 0.1348957121372223
+[10:02:03.641] Pred_soft: tensor([1.1502e-06, 1.2548e-06, 1.2835e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:03.644] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:04.213] 17/1: 
+  Region loss - dice_loss_indiv: 0.16281282901763916
+  Total loss : 0.16281282901763916
+[10:02:04.408] Pred_soft: tensor([1.5431e-06, 1.6736e-06, 1.7296e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:04.411] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:04.992] 18/1: 
+  Region loss - dice_loss_indiv: 0.19206228852272034
+  Total loss : 0.19206228852272034
+[10:02:05.188] Pred_soft: tensor([5.1475e-07, 5.3769e-07, 6.2612e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:05.190] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:05.740] 19/1: 
+  Region loss - dice_loss_indiv: 0.33573228120803833
+  Total loss : 0.33573228120803833
+[10:02:05.928] Pred_soft: tensor([9.5669e-07, 1.0940e-06, 1.2084e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:05.931] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:06.507] 20/1: 
+  Region loss - dice_loss_indiv: 0.3284134268760681
+  Total loss : 0.3284134268760681
+[10:02:06.693] Pred_soft: tensor([2.8132e-07, 2.8148e-07, 2.8274e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:06.696] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:07.273] 21/1: 
+  Region loss - dice_loss_indiv: 0.4664876461029053
+  Total loss : 0.4664876461029053
+[10:02:07.458] Pred_soft: tensor([5.1241e-07, 5.4350e-07, 5.8079e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:07.461] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:08.020] 22/1: 
+  Region loss - dice_loss_indiv: 0.2154482901096344
+  Total loss : 0.2154482901096344
+[10:02:08.215] Pred_soft: tensor([3.1212e-06, 3.1949e-06, 3.5294e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:08.217] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:08.781] 23/1: 
+  Region loss - dice_loss_indiv: 0.2074568271636963
+  Total loss : 0.2074568271636963
+[10:02:08.969] Pred_soft: tensor([2.0240e-06, 2.0475e-06, 2.0571e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:08.972] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:09.520] 24/1: 
+  Region loss - dice_loss_indiv: 0.31154632568359375
+  Total loss : 0.31154632568359375
+[10:02:09.712] Pred_soft: tensor([2.1965e-08, 2.5471e-08, 3.0504e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:09.714] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:10.263] 25/1: 
+  Region loss - dice_loss_indiv: 0.35464996099472046
+  Total loss : 0.35464996099472046
+[10:02:10.449] Pred_soft: tensor([6.1666e-07, 7.3503e-07, 7.3629e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:10.452] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:11.002] 26/1: 
+  Region loss - dice_loss_indiv: 0.4059785008430481
+  Total loss : 0.4059785008430481
+[10:02:11.191] Pred_soft: tensor([2.6865e-07, 2.8743e-07, 2.9878e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:11.194] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:11.777] 27/1: 
+  Region loss - dice_loss_indiv: 0.21400763094425201
+  Total loss : 0.21400763094425201
+[10:02:11.994] Pred_soft: tensor([1.1283e-07, 1.1758e-07, 1.1991e-07,  ..., 9.9998e-01, 9.9998e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:11.998] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:12.568] 28/1: 
+  Region loss - dice_loss_indiv: 0.30579614639282227
+  Total loss : 0.30579614639282227
+[10:02:12.764] Pred_soft: tensor([4.1216e-09, 8.3863e-09, 1.4461e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:12.767] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:13.370] 29/1: 
+  Region loss - dice_loss_indiv: 0.4466337561607361
+  Total loss : 0.4466337561607361
+[10:02:13.577] Pred_soft: tensor([8.6677e-08, 1.0060e-07, 1.1175e-07,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:13.580] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:14.143] 30/1: 
+  Region loss - dice_loss_indiv: 0.5071724653244019
+  Total loss : 0.5071724653244019
+[10:02:14.331] Pred_soft: tensor([7.2016e-07, 7.2954e-07, 7.4580e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:14.333] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:14.884] 31/1: 
+  Region loss - dice_loss_indiv: 0.5110026001930237
+  Total loss : 0.5110026001930237
+[10:02:15.071] Pred_soft: tensor([1.2954e-07, 1.4762e-07, 1.5023e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:15.073] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:15.622] 32/1: 
+  Region loss - dice_loss_indiv: 0.16939698159694672
+  Total loss : 0.16939698159694672
+[10:02:15.811] Pred_soft: tensor([5.3889e-07, 5.7555e-07, 6.3079e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:15.814] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:16.365] 33/1: 
+  Region loss - dice_loss_indiv: 0.2929578423500061
+  Total loss : 0.2929578423500061
+[10:02:16.551] Pred_soft: tensor([2.1451e-06, 2.2510e-06, 2.3296e-06,  ..., 9.9999e-01, 9.9999e-01,
+        9.9999e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:16.554] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:17.105] 34/1: 
+  Region loss - dice_loss_indiv: 0.4924700856208801
+  Total loss : 0.4924700856208801
+[10:02:17.291] Pred_soft: tensor([1.5307e-06, 1.5755e-06, 1.6874e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:17.294] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:17.848] 35/1: 
+  Region loss - dice_loss_indiv: 0.12686553597450256
+  Total loss : 0.12686553597450256
+[10:02:18.034] Pred_soft: tensor([1.1892e-06, 1.1945e-06, 1.2515e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:18.037] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:18.584] 36/1: 
+  Region loss - dice_loss_indiv: 0.20587249100208282
+  Total loss : 0.20587249100208282
+[10:02:18.773] Pred_soft: tensor([1.6122e-06, 1.8319e-06, 1.9065e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:18.775] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:19.327] 37/1: 
+  Region loss - dice_loss_indiv: 0.3873841166496277
+  Total loss : 0.3873841166496277
+[10:02:19.512] Pred_soft: tensor([3.3620e-06, 3.6715e-06, 3.7041e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:19.514] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:20.063] 38/1: 
+  Region loss - dice_loss_indiv: 0.17279917001724243
+  Total loss : 0.17279917001724243
+[10:02:20.251] Pred_soft: tensor([1.7771e-06, 1.8818e-06, 1.9524e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:20.254] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:20.801] 39/1: 
+  Region loss - dice_loss_indiv: 0.17411363124847412
+  Total loss : 0.17411363124847412
+[10:02:20.992] Pred_soft: tensor([1.4007e-06, 1.4100e-06, 1.4183e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:20.994] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:21.542] 40/1: 
+  Region loss - dice_loss_indiv: 0.2808992862701416
+  Total loss : 0.2808992862701416
+[10:02:21.731] Pred_soft: tensor([2.0211e-06, 2.0871e-06, 2.2337e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:21.734] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:22.284] 41/1: 
+  Region loss - dice_loss_indiv: 0.1652454435825348
+  Total loss : 0.1652454435825348
+[10:02:22.470] Pred_soft: tensor([9.7930e-07, 1.0086e-06, 1.0289e-06,  ..., 9.9953e-01, 9.9956e-01,
+        9.9958e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:22.472] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:23.023] 42/1: 
+  Region loss - dice_loss_indiv: 0.49030405282974243
+  Total loss : 0.49030405282974243
+[10:02:23.211] Pred_soft: tensor([1.4094e-07, 1.4305e-07, 1.5012e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:23.214] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:23.766] 43/1: 
+  Region loss - dice_loss_indiv: 0.19464421272277832
+  Total loss : 0.19464421272277832
+[10:02:23.957] Pred_soft: tensor([8.8732e-07, 9.2895e-07, 9.9656e-07,  ..., 9.9988e-01, 9.9988e-01,
+        9.9989e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:23.959] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:24.507] 44/1: 
+  Region loss - dice_loss_indiv: 0.2721012532711029
+  Total loss : 0.2721012532711029
+[10:02:24.694] Pred_soft: tensor([4.0197e-08, 4.0705e-08, 4.6358e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:24.696] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:25.248] 45/1: 
+  Region loss - dice_loss_indiv: 0.4195880591869354
+  Total loss : 0.4195880591869354
+[10:02:25.434] Pred_soft: tensor([1.9290e-07, 1.9935e-07, 2.0679e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:25.437] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:25.986] 46/1: 
+  Region loss - dice_loss_indiv: 0.23195351660251617
+  Total loss : 0.23195351660251617
+[10:02:26.174] Pred_soft: tensor([1.4067e-07, 1.5966e-07, 1.6101e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:26.176] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:26.722] 47/1: 
+  Region loss - dice_loss_indiv: 0.2500941753387451
+  Total loss : 0.2500941753387451
+[10:02:26.912] Pred_soft: tensor([3.9996e-07, 4.1490e-07, 4.3415e-07,  ..., 9.9998e-01, 9.9998e-01,
+        9.9998e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:26.914] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:27.461] 48/1: 
+  Region loss - dice_loss_indiv: 0.4228976368904114
+  Total loss : 0.4228976368904114
+[10:02:27.648] Pred_soft: tensor([4.3972e-08, 5.5074e-08, 6.4105e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:27.650] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:28.203] 49/1: 
+  Region loss - dice_loss_indiv: 0.16605617105960846
+  Total loss : 0.16605617105960846
+[10:02:28.389] Pred_soft: tensor([1.2632e-07, 1.3634e-07, 1.4109e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:28.392] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:28.968] 50/1: 
+  Region loss - dice_loss_indiv: 0.2858676612377167
+  Total loss : 0.2858676612377167
+[10:02:29.155] Pred_soft: tensor([8.3966e-08, 8.5207e-08, 8.5955e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:29.157] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:29.705] 51/1: 
+  Region loss - dice_loss_indiv: 0.2315819263458252
+  Total loss : 0.2315819263458252
+[10:02:29.894] Pred_soft: tensor([1.6252e-07, 1.6899e-07, 1.6909e-07,  ..., 9.9998e-01, 9.9998e-01,
+        9.9998e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:29.897] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:30.444] 52/1: 
+  Region loss - dice_loss_indiv: 0.27575016021728516
+  Total loss : 0.27575016021728516
+[10:02:30.630] Pred_soft: tensor([6.2732e-07, 6.8616e-07, 7.6246e-07,  ..., 9.9999e-01, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:30.633] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:31.183] 53/1: 
+  Region loss - dice_loss_indiv: 0.12821072340011597
+  Total loss : 0.12821072340011597
+[10:02:31.374] Pred_soft: tensor([1.8546e-07, 2.1124e-07, 2.3197e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:31.377] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:31.927] 54/1: 
+  Region loss - dice_loss_indiv: 0.10922758281230927
+  Total loss : 0.10922758281230927
+[10:02:32.113] Pred_soft: tensor([4.3334e-08, 4.5259e-08, 4.5372e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:32.116] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:32.663] 55/1: 
+  Region loss - dice_loss_indiv: 0.14305651187896729
+  Total loss : 0.14305651187896729
+[10:02:32.855] Pred_soft: tensor([1.7658e-07, 1.8834e-07, 1.9075e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:32.857] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:33.406] 56/1: 
+  Region loss - dice_loss_indiv: 0.30974912643432617
+  Total loss : 0.30974912643432617
+[10:02:33.593] Pred_soft: tensor([7.6010e-09, 9.0868e-09, 9.5389e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:33.595] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:34.147] 57/1: 
+  Region loss - dice_loss_indiv: 0.15196746587753296
+  Total loss : 0.15196746587753296
+[10:02:34.341] Pred_soft: tensor([1.2557e-08, 1.5402e-08, 1.6582e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:34.343] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:34.894] 58/1: 
+  Region loss - dice_loss_indiv: 0.44617924094200134
+  Total loss : 0.44617924094200134
+[10:02:35.080] Pred_soft: tensor([8.8022e-09, 9.0984e-09, 9.1800e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:35.083] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:35.633] 59/1: 
+  Region loss - dice_loss_indiv: 0.3933092951774597
+  Total loss : 0.3933092951774597
+[10:02:35.821] Pred_soft: tensor([3.6747e-08, 3.7584e-08, 5.0387e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:35.824] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:36.372] 60/1: 
+  Region loss - dice_loss_indiv: 0.17489208281040192
+  Total loss : 0.17489208281040192
+[10:02:36.558] Pred_soft: tensor([1.3618e-08, 1.4504e-08, 1.4647e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:36.561] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:37.112] 61/1: 
+  Region loss - dice_loss_indiv: 0.16107535362243652
+  Total loss : 0.16107535362243652
+[10:02:37.297] Pred_soft: tensor([1.9124e-08, 2.7165e-08, 3.1143e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:37.299] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:37.847] 62/1: 
+  Region loss - dice_loss_indiv: 0.3374730348587036
+  Total loss : 0.3374730348587036
+[10:02:38.034] Pred_soft: tensor([1.2377e-07, 1.3186e-07, 1.3618e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:38.037] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:38.586] 63/1: 
+  Region loss - dice_loss_indiv: 0.2166239321231842
+  Total loss : 0.2166239321231842
+[10:02:38.772] Pred_soft: tensor([2.0283e-07, 2.1896e-07, 2.4577e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:38.774] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:39.327] 64/1: 
+  Region loss - dice_loss_indiv: 0.5027996301651001
+  Total loss : 0.5027996301651001
+[10:02:39.513] Pred_soft: tensor([1.1053e-06, 1.2472e-06, 1.3261e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:39.516] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:40.066] 65/1: 
+  Region loss - dice_loss_indiv: 0.26955607533454895
+  Total loss : 0.26955607533454895
+[10:02:40.254] Pred_soft: tensor([5.3651e-08, 5.8314e-08, 6.9259e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:40.257] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:40.803] 66/1: 
+  Region loss - dice_loss_indiv: 0.5432080626487732
+  Total loss : 0.5432080626487732
+[10:02:40.993] Pred_soft: tensor([1.2278e-07, 1.3049e-07, 1.8164e-07,  ..., 9.9993e-01, 9.9994e-01,
+        9.9994e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:40.995] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:41.542] 67/1: 
+  Region loss - dice_loss_indiv: 0.31264448165893555
+  Total loss : 0.31264448165893555
+[10:02:41.730] Pred_soft: tensor([5.7763e-07, 6.0428e-07, 7.4549e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:41.732] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:42.280] 68/1: 
+  Region loss - dice_loss_indiv: 0.23281610012054443
+  Total loss : 0.23281610012054443
+[10:02:42.465] Pred_soft: tensor([1.3520e-08, 1.4556e-08, 1.9030e-08,  ..., 9.9997e-01, 9.9997e-01,
+        9.9997e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:42.468] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:43.014] 69/1: 
+  Region loss - dice_loss_indiv: 0.3172610104084015
+  Total loss : 0.3172610104084015
+[10:02:43.202] Pred_soft: tensor([4.4840e-08, 6.1343e-08, 6.1393e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:43.205] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:43.751] 70/1: 
+  Region loss - dice_loss_indiv: 0.14803794026374817
+  Total loss : 0.14803794026374817
+[10:02:43.938] Pred_soft: tensor([2.3543e-09, 3.0901e-09, 4.2512e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:43.941] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:44.489] 71/1: 
+  Region loss - dice_loss_indiv: 0.29846882820129395
+  Total loss : 0.29846882820129395
+[10:02:44.676] Pred_soft: tensor([1.0752e-07, 1.1604e-07, 1.2092e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:44.678] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:45.227] 72/1: 
+  Region loss - dice_loss_indiv: 0.4547920227050781
+  Total loss : 0.4547920227050781
+[10:02:45.412] Pred_soft: tensor([1.4997e-08, 2.6968e-08, 2.7278e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:45.415] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:45.960] 73/1: 
+  Region loss - dice_loss_indiv: 0.3654314875602722
+  Total loss : 0.3654314875602722
+[10:02:46.147] Pred_soft: tensor([1.3832e-06, 1.4094e-06, 1.4648e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:46.149] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:46.697] 74/1: 
+  Region loss - dice_loss_indiv: 0.3978245258331299
+  Total loss : 0.3978245258331299
+[10:02:46.888] Pred_soft: tensor([2.6994e-07, 2.7721e-07, 2.9365e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:46.891] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:47.447] 75/1: 
+  Region loss - dice_loss_indiv: 0.38750404119491577
+  Total loss : 0.38750404119491577
+[10:02:47.646] Pred_soft: tensor([4.6599e-09, 4.6815e-09, 5.1478e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:47.648] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:48.229] 76/1: 
+  Region loss - dice_loss_indiv: 0.24734129011631012
+  Total loss : 0.24734129011631012
+[10:02:48.438] Pred_soft: tensor([3.9179e-08, 4.1192e-08, 4.2655e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:48.441] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:48.998] 77/1: 
+  Region loss - dice_loss_indiv: 0.12476533651351929
+  Total loss : 0.12476533651351929
+[10:02:49.189] Pred_soft: tensor([7.2430e-08, 7.9206e-08, 8.3102e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:49.191] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:49.754] 78/1: 
+  Region loss - dice_loss_indiv: 0.11845286190509796
+  Total loss : 0.11845286190509796
+[10:02:49.945] Pred_soft: tensor([4.0961e-08, 4.1561e-08, 4.2441e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:49.948] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:50.508] 79/1: 
+  Region loss - dice_loss_indiv: 0.185335174202919
+  Total loss : 0.185335174202919
+[10:02:50.699] Pred_soft: tensor([6.6464e-09, 7.0733e-09, 8.9767e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:50.701] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:51.294] 80/1: 
+  Region loss - dice_loss_indiv: 0.7064786553382874
+  Total loss : 0.7064786553382874
+[10:02:51.488] Pred_soft: tensor([3.1289e-08, 3.4535e-08, 3.8730e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:51.490] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:52.039] 81/1: 
+  Region loss - dice_loss_indiv: 0.7283716797828674
+  Total loss : 0.7283716797828674
+[10:02:52.228] Pred_soft: tensor([1.2990e-07, 1.4527e-07, 1.6325e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:52.231] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:52.786] 82/1: 
+  Region loss - dice_loss_indiv: 0.3794262409210205
+  Total loss : 0.3794262409210205
+[10:02:52.973] Pred_soft: tensor([9.5722e-07, 9.6784e-07, 1.0563e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:52.976] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:53.541] 83/1: 
+  Region loss - dice_loss_indiv: 0.4056682586669922
+  Total loss : 0.4056682586669922
+[10:02:53.744] Pred_soft: tensor([4.4073e-07, 5.5413e-07, 5.6501e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:53.747] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:54.304] 84/1: 
+  Region loss - dice_loss_indiv: 0.21749092638492584
+  Total loss : 0.21749092638492584
+[10:02:54.490] Pred_soft: tensor([1.8010e-06, 1.8323e-06, 1.9178e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:54.493] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:55.040] 85/1: 
+  Region loss - dice_loss_indiv: 0.4117111265659332
+  Total loss : 0.4117111265659332
+[10:02:55.227] Pred_soft: tensor([8.4444e-08, 9.1651e-08, 9.9487e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:55.229] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:55.787] 86/1: 
+  Region loss - dice_loss_indiv: 0.14131492376327515
+  Total loss : 0.14131492376327515
+[10:02:55.973] Pred_soft: tensor([3.8597e-09, 3.9173e-09, 4.4717e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:55.975] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:56.566] 87/1: 
+  Region loss - dice_loss_indiv: 0.19185888767242432
+  Total loss : 0.19185888767242432
+[10:02:56.758] Pred_soft: tensor([1.3605e-07, 1.5978e-07, 1.6349e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:56.761] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:57.364] 88/1: 
+  Region loss - dice_loss_indiv: 0.09111243486404419
+  Total loss : 0.09111243486404419
+[10:02:57.564] Pred_soft: tensor([1.9349e-09, 2.3154e-09, 3.1608e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:57.567] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:58.149] 89/1: 
+  Region loss - dice_loss_indiv: 0.2116861641407013
+  Total loss : 0.2116861641407013
+[10:02:58.346] Pred_soft: tensor([1.0095e-08, 1.0166e-08, 1.0202e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:58.348] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:58.903] 90/1: 
+  Region loss - dice_loss_indiv: 0.20433050394058228
+  Total loss : 0.20433050394058228
+[10:02:59.090] Pred_soft: tensor([1.6354e-08, 1.6394e-08, 1.7748e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:59.093] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:02:59.641] 91/1: 
+  Region loss - dice_loss_indiv: 0.29809287190437317
+  Total loss : 0.29809287190437317
+[10:02:59.829] Pred_soft: tensor([3.3287e-07, 3.7009e-07, 3.9238e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:02:59.831] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:00.379] 92/1: 
+  Region loss - dice_loss_indiv: 0.13627742230892181
+  Total loss : 0.13627742230892181
+[10:03:00.565] Pred_soft: tensor([2.9969e-07, 3.1010e-07, 3.2176e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:00.567] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:01.150] 93/1: 
+  Region loss - dice_loss_indiv: 0.185836523771286
+  Total loss : 0.185836523771286
+[10:03:01.336] Pred_soft: tensor([9.6078e-09, 1.0869e-08, 1.1912e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:01.339] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:01.888] 94/1: 
+  Region loss - dice_loss_indiv: 0.2412935197353363
+  Total loss : 0.2412935197353363
+[10:03:02.081] Pred_soft: tensor([2.7296e-08, 2.7908e-08, 2.9506e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:02.084] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:02.647] 95/1: 
+  Region loss - dice_loss_indiv: 0.5890532732009888
+  Total loss : 0.5890532732009888
+[10:03:02.842] Pred_soft: tensor([3.2461e-08, 3.9875e-08, 4.5190e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:02.844] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:03.408] 96/1: 
+  Region loss - dice_loss_indiv: 0.677062451839447
+  Total loss : 0.677062451839447
+[10:03:03.602] Pred_soft: tensor([2.3525e-07, 2.3652e-07, 2.3668e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:03.604] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:04.161] 97/1: 
+  Region loss - dice_loss_indiv: 0.45718860626220703
+  Total loss : 0.45718860626220703
+[10:03:04.347] Pred_soft: tensor([1.6745e-06, 1.7404e-06, 1.8908e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:04.349] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:04.899] 98/1: 
+  Region loss - dice_loss_indiv: 0.08332087099552155
+  Total loss : 0.08332087099552155
+[10:03:05.086] Pred_soft: tensor([9.7906e-08, 1.0525e-07, 1.0629e-07,  ..., 9.9996e-01, 9.9996e-01,
+        9.9996e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:05.089] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:05.641] 99/1: 
+  Region loss - dice_loss_indiv: 0.1641540229320526
+  Total loss : 0.1641540229320526
+[10:03:05.827] Pred_soft: tensor([6.3238e-08, 6.3442e-08, 6.3816e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:05.830] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:06.411] 100/1: 
+  Region loss - dice_loss_indiv: 0.11541996896266937
+  Total loss : 0.11541996896266937
+[10:03:06.596] Pred_soft: tensor([7.2179e-08, 8.2251e-08, 8.4692e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:06.599] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:07.148] 101/1: 
+  Region loss - dice_loss_indiv: 0.269580602645874
+  Total loss : 0.269580602645874
+[10:03:07.333] Pred_soft: tensor([6.5743e-10, 7.7059e-10, 8.0591e-10,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:07.336] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:07.909] 102/1: 
+  Region loss - dice_loss_indiv: 0.19433537125587463
+  Total loss : 0.19433537125587463
+[10:03:08.102] Pred_soft: tensor([1.2173e-09, 1.6656e-09, 1.6686e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:08.105] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:08.660] 103/1: 
+  Region loss - dice_loss_indiv: 0.09205830097198486
+  Total loss : 0.09205830097198486
+[10:03:08.861] Pred_soft: tensor([6.9824e-09, 7.1334e-09, 8.6956e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:08.864] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:09.461] 104/1: 
+  Region loss - dice_loss_indiv: 0.0880117416381836
+  Total loss : 0.0880117416381836
+[10:03:09.665] Pred_soft: tensor([1.2189e-07, 1.3454e-07, 1.3919e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:09.668] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:10.244] 105/1: 
+  Region loss - dice_loss_indiv: 0.09749684482812881
+  Total loss : 0.09749684482812881
+[10:03:10.431] Pred_soft: tensor([7.8462e-08, 7.8825e-08, 7.9527e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:10.434] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:10.982] 106/1: 
+  Region loss - dice_loss_indiv: 0.15221497416496277
+  Total loss : 0.15221497416496277
+[10:03:11.172] Pred_soft: tensor([2.0132e-07, 2.0985e-07, 2.1753e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:11.174] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:11.799] 107/1: 
+  Region loss - dice_loss_indiv: 0.11916410177946091
+  Total loss : 0.11916410177946091
+[10:03:12.013] Pred_soft: tensor([4.7182e-08, 4.9227e-08, 5.4673e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:12.016] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:12.599] 108/1: 
+  Region loss - dice_loss_indiv: 0.35648077726364136
+  Total loss : 0.35648077726364136
+[10:03:12.789] Pred_soft: tensor([9.8150e-08, 1.5002e-07, 1.9263e-07,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:12.792] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:13.340] 109/1: 
+  Region loss - dice_loss_indiv: 0.3022726774215698
+  Total loss : 0.3022726774215698
+[10:03:13.527] Pred_soft: tensor([7.4915e-08, 8.0988e-08, 8.3812e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:13.530] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:14.096] 110/1: 
+  Region loss - dice_loss_indiv: 0.1454073041677475
+  Total loss : 0.1454073041677475
+[10:03:14.290] Pred_soft: tensor([6.0940e-09, 7.7699e-09, 8.2693e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:14.293] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:14.846] 111/1: 
+  Region loss - dice_loss_indiv: 0.16317228972911835
+  Total loss : 0.16317228972911835
+[10:03:15.032] Pred_soft: tensor([4.7072e-08, 5.2922e-08, 5.5310e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:15.034] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:15.587] 112/1: 
+  Region loss - dice_loss_indiv: 0.4618517756462097
+  Total loss : 0.4618517756462097
+[10:03:15.776] Pred_soft: tensor([1.5711e-06, 1.5725e-06, 1.5872e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:15.779] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:16.327] 113/1: 
+  Region loss - dice_loss_indiv: 0.14279276132583618
+  Total loss : 0.14279276132583618
+[10:03:16.548] Pred_soft: tensor([5.0395e-08, 6.5481e-08, 7.5726e-08,  ..., 9.9995e-01, 9.9995e-01,
+        9.9995e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:16.551] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:17.104] 114/1: 
+  Region loss - dice_loss_indiv: 0.5147756934165955
+  Total loss : 0.5147756934165955
+[10:03:17.294] Pred_soft: tensor([1.0862e-13, 1.2486e-13, 1.2659e-13,  ..., 9.9920e-01, 9.9920e-01,
+        9.9920e-01], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:17.296] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:17.845] 115/1: 
+  Region loss - dice_loss_indiv: 0.7118691205978394
+  Total loss : 0.7118691205978394
+[10:03:18.033] Pred_soft: tensor([2.6347e-08, 2.8748e-08, 2.8956e-08,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:18.035] Pred_hard: tensor([0., 1.], device='cuda:0')
+[10:03:18.588] 116/1: 
+  Region loss - dice_loss_indiv: 0.10001591593027115
+  Total loss : 0.10001591593027115
+[10:03:18.775] Pred_soft: tensor([8.3005e-06, 8.6510e-06, 8.6681e-06,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[10:03:18.778] Pred_hard: tensor([0., 1.], device='cuda:0')

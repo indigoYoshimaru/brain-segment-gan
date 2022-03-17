@@ -189,20 +189,20 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         
         # total loss is total batch loss of all classes
         loss_g = total_region_loss
+        epoch_region_loss += total_region_loss
+        epoch_loss += loss_g
         iter_num += 1 
         optimizer.zero_grad()
         loss_g.backward()
         optimizer.step()
-        epoch_region_loss += total_region_loss
-        epoch_loss += loss_g
+        
 
-        logging.info(f'{idx}/{epoch}: \n  Region loss - {model_cfg["region_loss"]}: {total_region_loss}\n')
-        writer.add_scalar('sample/region_loss',
-                            total_region_loss.item(), iter_num)
-        writer.add_scalar('epoch/total_loss', loss_g, epoch)
+        logging.info(f'{idx}/{epoch}: \n  Region loss - {model_cfg["region_loss"]}: {total_region_loss}\n  Total loss : {loss_g}')
+        writer.add_scalar('generator_sample/region_loss', total_region_loss.item(), iter_num)
+        # writer.add_scalar('epoch/total_loss', loss_g.item(), epoch)
         
     if epoch%params_cfg['save_epoch']==0: 
         save_model(checkpoint_root,model_cfg['model_name'], net, optimizer, epoch, iter_num)
 
-    writer.add_scalar('epoch/region_loss', epoch_region_loss /len(trainloader), epoch)
-    writer.add_scalar('epoch/total_loss', epoch_loss /len(trainloader), epoch)
+    writer.add_scalar('generator-epoch/region_loss', epoch_region_loss /len(trainloader), epoch)
+    # writer.add_scalar('epoch/total_loss', epoch_loss /len(trainloader), epoch)

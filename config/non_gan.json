@@ -1,6 +1,6 @@
 {
     "model_name": "unet",
-    "version": "0", 
+    "version": "1", 
     "module": "networks.multiscale_generator", 
     "class": "MultiscaleGenerator",
     "opt": "Adam",

@@ -1,6 +1,6 @@
 {
     "model_name": "gan_multiscale",
-    "version": "0", 
+    "version": "1", 
     "generator":{
         "opt": "Adam",
         "lr": 0.001,
@@ -17,5 +17,7 @@
         "grad_clip": -1, 
         "epochs":1, 
         "gan_loss": "mse_loss"
-    }
+    }, 
+    "dynamic_train": 0, 
+    "dy_epoch": 0
 }

@@ -14,7 +14,7 @@ from utils.run_util import draw_image, rotate_visual
 
 # When test_interp is not None, it should be a tuple like (56,56,40) used as the size of interpolated masks.
 def test_all_cases(net, db_test, writer, num_classes, batch_size=8,
-                   orig_patch_size=(128, 112, 80), input_patch_size=(128, 112, 64), 
+                   orig_patch_size=(128, 112, 80), input_patch_size=(128, 112, 64), visualize_pos = [21,60,10],
                    stride_xy=56, stride_z=40, 
                    save_result=True, test_save_path=None, 
                    preproc_fn=None, test_interp=None, has_mask=True):
@@ -23,7 +23,10 @@ def test_all_cases(net, db_test, writer, num_classes, batch_size=8,
     valid_metric_counts = np.zeros((num_classes - 1, 4))
     binarize = (num_classes == 2)
     class_name = ['ET', 'WT', 'TC']
-    rotate_axes = [{'top':(0,0)}, {'front':(0,1)}, {'side':(1,2)}]
+    rotate_axes = { 'top':(0,0), 
+                    'front':(1,0), 
+                    'side':(2,1)
+                }
     
     for image_idx in tqdm(range(len(db_test))):
         sample = db_test[image_idx]
@@ -88,13 +91,17 @@ def test_all_cases(net, db_test, writer, num_classes, batch_size=8,
             writer.add_scalar(f'{name}/avg-surface-distance', allcls_metric[cls_idx][3], image_idx)
 
         # draw images
-        for direction in rotate_axes:
-            name, axes = direction.items()
-            to_draws = rotate_visual(image_tensor, mask_tensor, preds_hard, axes)
-            draw_image(writer, image_tensor, f'test/{name}/image', c_start=0, c_end=1, iter_num=image_idx, size =[20,61,10], mode='test')
-            draw_image(writer, mask_tensor, f'test/{name}/label', c_start=1, c_end=2, iter_num=image_idx, size = [20,61,10], mode='test')
-            draw_image(writer, preds_hard, f'test/{name}predicted', c_start=1, c_end=2, iter_num=image_idx, size = [20,61,10], mode='test')
+        # for name, axes in rotate_axes.items():
+        #     print(axes)
+        #     result = rotate_visual(image_tensor, mask_tensor, preds_hard, axes)
+        #     draw_image(writer, result['image'] , f'test/{name}/image', c_start=0, c_end=1, iter_num=image_idx, size = visualize_pos, mode='test')
+        #     draw_image(writer, result['gt'], f'test/{name}/label', c_start=1, c_end=2, iter_num=image_idx, size = visualize_pos, mode='test')
+            # draw_image(writer, result['pred'], f'test/{name}/predicted', c_start=1, c_end=2, iter_num=image_idx, size = visualize_pos, mode='test')
+        draw_image(writer, image_tensor , 'test/image', c_start=0, c_end=1, iter_num=image_idx, size = visualize_pos, mode='test')
+        draw_image(writer, mask_tensor, 'test/label', c_start=1, c_end=2, iter_num=image_idx, size = visualize_pos, mode='test')
+        draw_image(writer, preds_hard, 'test/predicted', c_start=1, c_end=2, iter_num=image_idx, size = visualize_pos, mode='test')
         
+
         if save_result:
             inv_probs = brats_inv_map_label(preds_soft)
             preds_hard = torch.argmax(inv_probs, dim=0)

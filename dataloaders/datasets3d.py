@@ -363,7 +363,7 @@ class RandomCrop(object):
 
 class RandomRotFlip(object):
     """
-    Crop randomly flip the dataset in a sample
+    Randomly flip and rotate the dataset in a sample
     Args:
     output_size (int): Desired output size
     """

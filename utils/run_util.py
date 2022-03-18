@@ -5,6 +5,7 @@ import os
 import torch
 import logging
 from dataloaders.datasets3d import *
+from sklearn import linear_model as lm 
 
 from torchvision.utils import make_grid
 
@@ -20,8 +21,6 @@ def reduce_tensor(tensor):
     dist.all_reduce(rt, op=dist.ReduceOp.SUM)
     rt /= args.world_size
     return rt
-
-
 
 def compose2(f, g):
     return lambda *a, **kw: g(f(*a, **kw))
@@ -91,6 +90,11 @@ def convert_to_hard(preds_soft, thres=0.5):
     preds_hard[preds_soft>=thres]=1
     return preds_hard
 
+def rotate_image(img, axes): 
+    img = img.gpu()
+    img = np.rot90(img, 1, axes)
+    return torch.from_numpy(img).copy()
+
 def rotate_visual(img, gt, pred, axes: tuple): 
     """
     Rotate brain image and masks for perspective visualization
@@ -101,7 +105,44 @@ def rotate_visual(img, gt, pred, axes: tuple):
         axes: tuple of axis to rotate image. 
             the initial perspective is from the top
     """
+    if axes == (0,0): 
+        return {'image': img, 'gt': gt, 'pred': pred}
+    img = img.cpu()
+    gt = gt.cpu()
+    pred = pred.cpu()
     img_rot = np.rot90(img, 1, axes)
     gt_rot = np.rot90(gt, 1, axes)
     pred_rot = np.rot90(pred, 1, axes)
+    img_rot = np.flip(img_rot, 3)
+    gt_rot = np.flip(gt_rot, 3)
+    pred_rot = np.flip(pred_rot, 3)
+    img_rot = torch.from_numpy(img_rot.copy())
+    gt_rot = torch.from_numpy(gt_rot.copy())
+    pred_rot = torch.from_numpy(pred_rot.copy())
     return {'image': img_rot, 'gt': gt_rot, 'pred': pred_rot}
+
+
+def calculate_trend(iters: list, vals: list, dis_epoch:int):
+    """
+    Calculate the slope (trend) to determine discriminator training. 
+    if the slope > 0 or slope ~ 0 and intercp~1 -> dis_epoch = 0. 
+    else dis_epoch = dis_epoch (!= 0)
+
+    Args: 
+        iters: list of iterations during k epochs of generator
+        vals: list of loss values during k epochs of generator
+    
+    """
+    reg_model = lm.LinearRegression()
+    iters = np.asarray(iters).reshape(1, -1).transpose()
+    vals = np.asarray(vals)
+    
+    reg_model.fit(iters, vals)
+    slope = reg_model.coef_[0]
+    y_inter = reg_model.intercept_
+    del reg_model
+    if (slope > 0) or (abs(slope)<0.1 and y_inter>0.7): 
+        return slope, y_inter, 0
+
+    return slope, y_inter, dis_epoch
+

@@ -141,8 +141,17 @@ def calculate_trend(iters: list, vals: list, dis_epoch:int):
     slope = reg_model.coef_[0]
     y_inter = reg_model.intercept_
     del reg_model
-    if (slope > 0) or (abs(slope)<0.1 and y_inter>0.7): 
-        return slope, y_inter, 0
+    # if (abs(slope)<0.1 and y_inter>0.7) or (slope > 0): 
+    #     return slope, y_inter, 0
 
-    return slope, y_inter, dis_epoch
+    if slope < -0.1: 
+        return slope, y_inter, dis_epoch
+
+    if abs(slope)<0.1: 
+        if y_inter >0.7: 
+            return slope, y_inter, 0
+        if y_inter <0.2: 
+            return slope, y_inter, dis_epoch
+    
+    return slope, y_inter, 0 
 

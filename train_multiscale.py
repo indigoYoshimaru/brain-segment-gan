@@ -137,8 +137,12 @@ GOptClass = optim.__dict__[gen_cfg['opt']]
 DOptClass = optim.__dict__[dis_cfg['opt']]
 gen_opt = GOptClass(gen_net.parameters(), lr = gen_cfg['lr'], weight_decay = gen_cfg['decay'], betas = tuple(gen_cfg['betas']))
 dis_opt = GOptClass(dis_net.parameters(), lr = dis_cfg['lr'], weight_decay = dis_cfg['decay'], betas = tuple(dis_cfg['betas']))
-print(dis_cfg)
+
 dis_epoch =dis_cfg['epochs']
+
+if model_cfg['dynamic_train']: 
+    dis_epoch =0
+
 ### region based loss: including dice loss, log cosh dice loss, focal tversky loss  
 region_loss = getattr(losses, gen_cfg['region_loss'])
 class_weights = torch.ones(data_cfg['num_classes']).cuda()
@@ -165,6 +169,8 @@ logging.info(f'Total epochs: {params_cfg["epochs"]}')
 logging.info(f'Iterations per epoch: {len(trainloader)}')
 logging.info(f'Starting at iter/epoch: {gen_iter_num}/{start_epoch}')
 
+valid_gt = None
+fake_gt = None
 
 for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
 
@@ -176,6 +182,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
     
     # wipe out current array of GAN loss periodically 
     if model_cfg['dynamic_train'] and epoch % model_cfg['dy_epoch']==0: 
+        logging.info('Wiping out loss trend vals...')
         loss_trend_iters = []
         loss_trend_vals = []
 
@@ -193,7 +200,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             pred_real = dis_net(mask_batch)
 
             # Adversarial grounde truths, real = 1, fake = 0
-            if epoch == start_epoch: 
+            if fake_gt is None: 
                 out_size = pred_real.size()
                 valid_gt = Tensor(np.ones((volume_batch.size(0), out_size[1],out_size[2],out_size[3],out_size[4])))
                 fake_gt = Tensor(np.zeros((volume_batch.size(0), out_size[1],out_size[2],out_size[3],out_size[4])))
@@ -244,7 +251,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         outputs_hard = convert_to_hard(outputs_soft)
         pred_fake = dis_net(outputs_hard)
         
-        if epoch == start_epoch: 
+        if valid_gt is None: 
             out_size = pred_fake.size()
             valid_gt = Tensor(np.ones((volume_batch.size(0), out_size[1],out_size[2],out_size[3],out_size[4])))
                 

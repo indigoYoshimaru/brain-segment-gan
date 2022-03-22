@@ -15,7 +15,7 @@
         "decay": 0.0001, 
         "betas": [0.5, 0.999],
         "grad_clip": -1, 
-        "epochs":1, 
+        "epochs":0, 
         "gan_loss": "mse_loss"
     }, 
     "dynamic_train": 0, 

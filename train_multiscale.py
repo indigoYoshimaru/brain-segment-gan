@@ -140,8 +140,8 @@ dis_opt = GOptClass(dis_net.parameters(), lr = dis_cfg['lr'], weight_decay = dis
 
 dis_epoch =dis_cfg['epochs']
 
-if model_cfg['dynamic_train']: 
-    dis_epoch =0
+# if model_cfg['dynamic_train']: 
+#     dis_epoch =0
 
 ### region based loss: including dice loss, log cosh dice loss, focal tversky loss  
 region_loss = getattr(losses, gen_cfg['region_loss'])
@@ -158,11 +158,13 @@ dis_iter_num = 0
 start_epoch = 0
 max_epoch = params_cfg['epochs']
 Tensor = torch.cuda.FloatTensor
+loss_trend_iters = []
+loss_trend_vals = []
 
 if args.gen_cp_dir: 
-    gen_iter_num, start_epoch = load_model(args.gen_cp_dir, gen_net, gen_opt)
+    gen_iter_num, start_epoch, loss_trend_iters, loss_trend_vals = load_model(args.gen_cp_dir, gen_net, gen_opt)
 if args.dis_cp_dir: 
-    dis_iter_num, start_epoch = load_model(args.dis_cp_dir, dis_net, dis_opt)
+    dis_iter_num, start_epoch, _, _ = load_model(args.dis_cp_dir, dis_net, dis_opt)
     # to_train_epoch = params_cfg['epochs']-start_epoch
 
 logging.info(f'Total epochs: {params_cfg["epochs"]}')
@@ -302,18 +304,23 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         writer.add_scalar('generator_sample/total_sample_loss', loss_g, gen_iter_num)
 
     if epoch%params_cfg['save_epoch']==0: 
-        save_model(checkpoint_root,'generator', gen_net, gen_opt, epoch, gen_iter_num)
+        save_model(checkpoint_root,'generator', gen_net, gen_opt, epoch, gen_iter_num, loss_iter=loss_trend_iters, loss_vals=loss_trend_vals)
 
     # if the slopeficient > 0, generator GAN loss increases. -> train generator <-> dis_epoch = 0
     # else, the loss is stable or reduced, the generator is either being too good or cannot learn anything 
     # -> train discriminator to fool the generator <-> dis_epoch = dis_cfg['epochs']
     if model_cfg['dynamic_train']: 
-        logging.info('Evaluating trend... ')
-        slope, y_inter, dis_epoch = calculate_trend(loss_trend_iters, loss_trend_vals, dis_cfg['epochs'])
-        logging.info(f'Coeficient: {slope} - Y-intercept: {y_inter} - Discriminator epoch: {dis_epoch}')
-        writer.add_scalar('generator-epoch/slope', slope, epoch)
-        writer.add_scalar('generator-epoch/y-intercept', y_inter, epoch)
-
+        if model_cfg['simple_dynamic']: 
+            avg_epoch_gan_loss = epoch_gen_gan_loss_func/len(trainloader) 
+            dis_epoch = simple_dynamic(avg_epoch_gan_loss, dis_cfg['epochs'])
+            logging.info(f'Using simple dynamic:\nAvg GAN loss of 1 epoch is: {avg_epoch_gan_loss} - Discriminator epoch: {dis_epoch}')
+        else: 
+            logging.info('Evaluating trend... ')
+            slope, y_inter, dis_epoch = calculate_trend(loss_trend_iters, loss_trend_vals, dis_cfg['epochs'])
+            logging.info(f'Coeficient: {slope} - Y-intercept: {y_inter} - Discriminator epoch: {dis_epoch}')
+            writer.add_scalar('generator-epoch/slope', slope, epoch)
+            writer.add_scalar('generator-epoch/y-intercept', y_inter, epoch)
+    
     writer.add_scalar('generator-epoch/region_loss', epoch_region_loss /len(trainloader), epoch)
     writer.add_scalar('generator-epoch/GAN_loss', epoch_gen_gan_loss_func/len(trainloader), epoch)
     writer.add_scalar('generator-epoch/total_epoch_loss',epoch_gen_loss/len(trainloader),epoch)

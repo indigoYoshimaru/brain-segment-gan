@@ -9,7 +9,7 @@ class MultiscaleGenerator(nn.Module):
         self.outputs = []
         self.lrelu = nn.LeakyReLU()
         self.dropout3d = nn.Dropout3d(p=0.6)
-        self.upsacle = nn.Upsample(scale_factor=2, mode='nearest')
+        self.upscale = nn.Upsample(scale_factor=2, mode='nearest')
         self.softmax = nn.Softmax(dim=1)
 
         # Level 1 context pathway
@@ -158,7 +158,8 @@ class MultiscaleGenerator(nn.Module):
         ds1 = out 
         out = self.conv3d_l1(out)
         out = self.norm_lrelu_upscale_conv_norm_lrelu_l1(out)
-        # print_size('ds1-out', out)
+        # print_size('ds1-out', ds1)
+        # print_size('loc1-out', out)
 
         # Level 2 localization pathway
         out = torch.cat([out, context_3], dim=1)
@@ -166,7 +167,8 @@ class MultiscaleGenerator(nn.Module):
         ds2 = out
         out = self.conv3d_l2(out)
         out = self.norm_lrelu_upscale_conv_norm_lrelu_l2(out)
-        # print_size('ds2-out', out)
+        # print_size('ds2-out', ds2)
+        # print_size('loc2-out', out)
 
         # Level 3 localization pathway
         out = torch.cat([out, context_2], dim=1)
@@ -182,13 +184,14 @@ class MultiscaleGenerator(nn.Module):
         out_pred = self.conv3d_l4(out)
     
         # output 
-        ds1_upscale = self.upsacle(self.ds1_1x1_conv3d(ds1))
+        ds1_upscale = self.upscale(self.ds1_1x1_conv3d(ds1))
         ds2_conv = self.ds2_1x1_conv3d(ds2)
         ds1_ds2_sum = ds1_upscale + ds2_conv
-        ds1_ds2_sum_upscale = self.upsacle(ds1_ds2_sum)
+        ds1_ds2_sum_upscale = self.upscale(ds1_ds2_sum)
         ds3_conv = self.ds3_1x1_conv3d(ds3)
         ds1_ds2_sum_upscale_ds3_sum = ds1_ds2_sum_upscale + ds3_conv
-        ds1_ds2_sum_upscale_ds3_sum_upscale = self.upsacle(ds1_ds2_sum_upscale_ds3_sum)
+        ds1_ds2_sum_upscale_ds3_sum_upscale = self.upscale(ds1_ds2_sum_upscale_ds3_sum)
         
         final_out = out_pred + ds1_ds2_sum_upscale_ds3_sum_upscale
+        # print_size('final', final_out)
         return final_out

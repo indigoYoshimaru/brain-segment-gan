@@ -1,7 +1,7 @@
 {
     "module": "networks.multiscale_generator", 
     "class": "MultiscaleGenerator", 
-    "model_name": "gan_multiscale", 
+    "model_name": "gan_multiscale_dynamic", 
     "version": "0", 
     "save_result": 0, 
     "test_save_path": ""

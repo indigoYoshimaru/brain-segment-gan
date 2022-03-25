@@ -65,7 +65,7 @@ SegmentationModelClass = getattr(segmentation_module, test_cfg['class'])
 seg_net = SegmentationModelClass(in_channels=4, num_classes = brats_cfg['num_classes'])
 
 # 4. Load checkpoint 
-iter_num, epoch = load_model(args.seg_cp_dir, seg_net, optimizer = None)
+iter_num, epoch, _ , _ = load_model(args.seg_cp_dir, seg_net, optimizer = None)
 epoch-=1
 seg_net.cuda()
 

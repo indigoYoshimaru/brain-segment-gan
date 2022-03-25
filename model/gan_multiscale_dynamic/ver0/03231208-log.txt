@@ -1,0 +1,44 @@
+[12:08:33.553] Checkpoints to be saved at: model/gan_multiscale_dynamic/ver0
+[12:08:33.677] 2021train: 1125 images, has_mask: True
+[12:08:33.677] Combined dataset: 1125 images
+[12:08:36.146] Segmentation loss: <function dice_loss_indiv at 0x7f6f9fb43ee0> - GAN loss: MSELoss()
+[12:08:36.164] model loaded from model/gan_multiscale_dynamic/ver0/generator_epoch19.pth
+[12:08:36.171] model loaded from model/gan_multiscale_dynamic/ver0/discriminator_epoch19.pth
+[12:08:36.172] Total epochs: 101
+[12:08:36.172] Iterations per epoch: 375
+[12:08:36.172] Starting at iter/epoch: 7505/20
+[12:08:36.172] Wiping out loss trend vals...
+[12:08:36.189] save model to model/gan_multiscale_dynamic/ver0/discriminator_epoch20.pth
+[12:08:37.991] Pred_soft: tensor([4.0755e-16, 4.5073e-16, 5.1236e-16,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:08:37.994] Pred_hard: tensor([0., 1.], device='cuda:0')
+[12:08:38.784] Generator 0/20: 
+  Region loss - dice_loss_indiv: 0.29516327381134033
+   L2 loss: 0.9857330918312073
+[12:08:39.128] Pred_soft: tensor([6.1985e-13, 6.6865e-13, 8.7973e-13,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:08:39.131] Pred_hard: tensor([0., 1.], device='cuda:0')
+[12:08:39.889] Generator 1/20: 
+  Region loss - dice_loss_indiv: 0.16036109626293182
+   L2 loss: 1.2122044563293457
+[12:08:40.220] Pred_soft: tensor([2.0728e-14, 2.6375e-14, 2.7720e-14,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:08:40.223] Pred_hard: tensor([0., 1.], device='cuda:0')
+[12:08:40.984] Generator 2/20: 
+  Region loss - dice_loss_indiv: 0.2889496386051178
+   L2 loss: 1.0521997213363647
+[12:08:41.302] Pred_soft: tensor([2.0348e-12, 2.0777e-12, 2.2841e-12,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:08:41.305] Pred_hard: tensor([0., 1.], device='cuda:0')
+[12:08:42.066] Generator 3/20: 
+  Region loss - dice_loss_indiv: 0.077033132314682
+   L2 loss: 1.184645652770996
+[12:08:42.391] Pred_soft: tensor([2.8297e-11, 3.4615e-11, 4.0067e-11,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:08:42.394] Pred_hard: tensor([0., 1.], device='cuda:0')
+[12:08:43.155] Generator 4/20: 
+  Region loss - dice_loss_indiv: 0.051160212606191635
+   L2 loss: 1.257544994354248
+[12:08:43.472] Pred_soft: tensor([1.1593e-16, 1.5368e-16, 2.0441e-16,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[12:08:43.474] Pred_hard: tensor([0., 1.], device='cuda:0')

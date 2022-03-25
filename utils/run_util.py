@@ -48,6 +48,8 @@ def load_model(checkpoint_path, net, optimizer):
     optim_state_dict = state_dict['optim_state']
     iter_num = state_dict['iter_num'] + 1
     epoch_num = state_dict['epoch_num'] + 1
+    loss_iters = state_dict.get('loss_iters', [])
+    loss_vals = state_dict.get('loss_vals', []) 
 
     params.update(model_state_dict)
     net.load_state_dict(params)
@@ -56,14 +58,15 @@ def load_model(checkpoint_path, net, optimizer):
     logging.info(f'model loaded from {checkpoint_path}')
     # warmup info is mainly in optim_state_dict. So after loading the checkpoint,
     # the optimizer won't do warmup already.
-    return iter_num, epoch_num
+    return iter_num, epoch_num, loss_iters, loss_vals
 
 
-def save_model(checkpoint_dir, model_type,net, optimizer, epoch_num,iter_num):   
+def save_model(checkpoint_dir, model_type,net, optimizer, epoch_num,iter_num, loss_iter=[], loss_vals=[]):   
     save_model_path = os.path.join(
         checkpoint_dir, f'{model_type}_epoch{epoch_num}.pth')
+
     torch.save({'iter_num': iter_num, 'epoch_num': epoch_num, 'model': net.state_dict(),
-                'optim_state': optimizer.state_dict()},
+                'optim_state': optimizer.state_dict(), 'loss_iters': loss_iter, 'loss_vals': loss_vals},
                 # 'args': vars(args)},
                 save_model_path)
 
@@ -144,14 +147,19 @@ def calculate_trend(iters: list, vals: list, dis_epoch:int):
     # if (abs(slope)<0.1 and y_inter>0.7) or (slope > 0): 
     #     return slope, y_inter, 0
 
-    if slope < -0.1: 
+    if slope < -0.0001: 
         return slope, y_inter, dis_epoch
 
-    if abs(slope)<0.1: 
+    if abs(slope)<=0.0001: 
         if y_inter >0.7: 
             return slope, y_inter, 0
-        if y_inter <0.2: 
+        # if y_inter <0.5: 
+        else: 
             return slope, y_inter, dis_epoch
     
     return slope, y_inter, 0 
 
+def simple_dynamic(avg_gan: int, dis_epoch: int): 
+    if avg_gan>0.7: 
+        return 0
+    return dis_epoch

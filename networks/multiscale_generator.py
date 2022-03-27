@@ -87,7 +87,6 @@ class MultiscaleGenerator(nn.Module):
             nn.InstanceNorm3d(feat_in),
             nn.LeakyReLU(),
             nn.Upsample(scale_factor=2, mode='nearest'),
-            # should be feat_in*2 or feat_in
             nn.Conv3d(feat_in, feat_out, kernel_size=3, stride=1, padding=1, bias=False),
             nn.InstanceNorm3d(feat_out),
             nn.LeakyReLU())

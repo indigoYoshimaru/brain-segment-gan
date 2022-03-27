@@ -1,0 +1,4 @@
+[15:16:42.508] Checkpoints to be saved at: model/gan_multiscale_focal_tversky/ver0
+[15:16:42.666] 2021train: 1125 images, has_mask: True
+[15:16:42.667] Combined dataset: 1125 images
+[15:16:46.229] Segmentation loss: <function focal_tversky_loss at 0x7f72e0ce53a0> - GAN loss: BCEWithLogitsLoss()

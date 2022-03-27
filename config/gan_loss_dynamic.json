@@ -1,13 +1,13 @@
 {
-    "model_name": "gan_multiscale_dynamic",
-    "version": "1", 
+    "model_name": "gan_multiscale_focal_tversky_dynamic",
+    "version": "0", 
     "generator":{
         "opt": "Adam",
         "lr": 0.001,
         "decay": 0.0001, 
         "betas": [0.5, 0.999],
         "grad_clip": -1, 
-        "region_loss":"dice_loss_indiv"
+        "region_loss":"focal_tversky_loss"
     },
     "discriminator": {
         "opt": "Adam",
@@ -16,7 +16,7 @@
         "betas": [0.5, 0.999],
         "grad_clip": -1, 
         "epochs":1, 
-        "gan_loss": "mse_loss"
+        "gan_loss": "bce_loss"
     }, 
     "dynamic_train": 1, 
     "dy_epoch": 3, 

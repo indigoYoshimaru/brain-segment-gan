@@ -74,17 +74,23 @@ def tversky_loss(score, gt_mask, alpha, beta):
     """
     score = score.view(score.shape[0], -1)
     gt_mask = gt_mask.float().view(gt_mask.shape[0], -1)
+    smooth = 1
     intersect = torch.sum(score * gt_mask, dim=1)
     false_pos = torch.sum(score*(1-gt_mask), dim=1) * alpha
     false_neg = torch.sum((1-score)*gt_mask, dim=1) * beta
-    tversky = (1+intersect)/(1+intersect+false_pos+false_neg)
+    tversky = (smooth+intersect)/(intersect+false_pos+false_neg+smooth)
     loss = 1-tversky
     return loss.mean()
 
 
-def focal_tversky_loss(score, gt_mask, alpha=0.3, beta=0.8, gamma=4/3): 
+def focal_tversky_loss(score, gt_mask, alpha=0.3, beta=0.7, gamma=4/3): 
     """Focal tversky loss by powering by gamma"""
     tl = tversky_loss(score, gt_mask, alpha, beta)
+    return torch.pow(tl, 1/gamma)
+
+def focal_dice_loss(score, gt_mask, gamma=4/3): 
+    """Focal tversky loss by powering by gamma"""
+    tl = dice_loss_indiv(score, gt_mask)
     return torch.pow(tl, 1/gamma)
     
 # Treat the whole batch as one big example, and compute the dice loss.

@@ -1,0 +1,8 @@
+[20:47:54.147] Checkpoints to be saved at: model/gan_multiscale_focal_tversky_dynamic/ver0
+[20:47:54.291] 2021train: 1125 images, has_mask: True
+[20:47:54.291] Combined dataset: 1125 images
+[20:47:56.688] Segmentation loss: <function focal_tversky_loss at 0x7f3c2e5e9430> - GAN loss: BCEWithLogitsLoss()
+[20:47:56.689] Total epochs: 101
+[20:47:56.689] Iterations per epoch: 375
+[20:47:56.689] Starting at iter/epoch: 0/0
+[20:47:56.689] Wiping out loss trend vals...

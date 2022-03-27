@@ -210,8 +210,9 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             loss_real = gan_loss_func(pred_real, valid_gt)
             # compute loss for fake prediction: L2[D(x, y^), 0], x is image, y^ is generated mask
             fake_mask = gen_net(volume_batch)
-            output_hard = convert_to_hard(torch.sigmoid(fake_mask))
-            pred_fake = dis_net(output_hard)
+            outputs_soft = torch.sigmoid(fake_mask)
+            outputs_hard = convert_to_hard(outputs_soft)
+            pred_fake = dis_net(outputs_hard)
 
             logging.debug(f'Pred_real: {pred_real.unique()}')
             logging.debug(f'Pred_fake: {pred_fake.unique()}')
@@ -231,7 +232,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             if idx %50==0: 
                 draw_image(writer, volume_batch,'discriminator/image', c_start=0, c_end=1, iter_num=dis_iter_num, size = params_cfg['coords']) 
                 draw_image(writer, mask_batch,'discriminator/groundtruth_label', c_start=1, c_end=2, iter_num=dis_iter_num, size = params_cfg['coords'])
-                draw_image(writer, output_hard, 'discriminator/output_hard', c_start=1, c_end=2, iter_num=dis_iter_num, size=params_cfg['coords'])
+                draw_image(writer, outputs_hard, 'discriminator/outputs_hard', c_start=1, c_end=2, iter_num=dis_iter_num, size=params_cfg['coords'])
                 draw_image(writer, pred_real, 'discriminator/real_feat_map', iter_num=dis_iter_num, size = [2,11,2], mode='map')
                 draw_image(writer, pred_fake, 'discriminator/fake_feat_map', iter_num=dis_iter_num, size = [2,11,2], mode='map')
 
@@ -283,7 +284,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         del volume_batch, mask_batch
         
         # total loss is total batch loss of all classes
-        loss_g =  3*total_region_loss + loss_GAN
+        loss_g =  5*total_region_loss + loss_GAN
         gen_iter_num += 1 
         gen_opt.zero_grad()
         loss_g.backward()

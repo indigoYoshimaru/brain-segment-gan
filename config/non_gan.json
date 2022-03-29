@@ -1,8 +1,9 @@
 {
-    "model_name": "unet",
-    "version": "1", 
-    "module": "networks.multiscale_generator", 
-    "class": "MultiscaleGenerator",
+    "model_name": "unet-basic",
+    "version": "0", 
+    "num_classes": 4,
+    "module": "networks.3dunet", 
+    "class": "BasicUNet",
     "opt": "Adam",
     "lr": 0.001,
     "decay": 0.0001, 

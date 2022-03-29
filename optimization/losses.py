@@ -63,7 +63,7 @@ def log_cosh_dice_loss_indiv(score, gt_mask):
     dice_loss = dice_loss_indiv(score, gt_mask)
     return torch.log(torch.cosh(dice_loss)) 
 
-def tversky_loss(score, gt_mask, alpha, beta): 
+def tversky_loss(score, gt_mask, alpha=0.3, beta=0.7): 
     """
         Calculate tversky loss. The function calculate each sample in the batch, then average them
         Pros: generalization of Dice loss, add weights to false positives and false negatives. 

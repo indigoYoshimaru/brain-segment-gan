@@ -1,0 +1,7 @@
+[21:34:59.147] Checkpoints to be saved at: model/unet-basic/ver0
+[21:34:59.282] 2021train: 1125 images, has_mask: True
+[21:34:59.282] Combined dataset: 1125 images
+[21:35:02.048] Segmentation loss: <function dice_loss_indiv at 0x7f9a745453a0>
+[21:35:02.049] Total epochs: 101
+[21:35:02.049] Iterations per epoch: 375
+[21:35:02.049] Starting at iter/epoch: 0/0

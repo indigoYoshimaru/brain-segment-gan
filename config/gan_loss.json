@@ -16,7 +16,7 @@
         "betas": [0.5, 0.999],
         "grad_clip": -1, 
         "epochs":1, 
-        "gan_loss": "bce_loss"
+        "gan_loss": "mse_loss"
     }, 
     "dynamic_train": 0, 
     "dy_epoch": 0

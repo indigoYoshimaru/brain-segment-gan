@@ -142,7 +142,7 @@ max_epoch = params_cfg['epochs']
 Tensor = torch.cuda.FloatTensor
 
 if args.cp_dir: 
-    iter_num, start_epoch = load_model(args.cp_dir, net, optimizer)
+    iter_num, start_epoch, _, _ = load_model(args.cp_dir, net, optimizer)
     # to_train_epoch = params_cfg['epochs']-start_epoch
 
 logging.info(f'Total epochs: {params_cfg["epochs"]}')

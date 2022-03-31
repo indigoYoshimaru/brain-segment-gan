@@ -284,7 +284,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         del volume_batch, mask_batch
         
         # total loss is total batch loss of all classes
-        loss_g =  3*total_region_loss + loss_GAN
+        loss_g =  8*total_region_loss + loss_GAN
         gen_iter_num += 1 
         gen_opt.zero_grad()
         loss_g.backward()

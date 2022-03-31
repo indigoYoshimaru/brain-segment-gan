@@ -1,9 +1,9 @@
 {
-    "model_name": "unet-basic",
+    "model_name": "unet-simple",
     "version": "0", 
     "num_classes": 4,
-    "module": "networks.3dunet", 
-    "class": "BasicUNet",
+    "module": "networks.v2v_generator", 
+    "class": "Generator",
     "opt": "Adam",
     "lr": 0.001,
     "decay": 0.0001, 

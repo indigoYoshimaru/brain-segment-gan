@@ -33,13 +33,14 @@ def test_all_cases(net, db_test, writer, num_classes, batch_size=8,
         # image_tensor is 4D. First dim is modality. 
         # If only one modality is chosen, then image_tensor.shape[0] = 1.
         image_tensor, mask_tensor = sample['image'].cuda(), sample['mask'].cuda()
+        print(image_tensor.size())
         image_path = sample['image_path']
         image_name = get_filename(image_path)
         image_name = image_name.split(".")[0]
         
         
         # Map 4 to 3, and keep 0,1,2 unchanged.
-        print(torch.unique(mask_tensor)) # but it is already 3! 
+        # print(torch.unique(mask_tensor)) # but it is already 3! 
         mask_tensor -= (mask_tensor == 4).long()
         mask_tensor = mask_tensor.float()
         mask_tensor = brats_map_label(mask_tensor, binarize)
@@ -149,7 +150,7 @@ def test_single_case(net, image, orig_patch_size, input_patch_size, batch_size, 
     sx = math.ceil((H2 - dx) / stride_xy) + 1
     sy = math.ceil((W2 - dy) / stride_xy) + 1
     sz = math.ceil((D2 - dz) / stride_z) + 1
-    # print("{}, {}, {}".format(sx, sy, sz))
+    print("{}, {}, {}".format(sx, sy, sz))
     preds_soft  = torch.zeros((num_classes, ) + image.shape[1:], device='cuda')
     cnt         = torch.zeros_like(image[0])
 

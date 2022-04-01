@@ -1,0 +1,9 @@
+[15:05:44.179] Checkpoints to be saved at: model/gan_multiscale_matmul/ver0
+[15:05:44.351] 2021train: 1125 images, has_mask: True
+[15:05:44.351] Combined dataset: 1125 images
+[15:05:47.874] Segmentation loss: <function dice_loss_indiv at 0x7f645762a040> - GAN loss: MSELoss()
+[15:05:47.908] model loaded from model/gan_multiscale_matmul/ver0/generator_epoch20.pth
+[15:05:47.920] model loaded from model/gan_multiscale_matmul/ver0/discriminator_epoch20.pth
+[15:05:47.920] Total epochs: 101
+[15:05:47.920] Iterations per epoch: 375
+[15:05:47.920] Starting at iter/epoch: 7878/21

@@ -92,22 +92,26 @@ class MultiscaleGenerator(nn.Module):
             nn.LeakyReLU())
 
     def forward(self, x):
-        #  Level 1 context pathway
+        #  Level 1 context 
+        print_size('x', x)
         out = self.conv3d_c1_1(x)
         residual_1 = out
+        ##print_size('en-res1', residual_1 )
         out = self.lrelu(out)
         out = self.conv3d_c1_2(out)
         out = self.dropout3d(out)
         out = self.lrelu_conv_c1(out)
         # Element Wise Summation
         out += residual_1
-        context_1 = self.lrelu(out)
         out = self.inorm3d_c1(out)
         out = self.lrelu(out)
+        context_1 = out
+        ##print_size('en-out1', out)
 
         # Level 2 context pathway
         out = self.conv3d_c2(out)
         residual_2 = out
+        #print_size('en-res2', residual_2 )
         out = self.norm_lrelu_conv_c2(out)
         out = self.dropout3d(out)
         out = self.norm_lrelu_conv_c2(out)
@@ -115,10 +119,13 @@ class MultiscaleGenerator(nn.Module):
         out = self.inorm3d_c2(out)
         out = self.lrelu(out)
         context_2 = out
+        #print_size('en-out2', out)
+
 
         # Level 3 context pathway
         out = self.conv3d_c3(out)
         residual_3 = out
+        #print_size('en-res3', residual_3 )
         out = self.norm_lrelu_conv_c3(out)
         out = self.dropout3d(out)
         out = self.norm_lrelu_conv_c3(out)
@@ -126,10 +133,12 @@ class MultiscaleGenerator(nn.Module):
         out = self.inorm3d_c3(out)
         out = self.lrelu(out)
         context_3 = out
+        #print_size('en-out3', out)
 
         # Level 4 context pathway
         out = self.conv3d_c4(out)
         residual_4 = out
+        #print_size('en-res4', residual_4)
         out = self.norm_lrelu_conv_c4(out)
         out = self.dropout3d(out)
         out = self.norm_lrelu_conv_c4(out)
@@ -137,19 +146,24 @@ class MultiscaleGenerator(nn.Module):
         out = self.inorm3d_c4(out)
         out = self.lrelu(out)
         context_4 = out
+        #print_size('en-out4', out)
+
 
         # Level 5
         out = self.conv3d_c5(out)
         residual_5 = out
+        #print_size('en-res5', residual_5 )
         out = self.norm_lrelu_conv_c5(out)
         out = self.dropout3d(out)
         out = self.norm_lrelu_conv_c5(out)
         out += residual_5
+        # print_size('en-out5', out)
         out = self.norm_lrelu_upscale_conv_norm_lrelu_l0(out)
-
         out = self.conv3d_l0(out)
         out = self.inorm3d_l0(out)
         out = self.lrelu(out)
+        #print_size('en-out5', out)
+        #print('===========================')
 
         # Level 1 localization pathway
         out = torch.cat([out, context_4], dim=1)
@@ -157,8 +171,8 @@ class MultiscaleGenerator(nn.Module):
         ds1 = out 
         out = self.conv3d_l1(out)
         out = self.norm_lrelu_upscale_conv_norm_lrelu_l1(out)
-        # print_size('ds1-out', ds1)
-        # print_size('loc1-out', out)
+        #print_size('de-scale1', ds1)
+        #print_size('de-out1', out)
 
         # Level 2 localization pathway
         out = torch.cat([out, context_3], dim=1)
@@ -166,8 +180,8 @@ class MultiscaleGenerator(nn.Module):
         ds2 = out
         out = self.conv3d_l2(out)
         out = self.norm_lrelu_upscale_conv_norm_lrelu_l2(out)
-        # print_size('ds2-out', ds2)
-        # print_size('loc2-out', out)
+        #print_size('de-scale2', ds2)
+        #print_size('de-out2', out)
 
         # Level 3 localization pathway
         out = torch.cat([out, context_2], dim=1)
@@ -175,22 +189,30 @@ class MultiscaleGenerator(nn.Module):
         ds3 = out
         out = self.conv3d_l3(out)
         out = self.norm_lrelu_upscale_conv_norm_lrelu_l3(out)
-        # print_size('ds3-out', out)
+        #print_size('de-scale3', ds3)
+        #print_size('de-out3', out)
 
         # Level 4 localization pathway
         out = torch.cat([out, context_1], dim=1)
         out = self.conv_norm_lrelu_l4(out)
         out_pred = self.conv3d_l4(out)
+        #print_size('de-out4', out)
     
         # output 
-        ds1_upscale = self.upscale(self.ds1_1x1_conv3d(ds1))
+        ds1_conv = self.ds1_1x1_conv3d(ds1)
+        ds1_upscale = self.upscale(ds1_conv)
         ds2_conv = self.ds2_1x1_conv3d(ds2)
         ds1_ds2_sum = ds1_upscale + ds2_conv
         ds1_ds2_sum_upscale = self.upscale(ds1_ds2_sum)
         ds3_conv = self.ds3_1x1_conv3d(ds3)
         ds1_ds2_sum_upscale_ds3_sum = ds1_ds2_sum_upscale + ds3_conv
         ds1_ds2_sum_upscale_ds3_sum_upscale = self.upscale(ds1_ds2_sum_upscale_ds3_sum)
-        
+        #print_size('ds1-conv', ds1_conv)
+        #print_size('ds2-conv', ds2_conv)
+        #print_size('ds3-conv', ds3_conv)
+
         final_out = out_pred + ds1_ds2_sum_upscale_ds3_sum_upscale
-        # print_size('final', final_out)
+        #print_size('final', final_out)
+        #print('===========================')
+
         return final_out

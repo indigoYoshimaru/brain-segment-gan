@@ -197,27 +197,35 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             mask_batch = brats_map_label(mask_batch, binarize = False)
             volume_batch = F.interpolate(volume_batch, size=data_cfg['input_patch_size'], mode='trilinear', align_corners=False)
             dis_opt.zero_grad()
+            fake_mask = gen_net(volume_batch)
+            outputs_soft = torch.sigmoid(fake_mask)
+            outputs_hard = convert_to_hard(outputs_soft)
             
-            # compute loss for real prediction: L2[D(x,y), 1], x is image, y is mask
-            pred_real = dis_net(mask_batch)
+            real_input = mask_batch
+            fake_input = outputs_hard
+           
+            if model_cfg['matmul']: 
+                # print_size('volume', volume_batch)
+                # print_size('label', mask_batch)
+                # print_size('pred', outputs_soft)
+                real_input = torch.mul(mask_batch, volume_batch)
+                fake_input = torch.mul(fake_input, volume_batch)
+            pred_real = dis_net(real_input)
+            pred_fake = dis_net(fake_input)
 
             # Adversarial grounde truths, real = 1, fake = 0
             if fake_gt is None: 
                 out_size = pred_real.size()
                 valid_gt = Tensor(np.ones((volume_batch.size(0), out_size[1],out_size[2],out_size[3],out_size[4])))
                 fake_gt = Tensor(np.zeros((volume_batch.size(0), out_size[1],out_size[2],out_size[3],out_size[4])))
-            
+            # compute loss for real prediction: L2[D(x,y), 1], x is image, y is mask
             loss_real = gan_loss_func(pred_real, valid_gt)
             # compute loss for fake prediction: L2[D(x, y^), 0], x is image, y^ is generated mask
-            fake_mask = gen_net(volume_batch)
-            outputs_soft = torch.sigmoid(fake_mask)
-            outputs_hard = convert_to_hard(outputs_soft)
-            pred_fake = dis_net(outputs_hard)
+            loss_fake = gan_loss_func(pred_fake, fake_gt)
 
             logging.debug(f'Pred_real: {pred_real.unique()}')
             logging.debug(f'Pred_fake: {pred_fake.unique()}')
 
-            loss_fake = gan_loss_func(pred_fake, fake_gt)
             loss_d = loss_real + loss_fake
             epoch_dis_loss+=loss_d
 
@@ -252,12 +260,15 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         fake_mask = gen_net(volume_batch)
         outputs_soft = torch.sigmoid(fake_mask)
         outputs_hard = convert_to_hard(outputs_soft)
-        pred_fake = dis_net(outputs_hard)
+        fake_input = outputs_hard
+        if model_cfg['matmul']: 
+            fake_input = torch.mul(fake_input, volume_batch)
+        pred_fake = dis_net(fake_input)
         
         if valid_gt is None: 
             out_size = pred_fake.size()
             valid_gt = Tensor(np.ones((volume_batch.size(0), out_size[1],out_size[2],out_size[3],out_size[4])))
-                
+
         loss_GAN  = gan_loss_func(pred_fake, valid_gt)
         
         # voxel-wise loss 
@@ -284,7 +295,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         del volume_batch, mask_batch
         
         # total loss is total batch loss of all classes
-        loss_g =  8*total_region_loss + loss_GAN
+        loss_g =  3*total_region_loss + loss_GAN
         gen_iter_num += 1 
         gen_opt.zero_grad()
         loss_g.backward()

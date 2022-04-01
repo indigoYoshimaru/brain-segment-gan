@@ -1,0 +1,19 @@
+[15:07:34.546] Checkpoints to be saved at: model/gan_multiscale_matmul/ver0
+[15:07:34.673] 2021train: 1125 images, has_mask: True
+[15:07:34.674] Combined dataset: 1125 images
+[15:07:37.172] Segmentation loss: <function dice_loss_indiv at 0x7f92e9847040> - GAN loss: MSELoss()
+[15:07:37.190] model loaded from model/gan_multiscale_matmul/ver0/generator_epoch20.pth
+[15:07:37.197] model loaded from model/gan_multiscale_matmul/ver0/discriminator_epoch20.pth
+[15:07:37.197] Total epochs: 101
+[15:07:37.197] Iterations per epoch: 375
+[15:07:37.197] Starting at iter/epoch: 7878/21
+[15:07:39.021] Pred_real: tensor([0.6526, 0.6602, 0.7102,  ..., 1.2513, 1.2576, 1.2767], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:07:39.022] Pred_fake: tensor([-0.1237, -0.0777, -0.0627,  ...,  1.1115,  1.1167,  1.1229],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:07:39.022] Discriminator 0/0/21: loss real: 0.004460972733795643 -- loss fake: 0.30103445053100586
+[15:07:39.819] Pred_real: tensor([0.0585, 0.1561, 0.1615,  ..., 0.9197, 0.9326, 0.9386], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[15:07:39.820] Pred_fake: tensor([-0.7811, -0.7764, -0.7724,  ...,  0.2709,  0.2983,  0.3366],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[15:07:39.821] Discriminator 1/0/21: loss real: 0.17304560542106628 -- loss fake: 0.06226304918527603

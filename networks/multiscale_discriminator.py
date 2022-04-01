@@ -75,24 +75,25 @@ class MultiscaleDiscriminator(nn.Module):
     def forward(self, mask):
         #  Level 1 context pathway
         # x = torch.cat([brain, mask], dim =1 )
-        # print_size('x', x)
-        
+        #print_size('x', mask)
         out = self.conv3d_c1_1(mask)
         residual_1 = out
+        #print_size('en-res1', residual_1 )
         out = self.lrelu(out)
         out = self.conv3d_c1_2(out)
         out = self.dropout3d(out)
         out = self.lrelu_conv_c1(out)
         # Element Wise Summation
         out += residual_1
-        context_1 = self.lrelu(out)
         out = self.inorm3d_c1(out)
         out = self.lrelu(out)
-        # print_size('ds3-in', out)
+        context_1 = out
+        #print_size('en-out1', out)
 
         # Level 2 context pathway
         out = self.conv3d_c2(out)
         residual_2 = out
+        #print_size('en-res2', residual_2 )
         out = self.norm_lrelu_conv_c2(out)
         out = self.dropout3d(out)
         out = self.norm_lrelu_conv_c2(out)
@@ -100,11 +101,13 @@ class MultiscaleDiscriminator(nn.Module):
         out = self.inorm3d_c2(out)
         out = self.lrelu(out)
         context_2 = out
-        # print_size('ds2-in', out)
+        #print_size('en-out2', out)
+
 
         # Level 3 context pathway
         out = self.conv3d_c3(out)
         residual_3 = out
+        #print_size('en-res3', residual_3 )
         out = self.norm_lrelu_conv_c3(out)
         out = self.dropout3d(out)
         out = self.norm_lrelu_conv_c3(out)
@@ -112,11 +115,12 @@ class MultiscaleDiscriminator(nn.Module):
         out = self.inorm3d_c3(out)
         out = self.lrelu(out)
         context_3 = out
-        # print_size('ds1-in', out)
+        #print_size('en-out3', out)
 
         # Level 4 context pathway
         out = self.conv3d_c4(out)
         residual_4 = out
+        #print_size('en-res4', residual_4)
         out = self.norm_lrelu_conv_c4(out)
         out = self.dropout3d(out)
         out = self.norm_lrelu_conv_c4(out)
@@ -124,6 +128,9 @@ class MultiscaleDiscriminator(nn.Module):
         out = self.inorm3d_c4(out)
         out = self.lrelu(out)
         context_4 = out
+        #print_size('en-out4', out)
+        out = self.output_(out)
+        #print_size('final', out)
 
-        return self.output_(out)
+        return out
         

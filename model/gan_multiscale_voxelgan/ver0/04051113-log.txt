@@ -1,0 +1,11 @@
+[11:13:18.249] Checkpoints to be saved at: model/gan_multiscale_voxelgan/ver0
+[11:13:18.386] 2021train: 1125 images, has_mask: True
+[11:13:18.387] Combined dataset: 1125 images
+[11:13:22.253] Segmentation loss: <function l1_loss at 0x7efbcbd6f550> - GAN loss: MSELoss()
+[11:13:22.254] Total epochs: 101
+[11:13:22.254] Iterations per epoch: 375
+[11:13:22.254] Starting at iter/epoch: 0/0
+[11:13:22.279] save model to model/gan_multiscale_voxelgan/ver0/discriminator_epoch0.pth
+[11:13:24.568] Pred_soft: tensor([5.8947e-10, 1.9213e-09, 2.8466e-09,  ..., 1.0000e+00, 1.0000e+00,
+        1.0000e+00], device='cuda:0', grad_fn=<Unique2Backward0>)
+[11:13:24.571] Pred_hard: tensor([0., 1.], device='cuda:0')

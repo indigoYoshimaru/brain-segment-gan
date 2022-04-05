@@ -16,8 +16,10 @@ from torchvision import transforms
 from torchvision.utils import make_grid
 
 from dataloaders.datasets3d import *
-from networks.multiscale_generator import MultiscaleGenerator as Generator
-from networks.multiscale_discriminator import MultiscaleDiscriminator as Discriminator
+# from networks.multiscale_generator import MultiscaleGenerator as Generator
+# from networks.multiscale_discriminator import MultiscaleDiscriminator as Discriminator
+from networks.voxelgan_generator import Generator
+from networks.voxelgan_discriminator import Discriminator
 # from networks.v2v_discriminator import Discriminator
 import optimization.losses as losses
 
@@ -198,6 +200,12 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             volume_batch = F.interpolate(volume_batch, size=data_cfg['input_patch_size'], mode='trilinear', align_corners=False)
             dis_opt.zero_grad()
             fake_mask = gen_net(volume_batch)
+            if 'voxelgan' in model_cfg['model_name']: 
+                print('voxelgan')
+                new_vol = volume_batch+fake_mask
+                fake_mask1 = gen_net(new_vol)
+                fake_mask += fake_mask1
+
             outputs_soft = torch.sigmoid(fake_mask)
             outputs_hard = convert_to_hard(outputs_soft)
             
@@ -205,9 +213,6 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             fake_input = outputs_hard
            
             if model_cfg['matmul']: 
-                # print_size('volume', volume_batch)
-                # print_size('label', mask_batch)
-                # print_size('pred', outputs_soft)
                 real_input = torch.mul(mask_batch, volume_batch)
                 fake_input = torch.mul(fake_input, volume_batch)
             pred_real = dis_net(real_input)
@@ -258,6 +263,10 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         volume_batch = F.interpolate(volume_batch, size=data_cfg['input_patch_size'], mode='trilinear', align_corners=False)
 
         fake_mask = gen_net(volume_batch)
+        if 'voxelgan' in model_cfg['model_name']: 
+            new_vol = volume_batch+fake_mask
+            fake_mask1 = gen_net(new_vol)
+            fake_mask += fake_mask1
         outputs_soft = torch.sigmoid(fake_mask)
         outputs_hard = convert_to_hard(outputs_soft)
         fake_input = outputs_hard
@@ -276,7 +285,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         region_losses = []
         logging.debug(f'Pred_soft: {outputs_soft.unique()}')
         logging.debug(f'Pred_hard: {outputs_hard.unique()}')
-
+        
         for cls in range(1, data_cfg['num_classes']):
             # bce_loss_func is actually nn.BCEWithLogitsLoss(), so use raw scores as input.
             # dice loss always uses sigmoid/softmax transformed probs as input.

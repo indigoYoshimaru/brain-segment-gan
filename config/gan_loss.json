@@ -1,5 +1,5 @@
 {
-    "model_name": "gan_multiscale_matmul",
+    "model_name": "gan_multiscale_voxelgan",
     "version": "0", 
     "generator":{
         "opt": "Adam",
@@ -18,7 +18,7 @@
         "epochs":1, 
         "gan_loss": "mse_loss"
     }, 
-    "matmul": 1, 
+    "matmul": 0, 
     "dynamic_train": 0, 
     "dy_epoch": 0
 }

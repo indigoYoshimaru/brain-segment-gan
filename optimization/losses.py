@@ -166,3 +166,8 @@ def calc_vcdr(mask_nhot_soft, thres=0.5, delta=1):
         vcdr = cup_vert_len / (disc_vert_len + 0.0001)
         return vcdr
                     
+def l1_loss(): 
+    return nn.L1Loss()
+
+def cross_entropy_loss(): 
+    return nn.CrossEntropyLoss()

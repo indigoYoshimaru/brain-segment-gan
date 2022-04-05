@@ -93,7 +93,7 @@ class MultiscaleGenerator(nn.Module):
 
     def forward(self, x):
         #  Level 1 context 
-        print_size('x', x)
+        # print_size('x', x)
         out = self.conv3d_c1_1(x)
         residual_1 = out
         ##print_size('en-res1', residual_1 )

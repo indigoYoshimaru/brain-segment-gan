@@ -99,7 +99,7 @@ logging.info(f'{ds_name}: {len(db_test)} images, has_mask: {has_mask}')
 test_loader = DataLoader(db_test, batch_size=1, sampler=None,
                             num_workers=params_cfg['num_workers'], pin_memory=False, shuffle=False)
 
-avg_scores = test_all_cases(seg_net, db_test, writer,
+avg_scores = test_all_cases(seg_net, test_cfg['model_name'], db_test, writer,
                                     num_classes=brats_cfg['num_classes'],
                                     batch_size=1,
                                     orig_patch_size=brats_cfg['orig_patch_size'],

@@ -1,0 +1,7 @@
+[11:01:14.079] Checkpoints to be saved at: model/gan_multiscale_voxelgan/ver0
+[11:01:14.214] 2021train: 1125 images, has_mask: True
+[11:01:14.214] Combined dataset: 1125 images
+[11:01:17.039] Segmentation loss: <function l1_loss at 0x7f3ae18b9700> - GAN loss: CrossEntropyLoss()
+[11:01:17.040] Total epochs: 101
+[11:01:17.040] Iterations per epoch: 563
+[11:01:17.040] Starting at iter/epoch: 0/0

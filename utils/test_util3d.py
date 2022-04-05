@@ -13,7 +13,7 @@ import pdb
 from utils.run_util import draw_image, rotate_visual
 
 # When test_interp is not None, it should be a tuple like (56,56,40) used as the size of interpolated masks.
-def test_all_cases(net, db_test, writer, num_classes, batch_size=8,
+def test_all_cases(net, model_name, db_test, writer, num_classes, batch_size=8,
                    orig_patch_size=(128, 112, 80), input_patch_size=(128, 112, 64), visualize_pos = [21,60,10],
                    stride_xy=56, stride_z=40, 
                    save_result=True, test_save_path=None, 
@@ -33,7 +33,6 @@ def test_all_cases(net, db_test, writer, num_classes, batch_size=8,
         # image_tensor is 4D. First dim is modality. 
         # If only one modality is chosen, then image_tensor.shape[0] = 1.
         image_tensor, mask_tensor = sample['image'].cuda(), sample['mask'].cuda()
-        print(image_tensor.size())
         image_path = sample['image_path']
         image_name = get_filename(image_path)
         image_name = image_name.split(".")[0]
@@ -67,7 +66,7 @@ def test_all_cases(net, db_test, writer, num_classes, batch_size=8,
             preds_soft  = make_brats_pred_consistent(preds_soft, is_conservative=False)
             preds_hard  = harden_segmap3d(preds_soft, 0.5)
         else:
-            preds_hard, preds_soft = test_single_case(net, image_tensor, orig_patch_size, input_patch_size, 
+            preds_hard, preds_soft = test_single_case(net, model_name, image_tensor, orig_patch_size, input_patch_size, 
                                                       batch_size, stride_xy, stride_z, num_classes)
         
         if has_mask:    
@@ -115,7 +114,7 @@ def test_all_cases(net, db_test, writer, num_classes, batch_size=8,
     avg_metric = total_metric / valid_metric_counts
     return avg_metric
 
-def test_single_case(net, image, orig_patch_size, input_patch_size, batch_size, stride_xy, stride_z, num_classes):
+def test_single_case(net, model_name, image, orig_patch_size, input_patch_size, batch_size, stride_xy, stride_z, num_classes):
     C, H, W, D     = image.shape
     dx, dy, dz  = orig_patch_size
     
@@ -175,7 +174,11 @@ def test_single_case(net, image, orig_patch_size, input_patch_size, batch_size, 
                                                mode='trilinear', align_corners=False)
                     with torch.no_grad():
                         scores_raw = net(test_batch)
-                    
+                        if 'voxelgan' in model_name: 
+                            new_vol = test_batch+scores_raw
+                            new_score = net(new_vol)
+                            scores_raw += new_score
+                                    
                     # if net_type == 'unet':
                     #     scores_raw = scores_raw[1]
                         

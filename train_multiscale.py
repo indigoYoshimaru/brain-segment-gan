@@ -16,11 +16,10 @@ from torchvision import transforms
 from torchvision.utils import make_grid
 
 from dataloaders.datasets3d import *
-# from networks.multiscale_generator import MultiscaleGenerator as Generator
-# from networks.multiscale_discriminator import MultiscaleDiscriminator as Discriminator
-from networks.voxelgan_generator import Generator
-from networks.voxelgan_discriminator import Discriminator
-# from networks.v2v_discriminator import Discriminator
+from networks.multiscale_generator import MultiscaleGenerator as Generator
+from networks.multiscale_discriminator import MultiscaleDiscriminator as Discriminator
+# from networks.voxelgan_generator import Generator
+# from networks.voxelgan_discriminator import Discriminator
 import optimization.losses as losses
 
 """
@@ -269,6 +268,8 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             fake_mask += fake_mask1
         outputs_soft = torch.sigmoid(fake_mask)
         outputs_hard = convert_to_hard(outputs_soft)
+        # fake_input = torch.argmax(brats_inv_map_label(outputs_soft), dim=0)
+ 
         fake_input = outputs_hard
         if model_cfg['matmul']: 
             fake_input = torch.mul(fake_input, volume_batch)

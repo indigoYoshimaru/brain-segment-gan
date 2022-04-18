@@ -39,6 +39,14 @@ def brats_map_label(mask, binarize):
         mask_nhot = mask_nhot.permute(1, 0, 2, 3, 4)
     return mask_nhot
 
+def brats_permute(mask):
+    print(mask.size())
+    mask_nhot = torch.zeros((4,) + mask.shape, device='cuda')
+    mask_nhot[0, mask==0] = 1
+    print(mask_nhot[0].unique())
+    mask_nhot = mask_nhot.permute(1, 0, 2, 3, 4)
+    return mask_nhot
+
 # Called only when predicting each class separately
 def make_brats_pred_consistent(preds_soft, is_conservative):
     # is_conservative: predict 0 as much as it can. 

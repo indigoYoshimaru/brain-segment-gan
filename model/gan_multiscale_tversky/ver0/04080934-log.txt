@@ -1,4 +1,0 @@
-[09:34:55.276] Checkpoints to be saved at: model/gan_multiscale_tversky/ver0
-[09:34:55.456] 2021train: 1125 images, has_mask: True
-[09:34:55.457] Combined dataset: 1125 images
-[09:34:58.951] Segmentation loss: <function tversky_loss at 0x7f80428773a0> - GAN loss: MSELoss()

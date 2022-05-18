@@ -91,31 +91,7 @@ class Generator(nn.Module):
         # self.print_size(up2, 'up2')
         up3_1 = self.decoder2(up2_1)
         up3_1 = torch.cat([up3_1, down1_1], dim =1)
-        # self.print_size(up3, 'up3')
-        # out_1 = self.output_(up3_1)
-        # x+=out_1
-        # down1_2 = self.encoder0(x)
-        # down2_2 = self.encoder1(down1_2)
-        # down3_2 = self.encoder2(down2_2)
-        # down4_2 = self.encoder3(down3_2)
-        # bot=down4_2
-        # bot_new_2 = self.bneck0(bot) # 512-> 512
-        # for i in range(3): 
-        #     bot_res = torch.cat([bot_new_2, bot], dim=1)
-        #     bot = bot_new_2
-        #     bot_new_2 = self.bneck1(bot_res)
-        
-        # bot_new_2 +=bot_new_1
-        # up1_2 = self.decoder0(bot_new_2)	 
-        # up1_2 = torch.cat([up1_2, down3_2], dim=1)
-        # up2_2 = self.decoder1(up1_2)
-        # up2_2 = torch.cat([up2_2, down2_2], dim=1)
-        # # self.print_size(up2, 'up2')
-        # up3_2 = self.decoder2(up2_2)
-        # up3_2 = torch.cat([up3_2, down1_2], dim =1)
-        # # self.print_size(up3, 'up3')
 
-        # up3_2 += up3_1
         out = self.output_(up3_1)
         return out
         

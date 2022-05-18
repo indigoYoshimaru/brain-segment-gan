@@ -83,8 +83,8 @@ def brats_inv_map_label(orig_probs):
     inv_probs[2] = orig_probs[2] - orig_probs[3]     # P(2) = P(WT) - P(TC)
     inv_probs[2] *= UP
     
-    if (inv_probs < 0).sum() > 0:
-        pdb.set_trace()
+    # if (inv_probs < 0).sum() > 0:
+    #     pdb.set_trace()
         
     '''
     mask_nhot[0, mask==0] = 1

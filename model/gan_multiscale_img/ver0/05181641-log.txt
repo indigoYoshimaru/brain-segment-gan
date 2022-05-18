@@ -1,0 +1,3 @@
+[16:41:47.793] Checkpoints to be saved at: model/gan_multiscale_img/ver0
+[16:41:47.942] 2021train: 1125 images, has_mask: True
+[16:41:47.942] Combined dataset: 1125 images

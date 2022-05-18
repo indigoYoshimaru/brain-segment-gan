@@ -1,4 +1,0 @@
-[22:52:43.265] Checkpoints to be saved at: model/gan_multiscale_logcoshdice/ver0
-[22:52:43.443] 2021train: 1125 images, has_mask: True
-[22:52:43.443] Combined dataset: 1125 images
-[22:52:47.233] Segmentation loss: <function log_cosh_dice_loss_indiv at 0x7f8324f9c0d0> - GAN loss: MSELoss()

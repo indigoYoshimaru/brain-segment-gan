@@ -1,4 +1,0 @@
-[12:10:47.971] Checkpoints to be saved at: model/gan_multiscale/ver1
-[12:10:48.103] 2021train: 1125 images, has_mask: True
-[12:10:48.103] Combined dataset: 1125 images
-[12:10:51.554] Segmentation loss: <function dice_loss_indiv at 0x7f8e8e71df70> - GAN loss: MSELoss()

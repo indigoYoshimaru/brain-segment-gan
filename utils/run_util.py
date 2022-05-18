@@ -3,6 +3,7 @@ import json
 from functools import reduce
 import os
 import torch
+import numpy as np
 import logging
 from dataloaders.datasets3d import *
 from sklearn import linear_model as lm 
@@ -92,6 +93,21 @@ def convert_to_hard(preds_soft, thres=0.5):
     preds_hard = torch.zeros_like(preds_soft)
     preds_hard[preds_soft>=thres]=1
     return preds_hard
+
+def convert_to_img(preds_soft): 
+    converted = torch.zeros_like(preds_soft)
+    print(f'batch: {converted.unique()}')
+    for idx, img in enumerate(preds_soft):
+        inv_probs = brats_inv_map_label(img)
+        preds_hard = torch.argmax(inv_probs, dim=0)
+        # Map 3 to 4, and keep 0, 1, 2 unchanged.
+        preds_hard += (preds_hard == 3)
+        converted[idx] = preds_hard
+
+        # converted.append(preds_hard)
+    print(f'img conv: {converted.unique()}')
+
+    return converted
 
 def rotate_image(img, axes): 
     img = img.gpu()

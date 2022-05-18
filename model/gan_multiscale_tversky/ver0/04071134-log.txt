@@ -1,9 +1,0 @@
-[11:34:17.626] Checkpoints to be saved at: model/gan_multiscale_tversky/ver0
-[11:34:17.763] 2021train: 1125 images, has_mask: True
-[11:34:17.763] Combined dataset: 1125 images
-[11:34:20.204] Segmentation loss: <function tversky_loss at 0x7f8856e783a0> - GAN loss: MSELoss()
-[11:34:20.221] model loaded from model/gan_multiscale_tversky/ver0/generator_epoch10.pth
-[11:34:20.228] model loaded from model/gan_multiscale_tversky/ver0/discriminator_epoch10.pth
-[11:34:20.228] Total epochs: 101
-[11:34:20.228] Iterations per epoch: 375
-[11:34:20.228] Starting at iter/epoch: 4126/11

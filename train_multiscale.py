@@ -199,7 +199,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             volume_batch = F.interpolate(volume_batch, size=data_cfg['input_patch_size'], mode='trilinear', align_corners=False)
             dis_opt.zero_grad()
             fake_mask = gen_net(volume_batch)
-            if 'voxelgan' in model_cfg['model_name']: 
+            if 'voxelgan' in model_cfg['model_name']: # element wise summation
                 print('voxelgan')
                 new_vol = volume_batch+fake_mask
                 fake_mask1 = gen_net(new_vol)
@@ -207,10 +207,15 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
 
             outputs_soft = torch.sigmoid(fake_mask)
             outputs_hard = convert_to_hard(outputs_soft)
-            
-            real_input = mask_batch
-            fake_input = outputs_hard
-           
+
+            real_input = convert_to_img(mask_batch)
+            fake_input = convert_to_img(outputs_soft)
+            print(f'img_real: {real_input.unique()}')
+            print(f'img_fake: {fake_input.unique()}')
+
+            # real_input = mask_batch
+            # fake_input = outputs_hard
+
             if model_cfg['matmul']: 
                 real_input = torch.mul(mask_batch, volume_batch)
                 fake_input = torch.mul(fake_input, volume_batch)

@@ -1,9 +1,0 @@
-[12:56:27.821] Checkpoints to be saved at: model/gan_multiscale_focal_dice/ver0
-[12:56:27.972] 2021train: 1125 images, has_mask: True
-[12:56:27.972] Combined dataset: 1125 images
-[12:56:30.372] Segmentation loss: <function focal_dice_loss at 0x7f0b373fa430> - GAN loss: MSELoss()
-[12:56:30.416] model loaded from model/gan_multiscale_focal_dice/ver0/generator_epoch30.pth
-[12:56:30.429] model loaded from model/gan_multiscale_focal_dice/ver0/discriminator_epoch30.pth
-[12:56:30.429] Total epochs: 101
-[12:56:30.429] Iterations per epoch: 375
-[12:56:30.429] Starting at iter/epoch: 11630/31

@@ -19,6 +19,7 @@ def brats_map_label(mask, binarize):
     else:
         num_classes = 4
         
+    #print(f'mask shape:{mask.shape}')
     if type(mask) == torch.Tensor:
         mask_nhot = torch.zeros((num_classes,) + mask.shape, device='cuda')
     else:
@@ -34,9 +35,10 @@ def brats_map_label(mask, binarize):
         mask_nhot[2, (mask==3) | (mask==1) | (mask==2)] = 1 # P(WT) = P(1)+P(2)+P(3)
         mask_nhot[3, (mask==3) | (mask==1)] = 1               # P(TC) = P(1)+P(3)
         # Has the batch dimension. Swap the batch to the zero-th dim.
-
+    #print(mask_nhot.size())
     if len(mask_nhot.shape) == 5:
         mask_nhot = mask_nhot.permute(1, 0, 2, 3, 4)
+    #print(mask_nhot.size())
     return mask_nhot
 
 def brats_permute(mask):

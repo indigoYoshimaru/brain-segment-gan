@@ -1,0 +1,29 @@
+[20:14:03.579] Checkpoints to be saved at: model/gan_multiscale_dynamic_img/ver2
+[20:14:03.733] 2021train: 1125 images, has_mask: True
+[20:14:03.733] Combined dataset: 1125 images
+[20:14:06.139] Segmentation loss: <function dice_loss_indiv at 0x7fe6a2ffe1f0> - GAN loss: MSELoss()
+[20:14:06.170] model loaded from model/gan_multiscale_dynamic_img/ver2/generator_epoch76.pth
+[20:14:06.182] model loaded from model/gan_multiscale_dynamic_img/ver2/discriminator_epoch76.pth
+[20:14:06.182] Total epochs: 101
+[20:14:06.182] Iterations per epoch: 375
+[20:14:06.182] Starting at iter/epoch: 28887/77
+[20:14:08.068] Pred_real: tensor([0.1867, 0.1873, 0.1875,  ..., 1.0396, 1.0430, 1.0449], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[20:14:08.069] Pred_fake: tensor([-0.1264, -0.1030, -0.0935,  ...,  0.6337,  0.6470,  0.6899],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[20:14:08.069] Discriminator 0/0/77: loss real: 0.16799034178256989 -- loss fake: 0.07477644085884094
+[20:14:08.871] Pred_real: tensor([0.4849, 0.4992, 0.5375,  ..., 1.3516, 1.4375, 1.4381], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[20:14:08.872] Pred_fake: tensor([0.0443, 0.0482, 0.0486,  ..., 1.0571, 1.0607, 1.0837], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[20:14:08.873] Discriminator 1/0/77: loss real: 0.03503524512052536 -- loss fake: 0.34391552209854126
+[20:14:09.635] Pred_real: tensor([0.1425, 0.1630, 0.1857,  ..., 1.0159, 1.0194, 1.0235], device='cuda:0',
+       grad_fn=<Unique2Backward0>)
+[20:14:09.636] Pred_fake: tensor([-0.0328, -0.0270,  0.0269,  ...,  0.6126,  0.6143,  0.6737],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[20:14:09.636] Discriminator 2/0/77: loss real: 0.10278153419494629 -- loss fake: 0.07549512386322021
+[20:14:10.400] Pred_real: tensor([-0.0318, -0.0199, -0.0091,  ...,  0.9450,  0.9453,  0.9559],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[20:14:10.401] Pred_fake: tensor([-0.5251, -0.5194, -0.5149,  ...,  0.6060,  0.6064,  0.6122],
+       device='cuda:0', grad_fn=<Unique2Backward0>)
+[20:14:10.402] Discriminator 3/0/77: loss real: 0.16825151443481445 -- loss fake: 0.11824975162744522

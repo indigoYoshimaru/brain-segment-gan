@@ -191,8 +191,8 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
 
     #==========TRAIN DISCRIMINATOR==========#
     for de in tqdm(range(dis_epoch)): 
-        # if epoch ==0: 
-        #     continue
+        if epoch == 71: 
+            continue
         for idx, sampled_batch in enumerate(trainloader):
             volume_batch, mask_batch = sampled_batch['image'].cuda(), sampled_batch['mask'].cuda()
             mask_batch = brats_map_label(mask_batch, binarize = False)
@@ -209,7 +209,7 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
             outputs_hard = convert_to_hard(outputs_soft)
 
             real_input = convert_to_img(mask_batch)
-            fake_input = convert_to_img(outputs_soft)
+            fake_input = convert_to_img(outputs_soft) # these 2 inputs are not equal, although all 4 images in 1 batch are
             print(f'img_real: {real_input.unique()}')
             print(f'img_fake: {fake_input.unique()}')
 
@@ -274,8 +274,10 @@ for epoch in tqdm(range(start_epoch, max_epoch), ncols=70):
         outputs_soft = torch.sigmoid(fake_mask)
         outputs_hard = convert_to_hard(outputs_soft)
         # fake_input = torch.argmax(brats_inv_map_label(outputs_soft), dim=0)
+
+        fake_input = convert_to_img(outputs_soft)
  
-        fake_input = outputs_hard
+        # fake_input = outputs_hard
         if model_cfg['matmul']: 
             fake_input = torch.mul(fake_input, volume_batch)
         pred_fake = dis_net(fake_input)

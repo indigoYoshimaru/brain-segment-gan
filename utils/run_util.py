@@ -96,17 +96,19 @@ def convert_to_hard(preds_soft, thres=0.5):
 
 def convert_to_img(preds_soft): 
     converted = torch.zeros_like(preds_soft)
-    print(f'batch: {converted.unique()}')
     for idx, img in enumerate(preds_soft):
         inv_probs = brats_inv_map_label(img)
         preds_hard = torch.argmax(inv_probs, dim=0)
         # Map 3 to 4, and keep 0, 1, 2 unchanged.
         preds_hard += (preds_hard == 3)
         converted[idx] = preds_hard
-
-        # converted.append(preds_hard)
-    print(f'img conv: {converted.unique()}')
-
+    # print(f'converted shape: {converted.shape}')
+    # print(f'converted unique: {converted.unique()}')
+    # test = converted[0]
+    # pair1 = (test[0]==test[1])
+    # pair2 = (test[1]==test[2])
+    # pair3 = (test[2]==test[3])
+    # print(f'equal: pair1: {pair1.unique()}; pair2: {pair2.unique()}; pair3: {pair3.unique()}')
     return converted
 
 def rotate_image(img, axes): 
